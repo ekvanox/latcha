@@ -57,7 +57,7 @@ const StatBar = ({
               borderRadius: "0.75rem",
               fontFamily: "Inter",
             }}
-            formatter={(value: number) => [`${value}%`]}
+            formatter={(value: number | undefined) => [`${value ?? ""}%`]}
           />
           <Bar dataKey="value" radius={[8, 8, 0, 0]}>
             {data.map((entry) => (
