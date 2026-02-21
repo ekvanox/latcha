@@ -32,7 +32,7 @@ const ENVIRONMENT_PROMPTS = [
 const PROMPT_STYLE_SUFFIX =
   "detailed, high texture, visually rich, masterpiece";
 
-const DEFAULT_CONDITIONING_SCALE = 1.4;
+const DEFAULT_CONDITIONING_SCALE = 1.3;
 
 const SUPPORTED_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp"]);
 
