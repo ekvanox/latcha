@@ -34,12 +34,22 @@ const Index = () => {
           Bots got smarter. Your captcha should too. Latcha stops AI agents cold
           while keeping the experience seamless for real humans.
         </p>
-        <Link
-          href="/demo"
-          className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-base font-medium hover:opacity-90 transition-opacity"
-        >
-          Get Started <ArrowRight className="w-4 h-4" />
-        </Link>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://matcha-meadow-hub.lovable.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg text-base font-medium hover:opacity-90 transition-opacity"
+          >
+            Live Demo <ArrowRight className="w-4 h-4" />
+          </a>
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            See research analysis
+          </Link>
+        </div>
       </section>
 
       {/* Features */}

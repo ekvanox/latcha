@@ -32,7 +32,7 @@ const ENVIRONMENT_PROMPTS = [
 const PROMPT_STYLE_SUFFIX =
   "detailed, high texture, visually rich, masterpiece";
 
-const DEFAULT_CONDITIONING_SCALE = 1.1;
+const DEFAULT_CONDITIONING_SCALE = 1.4;
 
 const SUPPORTED_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp"]);
 
@@ -101,19 +101,57 @@ async function loadFaceSourcePaths(repoRoot: string): Promise<string[]> {
 }
 
 async function renderFaceControlImage(faceFilePath: string): Promise<Buffer> {
-  // Cover-fit the face to 512×512 and apply mild degradation to make AI
-  // detection harder while keeping it visually perceivable by humans.
-  const resized = await sharp(faceFilePath)
+  // The illusion-diffusion ControlNet expects a B&W luminance map:
+  // bright subject on a pure-black background (like the letter glyphs).
+  //
+  // Pipeline:
+  //   1. Cover-fit to 512×512 and upload to fal storage
+  //   2. fal-ai/bria/background/remove → PNG with alpha channel
+  //   3. Download the alpha-masked face, convert to greyscale
+  //   4. Composite onto a solid black 512×512 canvas — background is now truly black
+  //   5. Normalise + slight blur to match the ControlNet's expected input range
+  //   6. Mild random brightness jitter (0.92-1.0) for variety
+
+  // Step 1: resize and upload the face image
+  const resizedBuffer = await sharp(faceFilePath)
     .resize(SIZE, SIZE, { fit: "cover", position: "centre" })
     .png()
     .toBuffer();
 
-  const brightness = 0.88 + Math.random() * 0.12; // 0.88–1.0
-  const blurSigma = 0.4 + Math.random() * 0.3; // 0.4–0.7
+  const faceBlob = new Blob([Uint8Array.from(resizedBuffer)], {
+    type: "image/png",
+  });
+  const faceUrl = await fal.storage.upload(faceBlob);
 
-  return sharp(resized)
-    .modulate({ brightness })
-    .blur(blurSigma)
+  // Step 2: background removal via fal.ai
+  const bgResult = await fal.subscribe("fal-ai/bria/background/remove", {
+    input: { image_url: faceUrl },
+    logs: false,
+  });
+
+  const bgRemovedUrl = extractImageUrl(bgResult.data);
+  const bgResponse = await fetch(bgRemovedUrl);
+  if (!bgResponse.ok) {
+    throw new Error(
+      `Failed to download bg-removed face: ${bgResponse.status} ${bgResponse.statusText}`,
+    );
+  }
+  const bgRemovedBuffer = Buffer.from(await bgResponse.arrayBuffer());
+
+  // Step 3+4: greyscale the face, composite onto black canvas
+  // The bg-removed PNG has RGBA — alpha=0 where background was.
+  // We flatten onto black (alpha composite) then greyscale.
+  return sharp({
+    create: {
+      width: SIZE,
+      height: SIZE,
+      channels: 3,
+      background: { r: 0, g: 0, b: 0 },
+    },
+  })
+    .composite([{ input: bgRemovedBuffer, blend: "over" }])
+    .greyscale()
+    .linear(1.1, 0)               // +10% contrast, no brightness change
     .png()
     .toBuffer();
 }

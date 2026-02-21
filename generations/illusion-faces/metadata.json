@@ -1,86 +1,86 @@
 {
   "schemaVersion": 1,
   "generationType": "illusion-faces",
-  "updatedAt": "2026-02-21T13:42:52.178Z",
+  "updatedAt": "2026-02-21T14:36:07.300Z",
   "challenges": [
     {
-      "challengeId": "598e01c2-eaf8-45f8-a51a-717f292b1764",
-      "imageUuid": "5ebec7d6-9033-48fe-8f9b-9a4f4acb9e3c",
-      "imageFileName": "5ebec7d6-9033-48fe-8f9b-9a4f4acb9e3c.png",
+      "challengeId": "1da34975-9400-41a2-9be9-c92d0301f897",
+      "imageUuid": "4481e4f8-f36b-4b8f-878e-bb6cfd74b2de",
+      "imageFileName": "4481e4f8-f36b-4b8f-878e-bb6cfd74b2de.png",
       "answerAlternatives": [
-        "9,3",
-        "39,",
-        ",93",
-        "3,9"
+        ",15",
+        ",51",
+        "1,5",
+        "5,1"
       ],
-      "correctAlternative": "3,9",
-      "generationTimeMs": 80111,
-      "generationTimestamp": "2026-02-21T13:40:13.034Z",
+      "correctAlternative": "1,5",
+      "generationTimeMs": 112124,
+      "generationTimestamp": "2026-02-21T14:32:41.030Z",
       "question": "Select all images with hidden faces.",
       "generationSpecificMetadata": {
-        "originalChallengeId": "2cc187c2-5ca3-48f0-a1fb-e2240b67975a",
+        "originalChallengeId": "3cfda9f4-93d6-41a2-83cc-56d65ed586dc",
         "originalGeneratorId": "illusion-faces",
         "imageCount": 9,
         "imageRefs": [
           {
-            "uuid": "5ebec7d6-9033-48fe-8f9b-9a4f4acb9e3c",
-            "fileName": "5ebec7d6-9033-48fe-8f9b-9a4f4acb9e3c.png",
+            "uuid": "4481e4f8-f36b-4b8f-878e-bb6cfd74b2de",
+            "fileName": "4481e4f8-f36b-4b8f-878e-bb6cfd74b2de.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "ef40b0fd-7f5c-4e61-a09a-6a4126072e0b",
-            "fileName": "ef40b0fd-7f5c-4e61-a09a-6a4126072e0b.png",
+            "uuid": "8b85b085-cf9e-456b-90a8-a942110c6eb6",
+            "fileName": "8b85b085-cf9e-456b-90a8-a942110c6eb6.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "486b0976-a6d1-4ab9-86e5-40895ef24ea0",
-            "fileName": "486b0976-a6d1-4ab9-86e5-40895ef24ea0.png",
+            "uuid": "8ca12d72-fcec-4c4a-b801-a212637319d8",
+            "fileName": "8ca12d72-fcec-4c4a-b801-a212637319d8.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "9bc86262-7f92-445f-b30f-e9d6c59601c7",
-            "fileName": "9bc86262-7f92-445f-b30f-e9d6c59601c7.png",
+            "uuid": "2e595de2-7e4c-484f-b787-2256750440cc",
+            "fileName": "2e595de2-7e4c-484f-b787-2256750440cc.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "4b244ef3-c9a1-465b-a3b3-2de43d7b6782",
-            "fileName": "4b244ef3-c9a1-465b-a3b3-2de43d7b6782.png",
+            "uuid": "e81aa121-db37-4014-9658-d87c9d0fd524",
+            "fileName": "e81aa121-db37-4014-9658-d87c9d0fd524.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "92aff56a-a200-4363-b416-53be7bc9cbd7",
-            "fileName": "92aff56a-a200-4363-b416-53be7bc9cbd7.png",
+            "uuid": "87b963b3-9ed4-4fbb-96e9-593f0e834b89",
+            "fileName": "87b963b3-9ed4-4fbb-96e9-593f0e834b89.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "2f6210ab-5003-4229-a43f-590c9f948e47",
-            "fileName": "2f6210ab-5003-4229-a43f-590c9f948e47.png",
+            "uuid": "e9f8eb1f-b8a0-4df6-ad30-918822f3ad68",
+            "fileName": "e9f8eb1f-b8a0-4df6-ad30-918822f3ad68.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "721fbed2-99b4-41cb-8410-104e9a5762ba",
-            "fileName": "721fbed2-99b4-41cb-8410-104e9a5762ba.png",
+            "uuid": "4998766b-8a22-4c15-b295-e35a2c4919e4",
+            "fileName": "4998766b-8a22-4c15-b295-e35a2c4919e4.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "b6f26205-7278-4d4f-8b22-1a11b25de2a4",
-            "fileName": "b6f26205-7278-4d4f-8b22-1a11b25de2a4.png",
+            "uuid": "694200ff-f526-466d-8dfe-17f46bc2bf78",
+            "fileName": "694200ff-f526-466d-8dfe-17f46bc2bf78.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
@@ -91,97 +91,97 @@
           "cellCount": 9,
           "faceCount": 2,
           "faceCellIndices": [
-            3,
-            9
+            1,
+            5
           ],
           "cellFacePaths": {
-            "3": "bgOAZ-PO.jpg",
-            "9": "LAuKH9pp.jpg"
+            "1": "E4eCXDGx.jpg",
+            "5": "6U7LF6Ni.jpg"
           },
-          "environmentPrompt": "a supermarket produce section with stacked crates, price tags, and signage",
-          "prompt": "a supermarket produce section with stacked crates, price tags, and signage, detailed, high texture, visually rich, masterpiece",
+          "environmentPrompt": "a factory assembly line with repeating machinery, warning stripes, and tools",
+          "prompt": "a factory assembly line with repeating machinery, warning stripes, and tools, detailed, high texture, visually rich, masterpiece",
           "conditioningScale": 1.1
         }
       }
     },
     {
-      "challengeId": "ad286388-c94f-496e-af31-c6b13e7dff87",
-      "imageUuid": "022ac8af-82cd-471e-865e-9cf84eec0a9c",
-      "imageFileName": "022ac8af-82cd-471e-865e-9cf84eec0a9c.png",
+      "challengeId": "b2155b72-393b-417e-936b-02450ff50bf3",
+      "imageUuid": "de57db09-d12f-411b-8d23-13594c51194d",
+      "imageFileName": "de57db09-d12f-411b-8d23-13594c51194d.png",
       "answerAlternatives": [
-        ",,78236,,",
-        "3,,,,6278",
-        "2,3,6,7,8",
-        "67832,,,,"
+        "1,2,7,8,9",
+        "1,29,,7,8",
+        "72,,19,8,",
+        "128,79,,,"
       ],
-      "correctAlternative": "2,3,6,7,8",
-      "generationTimeMs": 76756,
-      "generationTimestamp": "2026-02-21T13:41:29.790Z",
+      "correctAlternative": "1,2,7,8,9",
+      "generationTimeMs": 99399,
+      "generationTimestamp": "2026-02-21T14:34:20.429Z",
       "question": "Select all images with hidden faces.",
       "generationSpecificMetadata": {
-        "originalChallengeId": "ff058e24-7d07-435e-b321-b580b8443b3b",
+        "originalChallengeId": "e7d14578-7530-466f-b141-32168947179a",
         "originalGeneratorId": "illusion-faces",
         "imageCount": 9,
         "imageRefs": [
           {
-            "uuid": "022ac8af-82cd-471e-865e-9cf84eec0a9c",
-            "fileName": "022ac8af-82cd-471e-865e-9cf84eec0a9c.png",
+            "uuid": "de57db09-d12f-411b-8d23-13594c51194d",
+            "fileName": "de57db09-d12f-411b-8d23-13594c51194d.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "17495a88-0323-4b55-81d8-7e5b762ae6d3",
-            "fileName": "17495a88-0323-4b55-81d8-7e5b762ae6d3.png",
+            "uuid": "95b922e5-91d1-4bcc-8a86-6ab44ee4da79",
+            "fileName": "95b922e5-91d1-4bcc-8a86-6ab44ee4da79.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "50df151e-eb1a-4e77-8105-a668305d7300",
-            "fileName": "50df151e-eb1a-4e77-8105-a668305d7300.png",
+            "uuid": "8f342e19-5274-4af4-9c6e-bb876cbf9be9",
+            "fileName": "8f342e19-5274-4af4-9c6e-bb876cbf9be9.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "ca6dcf0b-bb82-4a7c-80fb-184a760604b4",
-            "fileName": "ca6dcf0b-bb82-4a7c-80fb-184a760604b4.png",
+            "uuid": "31c09ab6-2a30-432a-9c58-e5cf61db2089",
+            "fileName": "31c09ab6-2a30-432a-9c58-e5cf61db2089.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "b91d7613-01e4-4282-94ae-c3997ddec554",
-            "fileName": "b91d7613-01e4-4282-94ae-c3997ddec554.png",
+            "uuid": "05e381ba-568e-45ac-a341-e17c64008631",
+            "fileName": "05e381ba-568e-45ac-a341-e17c64008631.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "67f87571-94dd-4197-9405-75e95641a7c8",
-            "fileName": "67f87571-94dd-4197-9405-75e95641a7c8.png",
+            "uuid": "df938f52-582a-4df3-b51f-0176ab832172",
+            "fileName": "df938f52-582a-4df3-b51f-0176ab832172.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "9b91bb7f-bec0-4622-ba8a-fe7b231ee4bb",
-            "fileName": "9b91bb7f-bec0-4622-ba8a-fe7b231ee4bb.png",
+            "uuid": "a557c5be-01be-4d18-ab13-5bc2d2aa16bc",
+            "fileName": "a557c5be-01be-4d18-ab13-5bc2d2aa16bc.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "25b90d01-00a4-44ce-9aea-85efc0c71a95",
-            "fileName": "25b90d01-00a4-44ce-9aea-85efc0c71a95.png",
+            "uuid": "8061ae4a-a0a1-43c9-9c46-6bd332f4dbad",
+            "fileName": "8061ae4a-a0a1-43c9-9c46-6bd332f4dbad.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "e7bdcfde-32d5-41bc-8c0b-3630829afc1f",
-            "fileName": "e7bdcfde-32d5-41bc-8c0b-3630829afc1f.png",
+            "uuid": "8f3f5568-ac2d-4e91-810c-4c695173efae",
+            "fileName": "8f3f5568-ac2d-4e91-810c-4c695173efae.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
@@ -192,103 +192,103 @@
           "cellCount": 9,
           "faceCount": 5,
           "faceCellIndices": [
+            1,
             2,
-            3,
-            6,
             7,
-            8
+            8,
+            9
           ],
           "cellFacePaths": {
-            "2": "GBGAvX8v.jpg",
-            "3": "4ldqlXrq.jpg",
-            "6": "YB2tfPoB.jpg",
-            "7": "42twFU02.jpg",
-            "8": "N4-rX-d6.jpg"
+            "1": "GBGAvX8v.jpg",
+            "2": "42twFU02.jpg",
+            "7": "Uuo7m4eu.jpg",
+            "8": "OVHP_ZQ0.jpg",
+            "9": "U6eKJmbz.jpg"
           },
-          "environmentPrompt": "a university lecture hall with seat rows, notes, and projection screens",
-          "prompt": "a university lecture hall with seat rows, notes, and projection screens, detailed, high texture, visually rich, masterpiece",
+          "environmentPrompt": "a supermarket produce section with stacked crates, price tags, and signage",
+          "prompt": "a supermarket produce section with stacked crates, price tags, and signage, detailed, high texture, visually rich, masterpiece",
           "conditioningScale": 1.1
         }
       }
     },
     {
-      "challengeId": "2df7a483-49c7-495b-ac30-7d6d0c021360",
-      "imageUuid": "7a0a1898-50b8-4c5a-a27e-861b080abcc5",
-      "imageFileName": "7a0a1898-50b8-4c5a-a27e-861b080abcc5.png",
+      "challengeId": "4f8f38ea-f50d-415c-af3d-bc0263662073",
+      "imageUuid": "9fd72e45-1053-481a-8b48-834721f234d7",
+      "imageFileName": "9fd72e45-1053-481a-8b48-834721f234d7.png",
       "answerAlternatives": [
-        "84,,1,6",
-        "6,1,,48",
-        "1,4,6,8",
-        "1,,,648"
+        "1,3,4,7,9",
+        "1,7,3,9,4",
+        ",39,71,4,",
+        ",,4,3,791"
       ],
-      "correctAlternative": "1,4,6,8",
-      "generationTimeMs": 82388,
-      "generationTimestamp": "2026-02-21T13:42:52.178Z",
+      "correctAlternative": "1,3,4,7,9",
+      "generationTimeMs": 106870,
+      "generationTimestamp": "2026-02-21T14:36:07.299Z",
       "question": "Select all images with hidden faces.",
       "generationSpecificMetadata": {
-        "originalChallengeId": "3e9bcaa4-0bd5-4410-821b-aa95f1c42ed4",
+        "originalChallengeId": "807f6496-d793-46e4-b856-ef780da4c70d",
         "originalGeneratorId": "illusion-faces",
         "imageCount": 9,
         "imageRefs": [
           {
-            "uuid": "7a0a1898-50b8-4c5a-a27e-861b080abcc5",
-            "fileName": "7a0a1898-50b8-4c5a-a27e-861b080abcc5.png",
+            "uuid": "9fd72e45-1053-481a-8b48-834721f234d7",
+            "fileName": "9fd72e45-1053-481a-8b48-834721f234d7.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "a470578b-14a5-4c0c-a3b7-81fceb5506ea",
-            "fileName": "a470578b-14a5-4c0c-a3b7-81fceb5506ea.png",
+            "uuid": "f3060f11-7ee5-40f4-a675-4103bb592fb0",
+            "fileName": "f3060f11-7ee5-40f4-a675-4103bb592fb0.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "6fc535a0-c794-4746-a666-e5e312fdeeb8",
-            "fileName": "6fc535a0-c794-4746-a666-e5e312fdeeb8.png",
+            "uuid": "a58a957f-7d6a-4b2e-b05c-f19b4659b575",
+            "fileName": "a58a957f-7d6a-4b2e-b05c-f19b4659b575.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "e08618c3-c901-464c-a90b-1ce29551bced",
-            "fileName": "e08618c3-c901-464c-a90b-1ce29551bced.png",
+            "uuid": "66f6f2d0-5935-43ea-b2e8-df1bdba90ce5",
+            "fileName": "66f6f2d0-5935-43ea-b2e8-df1bdba90ce5.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "7e93f27e-b352-40af-8b17-aa8a73a80008",
-            "fileName": "7e93f27e-b352-40af-8b17-aa8a73a80008.png",
+            "uuid": "66d93ce3-ff46-4712-aaa2-26d8aeb9c630",
+            "fileName": "66d93ce3-ff46-4712-aaa2-26d8aeb9c630.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "7bd345a8-7bda-46f4-b2dc-eff2b08b8a6f",
-            "fileName": "7bd345a8-7bda-46f4-b2dc-eff2b08b8a6f.png",
+            "uuid": "2d1966bd-1898-4573-96ae-7b85c289ef76",
+            "fileName": "2d1966bd-1898-4573-96ae-7b85c289ef76.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "17d9d26d-4f7f-4314-828c-8f4b62d25468",
-            "fileName": "17d9d26d-4f7f-4314-828c-8f4b62d25468.png",
+            "uuid": "6bed8700-3c5b-4973-84ab-f64ecf213c84",
+            "fileName": "6bed8700-3c5b-4973-84ab-f64ecf213c84.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "8d9b769e-8ab1-422a-946e-81365530eff1",
-            "fileName": "8d9b769e-8ab1-422a-946e-81365530eff1.png",
+            "uuid": "fa8883eb-6341-49c0-bddd-06b37bdad689",
+            "fileName": "fa8883eb-6341-49c0-bddd-06b37bdad689.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
           },
           {
-            "uuid": "d99b5d34-ad67-462c-86d4-455a18a20805",
-            "fileName": "d99b5d34-ad67-462c-86d4-455a18a20805.png",
+            "uuid": "42f13720-47fc-4545-b8f3-7f5b0e575f4f",
+            "fileName": "42f13720-47fc-4545-b8f3-7f5b0e575f4f.png",
             "mimeType": "image/png",
             "width": 512,
             "height": 512
@@ -297,21 +297,23 @@
         "metadata": {
           "format": "select-all",
           "cellCount": 9,
-          "faceCount": 4,
+          "faceCount": 5,
           "faceCellIndices": [
             1,
+            3,
             4,
-            6,
-            8
+            7,
+            9
           ],
           "cellFacePaths": {
-            "1": "bgOAZ-PO.jpg",
-            "4": "fn7I5TW9.jpg",
-            "6": "N98NxOrx.jpg",
-            "8": "YB2tfPoB.jpg"
+            "1": "YB2tfPoB.jpg",
+            "3": "m6MNGak_.jpg",
+            "4": "GBGAvX8v.jpg",
+            "7": "HWSjF2A5.jpg",
+            "9": "N98NxOrx.jpg"
           },
-          "environmentPrompt": "a dense urban street market with layered shop signs, awnings, and crowds",
-          "prompt": "a dense urban street market with layered shop signs, awnings, and crowds, detailed, high texture, visually rich, masterpiece",
+          "environmentPrompt": "a warehouse interior with pallet stacks, barcode labels, and shelving rows",
+          "prompt": "a warehouse interior with pallet stacks, barcode labels, and shelving rows, detailed, high texture, visually rich, masterpiece",
           "conditioningScale": 1.1
         }
       }
