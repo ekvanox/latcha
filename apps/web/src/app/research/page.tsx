@@ -111,7 +111,7 @@ function CategoryRow({ stat }: { stat: CategoryStat }) {
               </span>
             </span>
           </div>
-          <Bar value={stat.aiAccuracy} color="bg-[var(--cream-darker)]" />
+          <Bar value={stat.aiAccuracy} color="bg-[var(--olive-muted)]" />
         </div>
       </div>
 
@@ -329,7 +329,7 @@ export default function ResearchPage() {
                       Human
                     </span>
                     <span className="flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-[var(--cream-darker)] inline-block" />
+                      <span className="w-2 h-2 rounded-full bg-[var(--olive-muted)] inline-block" />
                       AI
                     </span>
                   </div>
