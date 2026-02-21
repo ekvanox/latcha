@@ -9,6 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   Cell,
+  ReferenceLine,
 } from "recharts";
 
 const humanData = [
@@ -25,10 +26,12 @@ const StatBar = ({
   title,
   data,
   subtitle,
+  showRandomLine,
 }: {
   title: string;
   data: typeof humanData;
   subtitle: string;
+  showRandomLine?: boolean;
 }) => (
   <div className="flex flex-col items-center gap-4">
     <h3 className="text-2xl font-serif text-foreground">{title}</h3>
@@ -50,6 +53,15 @@ const StatBar = ({
             tickLine={false}
             unit="%"
           />
+          {showRandomLine && (
+            <ReferenceLine
+              y={25}
+              stroke="hsl(0 0% 50%)"
+              strokeDasharray="3 3"
+              label={{ position: "right", value: "Random 25%" }}
+              zIndex={0}
+            />
+          )}
           <Tooltip
             contentStyle={{
               backgroundColor: "hsl(45 33% 94%)",
@@ -81,12 +93,14 @@ const StatsChart = () => {
       <StatBar
         title="Human Solve Rate"
         data={humanData}
-        subtitle="Higher is better"
+        subtitle="Higher is better (random = 25%)"
+        showRandomLine
       />
       <StatBar
         title="LLM Solve Rate"
         data={botData}
-        subtitle="Lower is better"
+        subtitle="Lower is better (random = 25%)"
+        showRandomLine
       />
     </div>
   );
