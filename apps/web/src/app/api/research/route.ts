@@ -32,7 +32,7 @@ export interface ModelStat {
   startedAt: string;
 }
 
-export interface DashboardData {
+export interface ResearchData {
   categories: CategoryStat[];
   models: ModelStat[];
   humanSessionCount: number;
@@ -173,7 +173,7 @@ export async function GET() {
   }
   const models = [...modelMap.values()].sort((a, b) => b.accuracy - a.accuracy);
 
-  const data: DashboardData = {
+  const data: ResearchData = {
     categories,
     models,
     humanSessionCount: humanSessionCount ?? 0,

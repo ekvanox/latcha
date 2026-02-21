@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import type {
-  DashboardData,
+  ResearchData,
   CategoryStat,
   ModelStat,
-} from "../api/dashboard/route";
+} from "../api/research/route";
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -204,16 +204,16 @@ function StatCard({
 
 // ── Page ───────────────────────────────────────────────────────────────────────
 
-export default function DashboardPage() {
-  const [data, setData] = useState<DashboardData | null>(null);
+export default function ResearchPage() {
+  const [data, setData] = useState<ResearchData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("/api/dashboard")
+    fetch("/api/research")
       .then((r) => r.json())
       .then((d) => {
         if (d.error) setError(d.error);
-        else setData(d as DashboardData);
+        else setData(d as ResearchData);
       })
       .catch((e) => setError(String(e)));
   }, []);
@@ -243,7 +243,7 @@ export default function DashboardPage() {
               <img src="/logo.png" alt="latcha logo" className="w-6 h-6" />
             </Link>
             <span className="text-[var(--text-muted)]">/</span>
-            <span className="text-sm text-[var(--text-muted)]">Dashboard</span>
+            <span className="text-sm text-[var(--text-muted)]">Research</span>
           </div>
           <Link
             href="/demo"
