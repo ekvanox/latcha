@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { consumePending } from "../challenge/route";
+import { consumePending } from "../../../../lib/latcha-pending-store";
 
 // ── CORS headers ──────────────────────────────────────────────────────────────
 const CORS = {
