@@ -130,23 +130,44 @@ export async function GET() {
   // ── Sample images per category ───────────────────────────────────────────────
   const { data: captchaRows } = await supabase
     .from("captchas")
-    .select("generation_type, bucket_path");
+    .select("generation_type, bucket_path, generation_specific_metadata");
+
+  // Collect individual face-cell URLs from illusion-faces imageRefs
+  const illusionFaceCellUrls: string[] = [];
 
   const imagesByType = new Map<string, string[]>();
   for (const row of captchaRows ?? []) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const t = (row as any).generation_type as string;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const bp = (row as any).bucket_path as string | undefined;
+    const r = row as any;
+    const t = r.generation_type as string;
+    const bp = r.bucket_path as string | undefined;
     if (!t || !bp) continue;
-    const arr = imagesByType.get(t) ?? [];
-    arr.push(bucketImageUrl(bp));
-    imagesByType.set(t, arr);
+
+    if (t === "illusion-faces") {
+      // Collect every individual cell image from imageRefs
+      const refs: Array<{ fileName: string }> =
+        r.generation_specific_metadata?.imageRefs ?? [];
+      for (const ref of refs) {
+        if (ref.fileName) {
+          illusionFaceCellUrls.push(
+            bucketImageUrl(`illusion-faces/${ref.fileName}`),
+          );
+        }
+      }
+    } else {
+      const arr = imagesByType.get(t) ?? [];
+      arr.push(bucketImageUrl(bp));
+      imagesByType.set(t, arr);
+    }
   }
 
-  // Attach 2 random samples to each category
+  // Attach 2 random samples to each category.
+  // "illusion-diffusion" shows face cells instead of its own images.
   for (const cat of categories) {
-    const pool = imagesByType.get(cat.generationType) ?? [];
+    const pool =
+      cat.generationType === "illusion-diffusion"
+        ? illusionFaceCellUrls
+        : (imagesByType.get(cat.generationType) ?? []);
     // Fisher-Yates partial shuffle to pick 2
     const copy = [...pool];
     for (let i = copy.length - 1; i > 0 && i >= copy.length - 2; i--) {
