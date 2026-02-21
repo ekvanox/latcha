@@ -99,16 +99,16 @@ export function ResultsScreen({ items, answers }: ResultsScreenProps) {
     <div className="w-full max-w-2xl mx-auto space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle className="text-xl sm:text-2xl text-center">
+          <CardTitle className="text-xl sm:text-2xl text-center font-serif">
             Test Complete
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="text-center space-y-1">
-            <p className="text-3xl sm:text-4xl font-bold tabular-nums">
+            <p className="text-3xl sm:text-4xl font-bold tabular-nums text-foreground">
               {overallCorrect} / {overallNonSkipped}
             </p>
-            <p className="text-lg text-gray-500 dark:text-gray-400">
+            <p className="text-lg text-text-secondary">
               {overallPercentage}% correct
               {overallSkipped > 0 && (
                 <span className="text-sm ml-1">({overallSkipped} skipped)</span>
@@ -119,20 +119,20 @@ export function ResultsScreen({ items, answers }: ResultsScreenProps) {
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-gray-200 dark:border-gray-800">
-                  <th className="text-left py-2 pr-4 font-medium text-gray-500 dark:text-gray-400">
+                <tr className="border-b border-card-border">
+                  <th className="text-left py-2 pr-4 font-medium text-text-secondary">
                     Category
                   </th>
-                  <th className="text-right py-2 px-2 font-medium text-gray-500 dark:text-gray-400">
+                  <th className="text-right py-2 px-2 font-medium text-text-secondary">
                     Score
                   </th>
-                  <th className="text-right py-2 px-2 font-medium text-gray-500 dark:text-gray-400">
+                  <th className="text-right py-2 px-2 font-medium text-text-secondary">
                     %
                   </th>
-                  <th className="text-right py-2 px-2 font-medium text-gray-500 dark:text-gray-400 hidden sm:table-cell">
+                  <th className="text-right py-2 px-2 font-medium text-text-secondary hidden sm:table-cell">
                     Skipped
                   </th>
-                  <th className="text-right py-2 pl-2 font-medium text-gray-500 dark:text-gray-400">
+                  <th className="text-right py-2 pl-2 font-medium text-text-secondary">
                     Avg Time
                   </th>
                 </tr>
@@ -141,31 +141,31 @@ export function ResultsScreen({ items, answers }: ResultsScreenProps) {
                 {stats.map((stat) => (
                   <tr
                     key={stat.generationType}
-                    className="border-b border-gray-100 dark:border-gray-800/50 last:border-0"
+                    className="border-b border-card-border last:border-0"
                   >
-                    <td className="py-2.5 pr-4 font-medium">
+                    <td className="py-2.5 pr-4 font-medium text-foreground">
                       {formatGenerationType(stat.generationType)}
                     </td>
-                    <td className="py-2.5 px-2 text-right tabular-nums">
+                    <td className="py-2.5 px-2 text-right tabular-nums text-text-secondary">
                       {stat.correct}/{stat.total - stat.skipped}
                     </td>
-                    <td className="py-2.5 px-2 text-right tabular-nums font-medium">
+                    <td className="py-2.5 px-2 text-right tabular-nums font-semibold">
                       <span
                         className={
                           stat.percentage >= 80
-                            ? "text-green-600 dark:text-green-400"
+                            ? "text-[#2d5a1b]"
                             : stat.percentage >= 50
-                              ? "text-yellow-600 dark:text-yellow-400"
-                              : "text-red-600 dark:text-red-400"
+                              ? "text-[#7a6020]"
+                              : "text-[#922b21]"
                         }
                       >
                         {stat.percentage}%
                       </span>
                     </td>
-                    <td className="py-2.5 px-2 text-right tabular-nums text-gray-400 hidden sm:table-cell">
+                    <td className="py-2.5 px-2 text-right tabular-nums text-text-muted hidden sm:table-cell">
                       {stat.skipped}
                     </td>
-                    <td className="py-2.5 pl-2 text-right tabular-nums text-gray-500 dark:text-gray-400">
+                    <td className="py-2.5 pl-2 text-right tabular-nums text-text-secondary">
                       {formatTime(stat.avgResponseTimeMs)}
                     </td>
                   </tr>
@@ -176,7 +176,7 @@ export function ResultsScreen({ items, answers }: ResultsScreenProps) {
         </CardContent>
       </Card>
 
-      <p className="text-center text-xs text-gray-400 dark:text-gray-600 pb-4">
+      <p className="text-center text-xs text-text-muted pb-4">
         Results saved. Run again to compare.
       </p>
     </div>

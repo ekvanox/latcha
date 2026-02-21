@@ -74,15 +74,15 @@ export function CaptchaQuestion({ item, onAnswer }: CaptchaQuestionProps) {
   return (
     <Card className="w-full max-w-lg mx-auto">
       <CardContent className="p-4 sm:p-6 space-y-5">
-        <p className="text-sm sm:text-base font-medium text-center text-[var(--foreground)]">
+        <p className="text-sm sm:text-base font-medium text-center text-foreground">
           {item.question}
         </p>
 
         <div className="flex justify-center">
-          <div className="relative rounded-lg overflow-hidden bg-[var(--cream-dark)]">
+          <div className="relative rounded-lg overflow-hidden bg-cream-dark">
             {!imageLoaded && (
               <div className="w-full h-48 sm:h-64 flex items-center justify-center">
-                <div className="w-6 h-6 border-2 border-[var(--cream-darker)] border-t-[var(--olive)] rounded-full animate-spin" />
+                <div className="w-6 h-6 border-2 border-cream-darker border-t-olive rounded-full animate-spin" />
               </div>
             )}
             <Image
@@ -116,7 +116,7 @@ export function CaptchaQuestion({ item, onAnswer }: CaptchaQuestionProps) {
                   getButtonStyle(option),
                 )}
               >
-                <span className="text-xs sm:text-sm text-[var(--olive-muted)] mr-1.5">
+                <span className="text-xs sm:text-sm text-olive-muted mr-1.5">
                   {letter})
                 </span>
                 {option}
@@ -128,7 +128,7 @@ export function CaptchaQuestion({ item, onAnswer }: CaptchaQuestionProps) {
         {answerState === "unanswered" && (
           <button
             onClick={handleSkip}
-            className="w-full py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors"
+            className="w-full py-2 text-sm text-text-secondary hover:text-foreground transition-colors"
           >
             Skip / I don&apos;t know
           </button>
@@ -138,7 +138,7 @@ export function CaptchaQuestion({ item, onAnswer }: CaptchaQuestionProps) {
           <div className="space-y-3">
             <p className="text-center text-sm font-medium">
               {selectedAnswer === SKIP_ANSWER ? (
-                <span className="text-[var(--text-secondary)]">Skipped</span>
+                <span className="text-text-secondary">Skipped</span>
               ) : selectedAnswer === item.correctAlternative ? (
                 <span className="text-[#2d5a1b]">Correct ✓</span>
               ) : (
@@ -149,7 +149,7 @@ export function CaptchaQuestion({ item, onAnswer }: CaptchaQuestionProps) {
             </p>
             <button
               onClick={handleNext}
-              className="w-full py-3 rounded-lg bg-[var(--olive)] text-white font-semibold text-sm hover:bg-[var(--olive-light)] transition-colors"
+              className="w-full py-3 rounded-lg bg-olive text-white font-semibold text-sm hover:bg-olive-light transition-colors"
             >
               Next
             </button>
