@@ -21,8 +21,8 @@ const Index = () => {
         <p className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6">
           AI-Proof Verification
         </p>
-        <h1 className="text-5xl md:text-7xl font-serif text-foreground leading-tight mb-6">
-          The LLM-Proof Captcha&nbsp;of&nbsp;the&nbsp;Future
+        <h1 className="text-5xl md:text-7xl font-serif text-foreground leading-tight mb-6 whitespace-normal">
+          The LLM-Proof Captcha of the Future
         </h1>
         <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
           Bots got smarter. Your captcha should too. Lacha stops AI agents cold
