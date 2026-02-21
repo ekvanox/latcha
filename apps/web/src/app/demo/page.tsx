@@ -54,7 +54,7 @@ export default function DemoPage() {
   }, []);
 
   const handleAnswer = useCallback(
-    (answer: UserAnswer) => {
+    async (answer: UserAnswer) => {
       const currentItem = items[currentIndex];
       if (!currentItem) return;
 
@@ -62,6 +62,43 @@ export default function DemoPage() {
 
       const nextIndex = currentIndex + 1;
       if (nextIndex >= items.length) {
+        setState("loading"); // reuse loading state for submission
+
+        try {
+          const results = items.map((item) => {
+            const a = answersRef.current[item.challengeId];
+            return {
+              captchaId: item.challengeId,
+              answerTimeMs: a.responseTimeMs,
+              response: a.answer,
+              isCorrect: a.answer === item.correctAlternative,
+            };
+          });
+
+          // calculate total session time as the sum of all response times
+          const totalSessionTimeMs = results.reduce(
+            (acc, curr) => acc + curr.answerTimeMs,
+            0,
+          );
+
+          await fetch("/api/captcha-test", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              session: {
+                userAgent: window.navigator.userAgent,
+                deviceType: /Mobi|Android/i.test(window.navigator.userAgent)
+                  ? "mobile"
+                  : "desktop",
+                totalSessionTimeMs,
+              },
+              results,
+            }),
+          });
+        } catch (err) {
+          console.error("Failed to submit results", err);
+        }
+
         setState("completed");
       } else {
         setCurrentIndex(nextIndex);
