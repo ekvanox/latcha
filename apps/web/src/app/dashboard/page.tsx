@@ -29,7 +29,7 @@ export default function DashboardPackagePage() {
             className="text-3xl sm:text-4xl font-normal text-[var(--olive)]"
             style={{ fontFamily: "var(--font-serif)" }}
           >
-            @latcha/react
+            Installation
           </h1>
           <p className="text-base text-[var(--text-secondary)] max-w-2xl leading-relaxed">
             A drop-in AI-proof CAPTCHA widget for React. Works like reCAPTCHA v2 — no signup,
