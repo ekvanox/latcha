@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import { LiveDemo } from "./LiveDemo";
+import { CodeBlock } from "./CodeBlock";
 
 export default function DashboardPackagePage() {
   return (
@@ -69,17 +70,12 @@ export default function DashboardPackagePage() {
 
           <div className="space-y-2">
             <p className="text-sm font-medium text-[var(--text-secondary)]">1. Install</p>
-            <pre className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-4 overflow-x-auto text-sm">
-              <code>{`npm install @latcha/react
-# or
-pnpm add @latcha/react`}</code>
-            </pre>
+            <CodeBlock lang="sh" code={`npm install @latcha/react\n# or\npnpm add @latcha/react`} />
           </div>
 
           <div className="space-y-2">
             <p className="text-sm font-medium text-[var(--text-secondary)]">2. Add to your form</p>
-            <pre className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-4 overflow-x-auto text-sm">
-              <code>{`import { LatchaWidget } from "@latcha/react";
+            <CodeBlock lang="tsx" code={`import { LatchaWidget } from "@latcha/react";
 
 function ContactForm() {
   const [verified, setVerified] = useState(false);
@@ -103,8 +99,7 @@ function ContactForm() {
       </button>
     </form>
   );
-}`}</code>
-            </pre>
+}`} />
           </div>
         </section>
 
