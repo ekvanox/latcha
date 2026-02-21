@@ -1,6 +1,13 @@
 import { NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase";
 
+const SUPABASE_URL =
+  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://supabase.heimdal.dev";
+
+function bucketImageUrl(bucketPath: string): string {
+  return `${SUPABASE_URL}/storage/v1/object/public/captchas/${bucketPath}`;
+}
+
 export interface CategoryStat {
   generationType: string;
   humanAccuracy: number;
@@ -11,6 +18,8 @@ export interface CategoryStat {
   aiTotal: number;
   /** human - ai, positive = human is better */
   gap: number;
+  /** Up to 2 random sample image URLs for this category */
+  sampleImages: string[];
 }
 
 export interface ModelStat {
@@ -116,6 +125,35 @@ export async function GET() {
 
   // Sort by gap descending (biggest human advantage first)
   categories.sort((a, b) => b.gap - a.gap);
+
+  // ── Sample images per category ───────────────────────────────────────────────
+  const { data: captchaRows } = await supabase
+    .from("captchas")
+    .select("generation_type, bucket_path");
+
+  const imagesByType = new Map<string, string[]>();
+  for (const row of captchaRows ?? []) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const t = (row as any).generation_type as string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const bp = (row as any).bucket_path as string | undefined;
+    if (!t || !bp) continue;
+    const arr = imagesByType.get(t) ?? [];
+    arr.push(bucketImageUrl(bp));
+    imagesByType.set(t, arr);
+  }
+
+  // Attach 2 random samples to each category
+  for (const cat of categories) {
+    const pool = imagesByType.get(cat.generationType) ?? [];
+    // Fisher-Yates partial shuffle to pick 2
+    const copy = [...pool];
+    for (let i = copy.length - 1; i > 0 && i >= copy.length - 2; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    (cat as CategoryStat).sampleImages = copy.slice(0, 2);
+  }
 
   // ── Deduplicate models (take latest session per model_id) ───────────────────
   const modelMap = new Map<string, ModelStat>();

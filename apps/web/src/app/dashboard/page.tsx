@@ -59,45 +59,85 @@ function GapBadge({ gap }: { gap: number }) {
 // ── Category row ───────────────────────────────────────────────────────────────
 
 function CategoryRow({ stat }: { stat: CategoryStat }) {
+  const [open, setOpen] = useState(false);
+  const hasImages = stat.sampleImages && stat.sampleImages.length > 0;
+
   return (
-    <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-5 space-y-3 hover:border-[var(--olive-muted)]/40 transition-colors">
-      <div className="flex items-center justify-between gap-2">
-        <span
-          className="font-semibold text-sm text-[var(--foreground)]"
-          style={{ fontFamily: "var(--font-serif)" }}
-        >
-          {label(stat.generationType)}
-        </span>
-        <GapBadge gap={stat.gap} />
+    <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl overflow-hidden hover:border-[var(--olive-muted)]/40 transition-colors">
+      <div className="p-5 space-y-3">
+        <div className="flex items-center justify-between gap-2">
+          <span
+            className="font-semibold text-sm text-[var(--foreground)]"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            {label(stat.generationType)}
+          </span>
+          <div className="flex items-center gap-2">
+            <GapBadge gap={stat.gap} />
+            {hasImages && (
+              <button
+                onClick={() => setOpen((o) => !o)}
+                className="flex items-center gap-1 text-xs text-[var(--olive-muted)] hover:text-[var(--olive)] transition-colors px-2 py-1 rounded-lg hover:bg-[var(--cream-dark)]"
+              >
+                <span>{open ? "▲" : "▼"}</span>
+                <span>Examples</span>
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Human */}
+        <div className="space-y-1">
+          <div className="flex justify-between text-xs text-[var(--text-muted)]">
+            <span>Human</span>
+            <span className="tabular-nums font-medium text-[var(--foreground)]">
+              {pct(stat.humanAccuracy)}{" "}
+              <span className="text-[var(--text-muted)]">
+                ({stat.humanCorrect}/{stat.humanTotal})
+              </span>
+            </span>
+          </div>
+          <Bar value={stat.humanAccuracy} color="bg-[var(--olive)]" />
+        </div>
+
+        {/* AI */}
+        <div className="space-y-1">
+          <div className="flex justify-between text-xs text-[var(--text-muted)]">
+            <span>AI (avg)</span>
+            <span className="tabular-nums font-medium text-[var(--foreground)]">
+              {pct(stat.aiAccuracy)}{" "}
+              <span className="text-[var(--text-muted)]">
+                ({stat.aiCorrect}/{stat.aiTotal})
+              </span>
+            </span>
+          </div>
+          <Bar value={stat.aiAccuracy} color="bg-[var(--cream-darker)]" />
+        </div>
       </div>
 
-      {/* Human */}
-      <div className="space-y-1">
-        <div className="flex justify-between text-xs text-[var(--text-muted)]">
-          <span>Human</span>
-          <span className="tabular-nums font-medium text-[var(--foreground)]">
-            {pct(stat.humanAccuracy)}{" "}
-            <span className="text-[var(--text-muted)]">
-              ({stat.humanCorrect}/{stat.humanTotal})
-            </span>
-          </span>
+      {/* Expandable image examples */}
+      {open && hasImages && (
+        <div className="border-t border-[var(--card-border)] bg-[var(--cream-dark)] px-5 py-4">
+          <p className="text-xs font-medium text-[var(--text-muted)] uppercase tracking-wider mb-3">
+            Sample Challenges
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            {stat.sampleImages.map((url, i) => (
+              <div
+                key={i}
+                className="rounded-xl overflow-hidden border border-[var(--card-border)] bg-[var(--card-bg)] aspect-square"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={url}
+                  alt={`${label(stat.generationType)} example ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        <Bar value={stat.humanAccuracy} color="bg-[var(--olive)]" />
-      </div>
-
-      {/* AI */}
-      <div className="space-y-1">
-        <div className="flex justify-between text-xs text-[var(--text-muted)]">
-          <span>AI (avg)</span>
-          <span className="tabular-nums font-medium text-[var(--foreground)]">
-            {pct(stat.aiAccuracy)}{" "}
-            <span className="text-[var(--text-muted)]">
-              ({stat.aiCorrect}/{stat.aiTotal})
-            </span>
-          </span>
-        </div>
-        <Bar value={stat.aiAccuracy} color="bg-[var(--cream-darker)]" />
-      </div>
+      )}
     </div>
   );
 }
