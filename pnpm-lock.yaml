@@ -35,9 +35,12 @@ importers:
 
   apps/web:
     dependencies:
-      '@lacha/core':
+      '@latcha/core':
         specifier: workspace:*
         version: link:../../packages/core
+      '@latcha/react':
+        specifier: workspace:*
+        version: link:../../packages/react
       '@radix-ui/react-progress':
         specifier: ^1.1.8
         version: 1.1.8(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -121,7 +124,7 @@ importers:
 
   packages/eval:
     dependencies:
-      '@lacha/core':
+      '@latcha/core':
         specifier: workspace:*
         version: link:../core
       '@openrouter/sdk':
@@ -139,6 +142,25 @@ importers:
         version: 22.19.11
       typescript:
         specifier: ^5.9.0
+        version: 5.9.3
+
+  packages/react:
+    dependencies:
+      react:
+        specifier: '>=18'
+        version: 19.2.3
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.3(react@19.2.3)
+    devDependencies:
+      '@types/react':
+        specifier: ^19
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19
+        version: 19.2.3(@types/react@19.2.14)
+      typescript:
+        specifier: ^5
         version: 5.9.3
 
 packages:

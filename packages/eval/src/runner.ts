@@ -4,11 +4,11 @@ import {
   type EvalRun,
   type ModelResult,
   type EvalChallengeResult,
-} from '@lacha/core';
+} from '@latcha/core';
 import { EVAL_MODELS, type ModelConfig } from './models.js';
 import { evaluateWithModel } from './openrouter.js';
 import { buildEvalPrompt, parseAnswer } from './prompts.js';
-import { generateId } from '@lacha/core';
+import { generateId } from '@latcha/core';
 
 /**
  * Tolerance scoring for select-all challenges (±1 total error).

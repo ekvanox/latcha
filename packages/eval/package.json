@@ -1,5 +1,5 @@
 {
-    "name": "@lacha/eval",
+    "name": "@latcha/eval",
     "version": "0.0.1",
     "private": true,
     "type": "module",
@@ -9,7 +9,7 @@
         "manual": "node --import tsx src/manual.ts"
     },
     "dependencies": {
-        "@lacha/core": "workspace:*",
+        "@latcha/core": "workspace:*",
         "@openrouter/sdk": "^0.8.0",
         "tsx": "^4.19.0",
         "dotenv": "^16.4.0"

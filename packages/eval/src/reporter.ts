@@ -1,4 +1,4 @@
-import type { EvalRun } from '@lacha/core';
+import type { EvalRun } from '@latcha/core';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
 

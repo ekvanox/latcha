@@ -1,13 +1,13 @@
 {
-  "name": "lacha",
+  "name": "latcha",
   "private": true,
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "test": "turbo test",
-    "eval": "pnpm --filter @lacha/eval start",
-    "manual": "pnpm --filter @lacha/eval manual",
+    "eval": "pnpm --filter @latcha/eval start",
+    "manual": "pnpm --filter @latcha/eval manual",
     "pregenerate": "npx tsx scripts/pregenerate-captchas.ts",
     "supabase-eval": "npx tsx scripts/supabase-eval.ts"
   },

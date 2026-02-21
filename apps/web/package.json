@@ -1,5 +1,5 @@
 {
-  "name": "@lacha/web",
+  "name": "@latcha/web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,8 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@lacha/core": "workspace:*",
+    "@latcha/core": "workspace:*",
+    "@latcha/react": "workspace:*",
     "@radix-ui/react-progress": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
     "@supabase/supabase-js": "^2.57.4",

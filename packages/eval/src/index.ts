@@ -1,4 +1,4 @@
-import { getGeneratorIds } from '@lacha/core';
+import { getGeneratorIds } from '@latcha/core';
 import { runEval, runEvalOnChallenges } from './runner.js';
 import { saveResults, printResults } from './reporter.js';
 import { resolve } from 'node:path';

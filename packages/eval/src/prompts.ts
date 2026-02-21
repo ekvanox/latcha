@@ -1,4 +1,4 @@
-import type { Challenge } from '@lacha/core';
+import type { Challenge } from '@latcha/core';
 
 export function buildEvalPrompt(challenge: Challenge): string {
   if (challenge.options) {

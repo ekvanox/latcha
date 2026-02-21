@@ -1,5 +1,5 @@
-import type { Challenge, ChallengeResponse, VerificationResult } from '@lacha/core';
-import { storeChallenge as storeInMemoryChallenge, verify as verifyInMemoryChallenge } from '@lacha/core';
+import type { Challenge, ChallengeResponse, VerificationResult } from '@latcha/core';
+import { storeChallenge as storeInMemoryChallenge, verify as verifyInMemoryChallenge } from '@latcha/core';
 import { createSupabaseServerClient } from './supabase';
 
 const DEFAULT_CHALLENGE_TABLE = 'captcha_challenges';

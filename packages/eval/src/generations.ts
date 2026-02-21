@@ -1,4 +1,4 @@
-import type { Challenge, ChallengeImage } from '@lacha/core';
+import type { Challenge, ChallengeImage } from '@latcha/core';
 import { readdir, readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 

@@ -249,7 +249,7 @@ export default function ResearchPage() {
             href="/demo"
             className="text-xs px-4 py-2 rounded-full bg-[var(--olive)] text-white font-semibold hover:bg-[var(--olive-light)] transition-colors"
           >
-            Take Test →
+            Try it yourself →
           </Link>
         </div>
       </nav>
@@ -277,7 +277,7 @@ export default function ResearchPage() {
         {!data && !error && (
           <div className="flex items-center gap-3 text-[var(--text-muted)] py-16 justify-center">
             <div className="w-5 h-5 border-2 border-[var(--cream-darker)] border-t-[var(--olive)] rounded-full animate-spin" />
-            <span className="text-sm">Loading data…</span>
+            <span className="text-sm">Loading live data…</span>
           </div>
         )}
         {error && (
@@ -384,15 +384,6 @@ export default function ResearchPage() {
                     ))}
                   </div>
                 </div>
-
-                {/* Last updated */}
-                <p className="text-xs text-[var(--text-muted)] text-right">
-                  Updated{" "}
-                  {new Date(data.lastUpdated).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                </p>
               </div>
             </div>
           </>

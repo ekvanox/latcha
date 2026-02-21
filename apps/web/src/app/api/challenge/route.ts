@@ -5,7 +5,7 @@ import {
   getGeneratorIds,
   type Challenge,
   type ChallengeResponse,
-} from '@lacha/core';
+} from '@latcha/core';
 import { storeChallenge, verifyChallenge } from '../../../lib/challenge-store';
 import { buildGenerationChallenge } from '../../../lib/generations';
 

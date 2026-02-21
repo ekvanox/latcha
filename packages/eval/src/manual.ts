@@ -3,7 +3,7 @@ import {
   buildRandomChallenge,
   getGeneratorIds,
   type Challenge,
-} from '@lacha/core';
+} from '@latcha/core';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { createInterface } from 'node:readline/promises';

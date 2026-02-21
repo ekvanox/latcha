@@ -35,7 +35,7 @@ const Index = () => {
           Bots got smarter. Your captcha should too. Latcha stops AI agents cold
           while keeping the experience seamless for real humans.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col items-center justify-center gap-4 sm:gap-6">
           <a
             href="https://matcha-meadow-hub.lovable.app/"
             target="_blank"
