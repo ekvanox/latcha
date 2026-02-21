@@ -148,7 +148,7 @@ function getGridImageUrls(row: IllusionFacesRow): string[] {
   }
   return refs.map(
     (ref) =>
-      `${SUPABASE_URL}/storage/v1/object/public/captchas/illusion-faces/${ref.uuid}.png`,
+      `${SUPABASE_URL}/storage/v1/object/public/captchas/illusion-faces/${ref.uuid}.webp`,
   );
 }
 

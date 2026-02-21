@@ -77,7 +77,7 @@ export async function GET() {
     // Build public storage URLs for each of the 9 cells
     const gridImageUrls = imageRefs.map(
       (ref) =>
-        `${supabaseUrl}/storage/v1/object/public/captchas/illusion-faces/${ref.uuid}.png`,
+        `${supabaseUrl}/storage/v1/object/public/captchas/illusion-faces/${ref.fileName}`,
     );
 
     // Store the answer server-side so the client never sees it
