@@ -1,6 +1,6 @@
 {
   "name": "@latcha/react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "AI-proof CAPTCHA widget for React — drop-in reCAPTCHA replacement",
   "keywords": [
     "captcha",
