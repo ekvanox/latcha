@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Shield, Bot, Users } from "lucide-react";
+import { ArrowRight, Shield, Bot, Users, ExternalLink } from "lucide-react";
 import StatsChart from "@/components/StatsChart";
 
 const Index = () => {
@@ -16,9 +16,10 @@ const Index = () => {
         </Link>
         <Link
           href="/dashboard"
-          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors inline-flex items-center gap-2"
         >
-          Dashboard →
+          Dashboard
+          <ExternalLink className="w-4 h-4" />
         </Link>
       </nav>
 

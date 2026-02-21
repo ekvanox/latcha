@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "generationType": "illusion-diffusion",
-  "updatedAt": "2026-02-21T13:38:52.921Z",
+  "updatedAt": "2026-02-21T14:58:25.137Z",
   "challenges": [
     {
       "challengeId": "f8ed2292-0899-40e5-8e9d-663207dba5fd",
@@ -310,6 +310,210 @@
           },
           "environmentPrompt": "a warehouse interior with pallet stacks, barcode labels, and shelving rows",
           "prompt": "a warehouse interior with pallet stacks, barcode labels, and shelving rows, detailed, high texture, visually rich, masterpiece",
+          "conditioningScale": 1
+        }
+      }
+    },
+    {
+      "challengeId": "123f4c09-17c2-4938-89b5-2e99c4b9f3ce",
+      "imageUuid": "db0f9c53-57f3-49fa-97ba-6c234ef3563d",
+      "imageFileName": "db0f9c53-57f3-49fa-97ba-6c234ef3563d.png",
+      "answerAlternatives": [
+        "21,,8",
+        ",182,",
+        "28,1,",
+        "1,2,8"
+      ],
+      "correctAlternative": "1,2,8",
+      "generationTimeMs": 96301,
+      "generationTimestamp": "2026-02-21T14:57:06.800Z",
+      "question": "Select all images containing a hidden letter.",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "770ddc99-64c3-49bc-8a5a-67182876ca5f",
+        "originalGeneratorId": "illusion-diffusion",
+        "imageCount": 9,
+        "imageRefs": [
+          {
+            "uuid": "db0f9c53-57f3-49fa-97ba-6c234ef3563d",
+            "fileName": "db0f9c53-57f3-49fa-97ba-6c234ef3563d.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "7a37b072-df31-47ed-90c8-66de2688921e",
+            "fileName": "7a37b072-df31-47ed-90c8-66de2688921e.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "b7292548-073d-4e5a-b698-2987db62c0f6",
+            "fileName": "b7292548-073d-4e5a-b698-2987db62c0f6.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "2168e92b-9e4c-471b-9ec7-24fe35e3c4c4",
+            "fileName": "2168e92b-9e4c-471b-9ec7-24fe35e3c4c4.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "a4fc3a08-5036-4895-9f8f-036c44b5f997",
+            "fileName": "a4fc3a08-5036-4895-9f8f-036c44b5f997.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "f6a6d700-adac-4ede-9d54-532a9c6da6db",
+            "fileName": "f6a6d700-adac-4ede-9d54-532a9c6da6db.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "64ec4453-4366-429c-a9fe-e181a75d7827",
+            "fileName": "64ec4453-4366-429c-a9fe-e181a75d7827.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "2db33d96-240b-4565-9e28-5982ce415fb2",
+            "fileName": "2db33d96-240b-4565-9e28-5982ce415fb2.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "06452f9b-6536-44b7-bd07-2733197e61b9",
+            "fileName": "06452f9b-6536-44b7-bd07-2733197e61b9.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "metadata": {
+          "format": "select-all",
+          "cellCount": 9,
+          "letterCount": 3,
+          "letterCellIndices": [
+            1,
+            2,
+            8
+          ],
+          "cellLetters": {
+            "1": "C",
+            "2": "U",
+            "8": "Q"
+          },
+          "environmentPrompt": "a factory assembly line with repeating machinery, warning stripes, and tools",
+          "prompt": "a factory assembly line with repeating machinery, warning stripes, and tools, detailed, high texture, visually rich, masterpiece",
+          "conditioningScale": 1
+        }
+      }
+    },
+    {
+      "challengeId": "feb97e78-6422-495a-8b18-1591a21adb54",
+      "imageUuid": "703e1d67-466e-41c4-a492-9f331a98c8e4",
+      "imageFileName": "703e1d67-466e-41c4-a492-9f331a98c8e4.png",
+      "answerAlternatives": [
+        "2,1",
+        ",12",
+        "1,2",
+        ",21"
+      ],
+      "correctAlternative": "1,2",
+      "generationTimeMs": 78337,
+      "generationTimestamp": "2026-02-21T14:58:25.137Z",
+      "question": "Select all images containing a hidden letter.",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "6eab4400-d13e-4dda-a4a1-dbde0a7c8d20",
+        "originalGeneratorId": "illusion-diffusion",
+        "imageCount": 9,
+        "imageRefs": [
+          {
+            "uuid": "703e1d67-466e-41c4-a492-9f331a98c8e4",
+            "fileName": "703e1d67-466e-41c4-a492-9f331a98c8e4.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "07155d4f-399e-467c-bc7f-1ff91cee60bd",
+            "fileName": "07155d4f-399e-467c-bc7f-1ff91cee60bd.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "1dfd2e3e-2a4e-4397-9e84-88fdf54b014d",
+            "fileName": "1dfd2e3e-2a4e-4397-9e84-88fdf54b014d.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "5dc37b61-cf61-4580-9523-b3fb9a17a4eb",
+            "fileName": "5dc37b61-cf61-4580-9523-b3fb9a17a4eb.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "1d57cd95-dca7-4de7-9cc1-c0c14cae5c7f",
+            "fileName": "1d57cd95-dca7-4de7-9cc1-c0c14cae5c7f.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "c6adaba0-4d41-4e9e-aa90-71b660a919b7",
+            "fileName": "c6adaba0-4d41-4e9e-aa90-71b660a919b7.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "1bb9e295-16cf-4d7b-969a-ba62e7710a14",
+            "fileName": "1bb9e295-16cf-4d7b-969a-ba62e7710a14.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "e2fd94a0-2644-42fd-a8ee-8f32beefc3ea",
+            "fileName": "e2fd94a0-2644-42fd-a8ee-8f32beefc3ea.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "a2b92284-e7c7-4b94-879e-b799b14a8598",
+            "fileName": "a2b92284-e7c7-4b94-879e-b799b14a8598.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "metadata": {
+          "format": "select-all",
+          "cellCount": 9,
+          "letterCount": 2,
+          "letterCellIndices": [
+            1,
+            2
+          ],
+          "cellLetters": {
+            "1": "O",
+            "2": "P"
+          },
+          "environmentPrompt": "a train station platform with timetable boards, pillars, and tracks",
+          "prompt": "a train station platform with timetable boards, pillars, and tracks, detailed, high texture, visually rich, masterpiece",
           "conditioningScale": 1
         }
       }

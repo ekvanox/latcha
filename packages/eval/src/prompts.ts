@@ -11,10 +11,6 @@ export function buildEvalPrompt(challenge: Challenge): string {
     ].join('\n');
   }
   // select-all: grid cell selection
-  // Tailor the response instruction to match what is hidden
-  const hiddenNoun =
-    challenge.generatorId === 'illusion-faces' ? 'a hidden face' : 'a hidden letter';
-
   return [
     challenge.question,
     '',
@@ -23,7 +19,7 @@ export function buildEvalPrompt(challenge: Challenge): string {
     '4 5 6',
     '7 8 9',
     '',
-    `Respond with ONLY the cell numbers that contain ${hiddenNoun}, comma-separated (e.g. "1,3,7"). Nothing else.`,
+    'Respond with ONLY the cell numbers that contain a hidden face, comma-separated (e.g. "1,3,7"). Nothing else.',
   ].join('\n');
 }
 

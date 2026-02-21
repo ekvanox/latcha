@@ -5,7 +5,6 @@ import { PartialOcclusionGenerator } from "./partial-occlusion.js";
 import { IllusoryContoursGenerator } from "./illusory-contours.js";
 import { AbuttingGratingGenerator } from "./abutting-grating.js";
 import { EmergingImageGenerator } from "./emerging-image.js";
-import { IllusionDiffusionGenerator } from "./illusion-diffusion.js";
 import { IllusionFacesGenerator } from "./illusion-faces.js";
 
 const generators: CaptchaGenerator[] = [
@@ -15,7 +14,6 @@ const generators: CaptchaGenerator[] = [
   new IllusoryContoursGenerator(),
   new AbuttingGratingGenerator(),
   new EmergingImageGenerator(),
-  new IllusionDiffusionGenerator(),
   new IllusionFacesGenerator(),
 ];
 
