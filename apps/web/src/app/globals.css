@@ -2,7 +2,7 @@
 
 :root {
   --background: #f5f0e8;
-  --foreground: #2a2a2a;
+  --foreground: #3d5a1e;
   --olive: #3d5a1e;
   --olive-light: #5a7a2e;
   --olive-muted: #7a9a4e;
@@ -13,6 +13,14 @@
   --card-border: #e8e2d6;
   --text-muted: #8a8478;
   --text-secondary: #6b6560;
+
+  /* shadcn-style tokens used in page.tsx */
+  --primary: #3d5a1e;
+  --primary-foreground: #f5f0e8;
+  --muted-foreground: #6b6560;
+  --card: #faf7f2;
+  --border: #e8e2d6;
+  --destructive: #c0392b;
 }
 
 @theme inline {
@@ -28,6 +36,15 @@
   --color-card-border: var(--card-border);
   --color-text-muted: var(--text-muted);
   --color-text-secondary: var(--text-secondary);
+
+  /* shadcn-style tokens */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+
   --font-sans: "Inter", sans-serif;
   --font-serif: "DM Serif Display", serif;
 }

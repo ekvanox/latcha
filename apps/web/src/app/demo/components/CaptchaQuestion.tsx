@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import type { CaptchaItem, UserAnswer } from "../types";
@@ -57,33 +56,33 @@ export function CaptchaQuestion({ item, onAnswer }: CaptchaQuestionProps) {
 
   const getButtonStyle = (option: string): string => {
     if (answerState !== "answered") {
-      return "border-gray-200 hover:border-gray-400 dark:border-gray-700 dark:hover:border-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800/50";
+      return "border-[var(--card-border)] hover:border-[var(--olive-muted)] hover:bg-[var(--cream-dark)] text-[var(--foreground)]";
     }
 
     const isCorrect = option === item.correctAlternative;
     const isSelected = option === selectedAnswer;
 
     if (isCorrect) {
-      return "border-green-500 bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300 dark:border-green-600";
+      return "border-[#4a7c2f] bg-[#eef4e8] text-[#2d5a1b]";
     }
     if (isSelected && !isCorrect) {
-      return "border-red-500 bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-300 dark:border-red-600";
+      return "border-[#c0392b] bg-[#fdf0ee] text-[#922b21]";
     }
-    return "border-gray-200 opacity-50 dark:border-gray-700";
+    return "border-[var(--card-border)] opacity-50 text-[var(--text-secondary)]";
   };
 
   return (
     <Card className="w-full max-w-lg mx-auto">
       <CardContent className="p-4 sm:p-6 space-y-5">
-        <p className="text-sm sm:text-base font-medium text-center text-foreground">
+        <p className="text-sm sm:text-base font-medium text-center text-[var(--foreground)]">
           {item.question}
         </p>
 
         <div className="flex justify-center">
-          <div className="relative rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-800">
+          <div className="relative rounded-lg overflow-hidden bg-[var(--cream-dark)]">
             {!imageLoaded && (
               <div className="w-full h-48 sm:h-64 flex items-center justify-center">
-                <div className="w-6 h-6 border-2 border-gray-300 border-t-foreground rounded-full animate-spin" />
+                <div className="w-6 h-6 border-2 border-[var(--cream-darker)] border-t-[var(--olive)] rounded-full animate-spin" />
               </div>
             )}
             <Image
@@ -117,7 +116,7 @@ export function CaptchaQuestion({ item, onAnswer }: CaptchaQuestionProps) {
                   getButtonStyle(option),
                 )}
               >
-                <span className="text-xs sm:text-sm text-gray-400 mr-1.5">
+                <span className="text-xs sm:text-sm text-[var(--olive-muted)] mr-1.5">
                   {letter})
                 </span>
                 {option}
@@ -127,33 +126,33 @@ export function CaptchaQuestion({ item, onAnswer }: CaptchaQuestionProps) {
         </div>
 
         {answerState === "unanswered" && (
-          <Button
-            variant="ghost"
+          <button
             onClick={handleSkip}
-            className="w-full text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+            className="w-full py-2 text-sm text-[var(--text-secondary)] hover:text-[var(--foreground)] transition-colors"
           >
             Skip / I don&apos;t know
-          </Button>
+          </button>
         )}
 
         {answerState === "answered" && (
           <div className="space-y-3">
             <p className="text-center text-sm font-medium">
               {selectedAnswer === SKIP_ANSWER ? (
-                <span className="text-gray-500">Skipped</span>
+                <span className="text-[var(--text-secondary)]">Skipped</span>
               ) : selectedAnswer === item.correctAlternative ? (
-                <span className="text-green-600 dark:text-green-400">
-                  Correct
-                </span>
+                <span className="text-[#2d5a1b]">Correct ✓</span>
               ) : (
-                <span className="text-red-600 dark:text-red-400">
+                <span className="text-[#922b21]">
                   Incorrect — the answer was {item.correctAlternative}
                 </span>
               )}
             </p>
-            <Button onClick={handleNext} className="w-full">
+            <button
+              onClick={handleNext}
+              className="w-full py-3 rounded-lg bg-[var(--olive)] text-white font-semibold text-sm hover:bg-[var(--olive-light)] transition-colors"
+            >
               Next
-            </Button>
+            </button>
           </div>
         )}
       </CardContent>
