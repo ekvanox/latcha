@@ -2,35 +2,88 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-8 font-[family-name:var(--font-geist-sans)]">
-      <main className="max-w-2xl text-center space-y-8">
-        <h1 className="text-6xl font-bold tracking-tight">Lacha</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400">
-          LLM-Proof CAPTCHA — challenges that are trivially easy for humans but
-          impossible for frontier AI models.
+    <div className="min-h-screen bg-[var(--cream)]">
+      {/* Nav */}
+      <nav className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div className="flex items-center gap-2.5">
+          <span className="text-2xl">🍃</span>
+          <span className="text-lg font-semibold text-[var(--foreground)]">
+            lacha
+          </span>
+        </div>
+        <Link
+          href="/dashboard"
+          className="text-sm font-medium text-[var(--olive)] hover:text-[var(--olive-light)] transition-colors"
+        >
+          Dashboard →
+        </Link>
+      </nav>
+
+      {/* Hero */}
+      <main className="max-w-3xl mx-auto px-6 pt-16 pb-20 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--olive-muted)] mb-6">
+          AI-Proof Verification
         </p>
-        <div className="flex gap-4 justify-center flex-wrap">
-          <Link
-            href="/demo"
-            className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
-          >
-            Start Captcha Test
-          </Link>
-          <Link
-            href="/dashboard"
-            className="px-6 py-3 bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-          >
-            View Dashboard →
-          </Link>
-        </div>
-        <div className="mt-12 text-sm text-gray-500 space-y-2">
-          <p>Current CAPTCHAs are broken — AI solves them at 90-100% rates.</p>
-          <p>
-            Lacha exploits documented perceptual gaps where humans score 85-100%
-            while frontier LLMs score 0-5%.
-          </p>
-        </div>
+        <h1
+          className="text-5xl sm:text-6xl md:text-7xl font-normal leading-[1.1] text-[var(--olive)] mb-6"
+          style={{ fontFamily: "var(--font-serif)" }}
+        >
+          The LLM-Proof
+          <br />
+          Captcha of the Future
+        </h1>
+        <p className="text-base sm:text-lg text-[var(--text-secondary)] max-w-xl mx-auto mb-10 leading-relaxed">
+          Bots got smarter. Your captcha should too. Lacha stops AI agents cold
+          while keeping the experience seamless for real humans.
+        </p>
+        <Link
+          href="/demo"
+          className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--olive)] text-white rounded-full text-sm font-semibold hover:bg-[var(--olive-light)] transition-colors shadow-sm"
+        >
+          Get Started <span aria-hidden>→</span>
+        </Link>
       </main>
+
+      {/* Feature cards */}
+      <section className="max-w-4xl mx-auto px-6 pb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <FeatureCard
+            icon="🛡"
+            title="LLM Resistant"
+            description="Purpose-built challenges that multimodal AI models cannot solve, even with tool use."
+          />
+          <FeatureCard
+            icon="👥"
+            title="Human Friendly"
+            description="97%+ human solve rate. No more fire hydrants, crosswalks, or blurry text."
+          />
+          <FeatureCard
+            icon="⚡"
+            title="Adaptive Difficulty"
+            description="Threat-level scoring adjusts challenge complexity in real time, zero friction for trusted users."
+          />
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function FeatureCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-6 space-y-3">
+      <span className="text-2xl">{icon}</span>
+      <h3 className="text-base font-bold text-[var(--foreground)]">{title}</h3>
+      <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+        {description}
+      </p>
     </div>
   );
 }

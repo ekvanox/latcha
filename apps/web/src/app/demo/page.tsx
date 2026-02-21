@@ -110,22 +110,27 @@ export default function DemoPage() {
   const answeredCount = Object.keys(answersRef.current).length;
 
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen bg-[var(--cream)]">
       {state === "testing" && (
         <TestProgressBar current={answeredCount} total={items.length} />
       )}
 
       <div
-        className={`max-w-2xl mx-auto px-4 py-8 ${state === "testing" ? "pt-20" : ""}`}
+        className={`max-w-2xl mx-auto px-6 py-8 ${state === "testing" ? "pt-20" : ""}`}
       >
         <div className="flex items-center justify-between mb-8">
           <Link
             href="/"
-            className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+            className="text-sm text-[var(--text-muted)] hover:text-[var(--olive)] transition-colors"
           >
-            &larr; Back
+            ← Back
           </Link>
-          <h1 className="text-lg sm:text-xl font-bold">Lacha</h1>
+          <div className="flex items-center gap-2">
+            <span className="text-lg">🍃</span>
+            <h1 className="text-base font-semibold text-[var(--foreground)]">
+              lacha
+            </h1>
+          </div>
           <div className="w-12" />
         </div>
 
@@ -144,17 +149,22 @@ export default function DemoPage() {
               {error && (
                 <p className="text-sm text-red-500 text-center">{error}</p>
               )}
-              <Button onClick={startTest} className="w-full" size="lg">
+              <button
+                onClick={startTest}
+                className="w-full py-3 rounded-full bg-[var(--olive)] text-white font-semibold text-sm hover:bg-[var(--olive-light)] transition-colors"
+              >
                 Start Captcha Test
-              </Button>
+              </button>
             </CardContent>
           </Card>
         )}
 
         {state === "loading" && (
           <div className="flex flex-col items-center justify-center py-24 space-y-4">
-            <div className="w-8 h-8 border-2 border-gray-300 border-t-foreground rounded-full animate-spin" />
-            <p className="text-sm text-gray-500">Loading challenges...</p>
+            <div className="w-8 h-8 border-2 border-[var(--cream-darker)] border-t-[var(--olive)] rounded-full animate-spin" />
+            <p className="text-sm text-[var(--text-muted)]">
+              Loading challenges…
+            </p>
           </div>
         )}
 
