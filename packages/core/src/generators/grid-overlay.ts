@@ -4,29 +4,7 @@ import { BaseGenerator } from './base.js';
 import { makeCanvas, canvasToImage } from '../utils/image.js';
 import { randomInt, randomPick, shuffle } from '../utils/random.js';
 
-// Word pool: short, common words that are easy for humans to read
-const WORDS = [
-  'ALPHA', 'BRAVO', 'DELTA', 'EAGLE', 'FLAME', 'GRAPE', 'HORSE', 'IVORY',
-  'JOKER', 'KNIFE', 'LEMON', 'MAPLE', 'NOBLE', 'OCEAN', 'PEARL', 'QUEST',
-  'RAVEN', 'SOLAR', 'TIGER', 'ULTRA', 'VIVID', 'WALTZ', 'XENON', 'YACHT',
-  'ZEBRA', 'STORM', 'BLAZE', 'CRANE', 'DRIFT', 'FROST', 'GLEAM', 'HAVEN',
-  'FLUX', 'BOLD', 'CALM', 'DARK', 'ECHO', 'FERN', 'GLOW', 'HAZE',
-  'JADE', 'KITE', 'LUNA', 'MIST', 'NOVA', 'OPAL', 'PINE', 'ROSE',
-  'SILK', 'TIDE', 'VOLT', 'WAVE', 'ZINC', 'APEX', 'BEAM', 'CUBE',
-];
-
-// Letter substitutions for generating plausible distractors
-const SIMILAR_LETTERS: Record<string, string[]> = {
-  A: ['H', 'R', 'K'], B: ['D', 'P', 'R'], C: ['G', 'O', 'Q'],
-  D: ['B', 'P', 'O'], E: ['F', 'B', 'L'], F: ['E', 'P', 'T'],
-  G: ['C', 'Q', 'O'], H: ['N', 'M', 'K'], I: ['L', 'T', 'J'],
-  J: ['I', 'L', 'T'], K: ['H', 'X', 'R'], L: ['I', 'T', 'J'],
-  M: ['N', 'W', 'H'], N: ['M', 'H', 'W'], O: ['Q', 'C', 'D'],
-  P: ['B', 'D', 'R'], Q: ['O', 'G', 'C'], R: ['B', 'P', 'K'],
-  S: ['Z', 'C', 'G'], T: ['I', 'L', 'F'], U: ['V', 'W', 'Y'],
-  V: ['U', 'W', 'Y'], W: ['M', 'V', 'N'], X: ['K', 'Z', 'Y'],
-  Y: ['V', 'X', 'T'], Z: ['S', 'X', 'N'],
-};
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 type PatternType = 'diagonal-grid' | 'crosshatch' | 'concentric-circles' | 'honeycomb';
 
@@ -51,19 +29,19 @@ export class GridOverlayGenerator extends BaseGenerator {
 
   async generate(): Promise<Challenge> {
     const shell = this.createChallengeShell();
-    const word = randomPick(WORDS);
-    const distractors = this.generateDistractors(word, 3);
-    const options = shuffle([word, ...distractors]);
+    const token = this.generateRandomToken();
+    const distractors = this.generatePermutationDistractors(token, 3);
+    const options = shuffle([token, ...distractors]);
 
-    const image = await this.renderImage(word);
+    const image = await this.renderImage(token);
 
     return {
       ...shell,
       images: [image],
-      question: 'What word do you see in this image?',
+      question: 'What 4–5 letter sequence do you see in this image?',
       options,
-      correctAnswer: word,
-      metadata: { word, distractors, pattern: 'grid-overlay' },
+      correctAnswer: token,
+      metadata: { token, distractors, pattern: 'grid-overlay' },
     };
   }
 
@@ -193,53 +171,24 @@ export class GridOverlayGenerator extends BaseGenerator {
     ctx.stroke();
   }
 
-  /** Generate distractor words that are visually similar to the target */
-  private generateDistractors(word: string, count: number): string[] {
+  private generateRandomToken(): string {
+    const length = randomInt(4, 6); // 4 or 5
+    const letters = shuffle(ALPHABET.split('')).slice(0, length);
+    return letters.join('');
+  }
+
+  /** Generate distractors as permutations of the same letters */
+  private generatePermutationDistractors(word: string, count: number): string[] {
     const distractors = new Set<string>();
     let attempts = 0;
-    while (distractors.size < count && attempts < 50) {
+    while (distractors.size < count && attempts < 200) {
       attempts++;
-      const distractor = this.mutateWord(word);
+      const distractor = shuffle([...word]).join('');
       if (distractor !== word && !distractors.has(distractor)) {
         distractors.add(distractor);
       }
     }
-    // If we couldn't generate enough, pick random words
-    while (distractors.size < count) {
-      const fallback = randomPick(WORDS);
-      if (fallback !== word && !distractors.has(fallback)) {
-        distractors.add(fallback);
-      }
-    }
+
     return [...distractors];
-  }
-
-  private mutateWord(word: string): string {
-    const chars = word.split('');
-    const strategy = randomInt(0, 3);
-
-    switch (strategy) {
-      case 0: {
-        // Swap one letter with a visually similar one
-        const pos = randomInt(0, chars.length);
-        const subs = SIMILAR_LETTERS[chars[pos]];
-        if (subs) chars[pos] = randomPick(subs);
-        break;
-      }
-      case 1: {
-        // Swap two adjacent letters
-        const pos = randomInt(0, chars.length - 1);
-        [chars[pos], chars[pos + 1]] = [chars[pos + 1], chars[pos]];
-        break;
-      }
-      case 2: {
-        // Replace a random letter
-        const pos = randomInt(0, chars.length);
-        const newChar = String.fromCharCode(65 + randomInt(0, 26));
-        if (newChar !== chars[pos]) chars[pos] = newChar;
-        break;
-      }
-    }
-    return chars.join('');
   }
 }

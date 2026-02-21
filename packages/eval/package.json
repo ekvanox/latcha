@@ -5,7 +5,8 @@
     "type": "module",
     "scripts": {
         "build": "tsc",
-        "start": "node --import tsx src/index.ts"
+        "start": "node --import tsx src/index.ts",
+        "manual": "node --import tsx src/manual.ts"
     },
     "dependencies": {
         "@lacha/core": "workspace:*",

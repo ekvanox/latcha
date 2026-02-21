@@ -1,8 +1,10 @@
-import 'dotenv/config';
 import { getGeneratorIds } from '@lacha/core';
 import { runEval } from './runner.js';
 import { saveResults, printResults } from './reporter.js';
 import { resolve } from 'node:path';
+import { loadEvalEnv } from './env.js';
+
+loadEvalEnv();
 
 const args = process.argv.slice(2);
 

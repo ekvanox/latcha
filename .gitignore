@@ -2,9 +2,8 @@ node_modules/
 dist/
 .next/
 .turbo/
-results/*.json
-results/*.md
-!results/.gitkeep
+results/
+packages/results/
 .env
 .env.local
 *.tsbuildinfo
