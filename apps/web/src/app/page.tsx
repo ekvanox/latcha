@@ -124,13 +124,9 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border py-10 px-6 text-center">
-        <p className="font-serif text-xl text-primary mb-2">latcha</p>
-        <a
-          href="mailto:hello@latcha.dev"
-          className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          hello@latcha.dev
-        </a>
+        <p className="text-xs text-muted-foreground mb-2 mt-2">
+          © {new Date().getFullYear()} latcha. All rights reserved.
+        </p>
       </footer>
     </div>
   );
