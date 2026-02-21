@@ -12,12 +12,12 @@ import {
 } from "recharts";
 
 const humanData = [
-  { name: "Lacha", value: 82 },
+  { name: "Latcha", value: 82 },
   { name: "reCAPTCHA v2", value: 79 },
 ];
 
 const botData = [
-  { name: "Lacha", value: 23 },
+  { name: "Latcha", value: 23 },
   { name: "reCAPTCHA v2", value: 68 },
 ];
 
@@ -64,7 +64,7 @@ const StatBar = ({
               <Cell
                 key={entry.name}
                 fill={
-                  entry.name === "Lacha" ? "hsl(82 50% 28%)" : "hsl(45 20% 70%)"
+                  entry.name === "Latcha" ? "hsl(82 50% 28%)" : "hsl(45 20% 70%)"
                 }
               />
             ))}

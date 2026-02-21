@@ -194,13 +194,6 @@ export function DemoSession({
           >
             {backLabel}
           </Link>
-          <div className="flex items-center gap-2">
-            <span className="text-lg">🍃</span>
-            <h1 className="text-base font-semibold text-[var(--foreground)]">
-              lacha
-            </h1>
-          </div>
-          <div className="w-12" />
         </div>
 
         {state === "idle" && (

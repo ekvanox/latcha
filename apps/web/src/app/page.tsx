@@ -7,7 +7,13 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       {/* Nav */}
       <nav className="flex items-center justify-between px-8 py-6 max-w-6xl mx-auto">
-        <span className="font-serif text-2xl text-primary">lacha</span>
+        <Link href="/" className="inline-block">
+          <img
+            src="/logo.png"
+            alt="latcha logo"
+            className="w-8 h-8"
+          />
+        </Link>
         <Link
           href="/dashboard"
           className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
@@ -25,7 +31,7 @@ const Index = () => {
           The LLM-Proof Captcha of the Future
         </h1>
         <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
-          Bots got smarter. Your captcha should too. Lacha stops AI agents cold
+          Bots got smarter. Your captcha should too. Latcha stops AI agents cold
           while keeping the experience seamless for real humans.
         </p>
         <Link
@@ -83,7 +89,7 @@ const Index = () => {
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
             Same human pass rate. Dramatically lower AI solve rate. That&apos;s
-            the Lacha difference.
+            the Latcha difference.
           </p>
         </div>
         <StatsChart />
@@ -95,7 +101,7 @@ const Index = () => {
           Ready to outsmart the bots?
         </h2>
         <p className="text-muted-foreground mb-10">
-          Integrate Lacha in minutes. One script tag. Full protection.
+          Integrate Latcha in minutes. One script tag. Full protection.
         </p>
         <Link
           href="/dashboard"
@@ -107,12 +113,12 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border py-10 px-6 text-center">
-        <p className="font-serif text-xl text-primary mb-2">lacha</p>
+        <p className="font-serif text-xl text-primary mb-2">latcha</p>
         <a
-          href="mailto:hello@lacha.dev"
+          href="mailto:hello@latcha.dev"
           className="text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
-          hello@lacha.dev
+          hello@latcha.dev
         </a>
       </footer>
     </div>

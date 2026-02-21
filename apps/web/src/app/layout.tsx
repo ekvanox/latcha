@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lacha — LLM-Proof CAPTCHA",
+  title: "Latcha — LLM-Proof CAPTCHA",
   description:
     "AI-proof CAPTCHA service that exploits perceptual gaps between humans and LLMs",
 };

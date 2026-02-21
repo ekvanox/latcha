@@ -235,15 +235,12 @@ export default function DashboardPage() {
       {/* Nav */}
       <nav className="border-b border-[var(--card-border)]">
         <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2">
             <Link
               href="/"
               className="flex items-center gap-2.5 hover:opacity-80 transition-opacity"
             >
-              <span className="text-xl">🍃</span>
-              <span className="text-base font-semibold text-[var(--foreground)]">
-                lacha
-              </span>
+              <img src="/logo.png" alt="latcha logo" className="w-6 h-6" />
             </Link>
             <span className="text-[var(--text-muted)]">/</span>
             <span className="text-sm text-[var(--text-muted)]">Dashboard</span>
