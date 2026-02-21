@@ -1,7 +1,6 @@
 "use client";
 
-import { useMemo, useState, useCallback } from "react";
-import { Button } from "@/components/ui/button";
+import { useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { CaptchaItem, UserAnswer, CategoryStats } from "../types";
 import { SKIP_ANSWER } from "../types";
@@ -82,8 +81,6 @@ function computeCategoryStats(
 }
 
 export function ResultsScreen({ items, answers }: ResultsScreenProps) {
-  const [copied, setCopied] = useState(false);
-
   const stats = useMemo(
     () => computeCategoryStats(items, answers),
     [items, answers],
@@ -97,28 +94,6 @@ export function ResultsScreen({ items, answers }: ResultsScreenProps) {
     overallNonSkipped > 0
       ? Math.round((overallCorrect / overallNonSkipped) * 100)
       : 0;
-
-  const base64Result = useMemo(() => {
-    const json = JSON.stringify(answers);
-    return btoa(json);
-  }, [answers]);
-
-  const handleCopy = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(base64Result);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch {
-      const textarea = document.createElement("textarea");
-      textarea.value = base64Result;
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      document.body.removeChild(textarea);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  }, [base64Result]);
 
   return (
     <div className="w-full max-w-2xl mx-auto space-y-6">
@@ -201,24 +176,9 @@ export function ResultsScreen({ items, answers }: ResultsScreenProps) {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Response Data</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="relative">
-            <textarea
-              readOnly
-              value={base64Result}
-              rows={4}
-              className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 p-3 text-xs font-mono resize-none focus:outline-none focus:ring-1 focus:ring-gray-400"
-            />
-          </div>
-          <Button onClick={handleCopy} variant="outline" className="w-full">
-            {copied ? "Copied" : "Copy to clipboard"}
-          </Button>
-        </CardContent>
-      </Card>
+      <p className="text-center text-xs text-gray-400 dark:text-gray-600 pb-4">
+        Results saved. Run again to compare.
+      </p>
     </div>
   );
 }

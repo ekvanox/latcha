@@ -9,21 +9,26 @@ export type {
   EvalRun,
   ModelResult,
   EvalChallengeResult,
-} from './types.js';
-export { CaptchaGenerator } from './types.js';
+} from "./types.js";
+export { CaptchaGenerator } from "./types.js";
 
 // Generators
-export { getGenerator, getAllGenerators, getGeneratorIds } from './generators/index.js';
-export { GridOverlayGenerator } from './generators/grid-overlay.js';
-export { ProximityTextGenerator } from './generators/proximity-text.js';
-export { PartialOcclusionGenerator } from './generators/partial-occlusion.js';
-export { IllusoryContoursGenerator } from './generators/illusory-contours.js';
-export { AbuttingGratingGenerator } from './generators/abutting-grating.js';
-export { EmergingImageGenerator } from './generators/emerging-image.js';
+export {
+  getGenerator,
+  getAllGenerators,
+  getGeneratorIds,
+} from "./generators/index.js";
+export { GridOverlayGenerator } from "./generators/grid-overlay.js";
+export { ProximityTextGenerator } from "./generators/proximity-text.js";
+export { PartialOcclusionGenerator } from "./generators/partial-occlusion.js";
+export { IllusoryContoursGenerator } from "./generators/illusory-contours.js";
+export { AbuttingGratingGenerator } from "./generators/abutting-grating.js";
+export { EmergingImageGenerator } from "./generators/emerging-image.js";
+export { IllusionDiffusionGenerator } from "./generators/illusion-diffusion.js";
 
 // Challenge
-export { buildChallenge, buildRandomChallenge } from './challenge/builder.js';
-export { storeChallenge, verify, pruneExpired } from './challenge/verifier.js';
+export { buildChallenge, buildRandomChallenge } from "./challenge/builder.js";
+export { storeChallenge, verify, pruneExpired } from "./challenge/verifier.js";
 
 // Utils
-export { generateId } from './utils/random.js';
+export { generateId } from "./utils/random.js";

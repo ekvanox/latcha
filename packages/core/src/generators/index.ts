@@ -1,10 +1,11 @@
-import type { CaptchaGenerator } from '../types.js';
-import { GridOverlayGenerator } from './grid-overlay.js';
-import { ProximityTextGenerator } from './proximity-text.js';
-import { PartialOcclusionGenerator } from './partial-occlusion.js';
-import { IllusoryContoursGenerator } from './illusory-contours.js';
-import { AbuttingGratingGenerator } from './abutting-grating.js';
-import { EmergingImageGenerator } from './emerging-image.js';
+import type { CaptchaGenerator } from "../types.js";
+import { GridOverlayGenerator } from "./grid-overlay.js";
+import { ProximityTextGenerator } from "./proximity-text.js";
+import { PartialOcclusionGenerator } from "./partial-occlusion.js";
+import { IllusoryContoursGenerator } from "./illusory-contours.js";
+import { AbuttingGratingGenerator } from "./abutting-grating.js";
+import { EmergingImageGenerator } from "./emerging-image.js";
+import { IllusionDiffusionGenerator } from "./illusion-diffusion.js";
 
 const generators: CaptchaGenerator[] = [
   new GridOverlayGenerator(),
@@ -13,6 +14,7 @@ const generators: CaptchaGenerator[] = [
   new IllusoryContoursGenerator(),
   new AbuttingGratingGenerator(),
   new EmergingImageGenerator(),
+  new IllusionDiffusionGenerator(),
 ];
 
 const generatorMap = new Map(generators.map((g) => [g.config.id, g]));

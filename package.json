@@ -8,10 +8,13 @@
     "test": "turbo test",
     "eval": "pnpm --filter @lacha/eval start",
     "manual": "pnpm --filter @lacha/eval manual",
-    "pregenerate": "npx tsx scripts/pregenerate-captchas.ts"
+    "pregenerate": "npx tsx scripts/pregenerate-captchas.ts",
+    "supabase-eval": "npx tsx scripts/supabase-eval.ts"
   },
   "devDependencies": {
     "@fal-ai/client": "^1.9.3",
+    "@openrouter/sdk": "^0.8.0",
+    "@supabase/supabase-js": "^2.57.4",
     "canvas": "^3.2.1",
     "dotenv": "^16.6.1",
     "tsx": "^4.21.0",

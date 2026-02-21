@@ -11,6 +11,12 @@ importers:
       '@fal-ai/client':
         specifier: ^1.9.3
         version: 1.9.3
+      '@openrouter/sdk':
+        specifier: ^0.8.0
+        version: 0.8.0
+      '@supabase/supabase-js':
+        specifier: ^2.57.4
+        version: 2.97.0
       canvas:
         specifier: ^3.2.1
         version: 3.2.1
@@ -93,6 +99,9 @@ importers:
 
   packages/core:
     dependencies:
+      '@fal-ai/client':
+        specifier: ^1.9.3
+        version: 1.9.3
       canvas:
         specifier: ^3.1.0
         version: 3.2.1
