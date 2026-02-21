@@ -120,6 +120,7 @@ export async function GET() {
       aiCorrect: a.correct,
       aiTotal: a.total,
       gap: humanAcc - aiAcc,
+      sampleImages: [],
     });
   }
 
@@ -152,7 +153,7 @@ export async function GET() {
       const j = Math.floor(Math.random() * (i + 1));
       [copy[i], copy[j]] = [copy[j], copy[i]];
     }
-    (cat as CategoryStat).sampleImages = copy.slice(0, 2);
+    cat.sampleImages = copy.slice(0, 2);
   }
 
   // ── Deduplicate models (take latest session per model_id) ───────────────────
