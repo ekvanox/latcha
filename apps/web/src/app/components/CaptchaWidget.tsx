@@ -17,9 +17,11 @@ type WidgetState = 'idle' | 'loading' | 'challenge' | 'verifying' | 'success' | 
 
 interface CaptchaWidgetProps {
   generator?: string;
+  source?: 'live' | 'generations';
+  challengeId?: string;
 }
 
-export function CaptchaWidget({ generator }: CaptchaWidgetProps) {
+export function CaptchaWidget({ generator, source = 'live', challengeId }: CaptchaWidgetProps) {
   const [state, setState] = useState<WidgetState>('idle');
   const [challenge, setChallenge] = useState<ChallengeData | null>(null);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -33,8 +35,19 @@ export function CaptchaWidget({ generator }: CaptchaWidgetProps) {
     setSelectedImages(new Set());
 
     try {
-      const params = generator ? `?generator=${generator}` : '';
-      const res = await fetch(`/api/challenge${params}`);
+      const params = new URLSearchParams();
+      if (generator) {
+        params.set('generator', generator);
+      }
+      if (source === 'generations') {
+        params.set('source', 'generations');
+      }
+      if (challengeId) {
+        params.set('challengeId', challengeId);
+      }
+
+      const query = params.toString();
+      const res = await fetch(query ? `/api/challenge?${query}` : '/api/challenge');
       const data = await res.json();
 
       if (!res.ok) {
@@ -47,7 +60,7 @@ export function CaptchaWidget({ generator }: CaptchaWidgetProps) {
       setError(err instanceof Error ? err.message : 'Failed to load challenge');
       setState('idle');
     }
-  }, [generator]);
+  }, [generator, source, challengeId]);
 
   const submitAnswer = useCallback(async () => {
     if (!challenge) return;

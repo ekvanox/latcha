@@ -1,0 +1,767 @@
+{
+  "schemaVersion": 1,
+  "generationType": "abutting-grating",
+  "updatedAt": "2026-02-20T23:23:49.029Z",
+  "challenges": [
+    {
+      "challengeId": "10403f1a-72b4-41fb-95be-701f3764f806",
+      "imageUuid": "eeef53c2-d539-4229-b3db-85e9f668f42b",
+      "imageFileName": "eeef53c2-d539-4229-b3db-85e9f668f42b.png",
+      "answerAlternatives": [
+        "3",
+        "G",
+        "5",
+        "J"
+      ],
+      "correctAlternative": "5",
+      "generationTimeMs": 36,
+      "generationTimestamp": "2026-02-20T23:23:48.460Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "0d0350c2-52c9-47d0-b671-f23a7f140764",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "eeef53c2-d539-4229-b3db-85e9f668f42b",
+            "fileName": "eeef53c2-d539-4229-b3db-85e9f668f42b.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "5",
+          "family": "abutting-grating",
+          "distractors": [
+            "J",
+            "G",
+            "3"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "583d8862-3d60-4e44-865c-a38f0c9142db",
+      "imageUuid": "cd288a67-fb9d-4d8c-86b3-9cb084d4a157",
+      "imageFileName": "cd288a67-fb9d-4d8c-86b3-9cb084d4a157.png",
+      "answerAlternatives": [
+        "L",
+        "R",
+        "U",
+        "2"
+      ],
+      "correctAlternative": "L",
+      "generationTimeMs": 35,
+      "generationTimestamp": "2026-02-20T23:23:48.495Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "2c3d0235-daef-4660-a032-605d0c28f2e9",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "cd288a67-fb9d-4d8c-86b3-9cb084d4a157",
+            "fileName": "cd288a67-fb9d-4d8c-86b3-9cb084d4a157.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "L",
+          "family": "abutting-grating",
+          "distractors": [
+            "U",
+            "2",
+            "R"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "3878dd69-06fe-4fec-b8d0-856a4937e5d2",
+      "imageUuid": "a64aa475-ab7b-456e-8526-fe199fdc54b3",
+      "imageFileName": "a64aa475-ab7b-456e-8526-fe199fdc54b3.png",
+      "answerAlternatives": [
+        "B",
+        "N",
+        "7",
+        "H"
+      ],
+      "correctAlternative": "7",
+      "generationTimeMs": 31,
+      "generationTimestamp": "2026-02-20T23:23:48.526Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "421de06e-b686-4e09-ac32-4c0c9dd08b81",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "a64aa475-ab7b-456e-8526-fe199fdc54b3",
+            "fileName": "a64aa475-ab7b-456e-8526-fe199fdc54b3.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "7",
+          "family": "abutting-grating",
+          "distractors": [
+            "B",
+            "H",
+            "N"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "a50419fc-ee36-4e56-ae57-6c29aedbe597",
+      "imageUuid": "d14fabad-fad9-498b-b46a-6bad571300d8",
+      "imageFileName": "d14fabad-fad9-498b-b46a-6bad571300d8.png",
+      "answerAlternatives": [
+        "L",
+        "U",
+        "W",
+        "G"
+      ],
+      "correctAlternative": "G",
+      "generationTimeMs": 32,
+      "generationTimestamp": "2026-02-20T23:23:48.558Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "6766bba5-0c0c-4454-8e28-7abe1258e141",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "d14fabad-fad9-498b-b46a-6bad571300d8",
+            "fileName": "d14fabad-fad9-498b-b46a-6bad571300d8.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "G",
+          "family": "abutting-grating",
+          "distractors": [
+            "L",
+            "U",
+            "W"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "99d1c234-9f32-4717-ad6f-aca693a73a71",
+      "imageUuid": "2c79c31c-b1b1-405f-8070-9cd479b3e023",
+      "imageFileName": "2c79c31c-b1b1-405f-8070-9cd479b3e023.png",
+      "answerAlternatives": [
+        "Y",
+        "E",
+        "S",
+        "F"
+      ],
+      "correctAlternative": "S",
+      "generationTimeMs": 30,
+      "generationTimestamp": "2026-02-20T23:23:48.588Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "9c4b22a2-32b0-4e0c-902d-3b219059bedd",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "2c79c31c-b1b1-405f-8070-9cd479b3e023",
+            "fileName": "2c79c31c-b1b1-405f-8070-9cd479b3e023.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "S",
+          "family": "abutting-grating",
+          "distractors": [
+            "F",
+            "E",
+            "Y"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "3e3db210-48f1-40f7-914d-4a50497156cb",
+      "imageUuid": "34a7a4d3-38b4-4f03-b6bb-3c6caad78ae2",
+      "imageFileName": "34a7a4d3-38b4-4f03-b6bb-3c6caad78ae2.png",
+      "answerAlternatives": [
+        "N",
+        "6",
+        "5",
+        "P"
+      ],
+      "correctAlternative": "N",
+      "generationTimeMs": 29,
+      "generationTimestamp": "2026-02-20T23:23:48.617Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "954cfd70-4550-4df5-ab40-a3bdb2c5507e",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "34a7a4d3-38b4-4f03-b6bb-3c6caad78ae2",
+            "fileName": "34a7a4d3-38b4-4f03-b6bb-3c6caad78ae2.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "N",
+          "family": "abutting-grating",
+          "distractors": [
+            "P",
+            "5",
+            "6"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "fcd17580-d8eb-49c8-aa7a-7439c21ad800",
+      "imageUuid": "97b8ac7d-92d4-4a63-89de-6017f271080f",
+      "imageFileName": "97b8ac7d-92d4-4a63-89de-6017f271080f.png",
+      "answerAlternatives": [
+        "D",
+        "3",
+        "N",
+        "J"
+      ],
+      "correctAlternative": "N",
+      "generationTimeMs": 29,
+      "generationTimestamp": "2026-02-20T23:23:48.646Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "bfc01b11-a4b7-4ad7-8c23-b7c63dadf593",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "97b8ac7d-92d4-4a63-89de-6017f271080f",
+            "fileName": "97b8ac7d-92d4-4a63-89de-6017f271080f.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "N",
+          "family": "abutting-grating",
+          "distractors": [
+            "J",
+            "D",
+            "3"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "8af0d2eb-f2af-4090-9516-0b87350fb68b",
+      "imageUuid": "c6497f66-895e-466d-b56c-f0e24d7eec1d",
+      "imageFileName": "c6497f66-895e-466d-b56c-f0e24d7eec1d.png",
+      "answerAlternatives": [
+        "Z",
+        "2",
+        "X",
+        "L"
+      ],
+      "correctAlternative": "X",
+      "generationTimeMs": 32,
+      "generationTimestamp": "2026-02-20T23:23:48.678Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "364a3b0a-5dee-427f-b412-b28f994da96e",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "c6497f66-895e-466d-b56c-f0e24d7eec1d",
+            "fileName": "c6497f66-895e-466d-b56c-f0e24d7eec1d.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "X",
+          "family": "abutting-grating",
+          "distractors": [
+            "L",
+            "2",
+            "Z"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "9e01d4cc-73b1-4687-b9de-fcab7cbb1511",
+      "imageUuid": "e4b13359-2726-48d3-849b-e8cfd5e95ecb",
+      "imageFileName": "e4b13359-2726-48d3-849b-e8cfd5e95ecb.png",
+      "answerAlternatives": [
+        "L",
+        "5",
+        "N",
+        "A"
+      ],
+      "correctAlternative": "L",
+      "generationTimeMs": 30,
+      "generationTimestamp": "2026-02-20T23:23:48.708Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "7d08c433-cbb9-4045-a492-20a94f7e5e55",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e4b13359-2726-48d3-849b-e8cfd5e95ecb",
+            "fileName": "e4b13359-2726-48d3-849b-e8cfd5e95ecb.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "L",
+          "family": "abutting-grating",
+          "distractors": [
+            "N",
+            "5",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "2cc5bc71-cb60-415f-8143-c66448f5427e",
+      "imageUuid": "57e17424-d3f8-43e8-9678-9f260032ceca",
+      "imageFileName": "57e17424-d3f8-43e8-9678-9f260032ceca.png",
+      "answerAlternatives": [
+        "V",
+        "M",
+        "S",
+        "R"
+      ],
+      "correctAlternative": "R",
+      "generationTimeMs": 30,
+      "generationTimestamp": "2026-02-20T23:23:48.738Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "2407e144-c929-4a4a-9c0c-4bbd71e8c484",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "57e17424-d3f8-43e8-9678-9f260032ceca",
+            "fileName": "57e17424-d3f8-43e8-9678-9f260032ceca.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "R",
+          "family": "abutting-grating",
+          "distractors": [
+            "M",
+            "S",
+            "V"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "eba38fbe-b03b-467c-ade5-39dab37995bd",
+      "imageUuid": "9bbf056a-5eef-46ef-a0b6-1143bce0b630",
+      "imageFileName": "9bbf056a-5eef-46ef-a0b6-1143bce0b630.png",
+      "answerAlternatives": [
+        "N",
+        "T",
+        "J",
+        "2"
+      ],
+      "correctAlternative": "2",
+      "generationTimeMs": 31,
+      "generationTimestamp": "2026-02-20T23:23:48.769Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "9a6f7395-a17d-4c08-848b-066729f80b66",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "9bbf056a-5eef-46ef-a0b6-1143bce0b630",
+            "fileName": "9bbf056a-5eef-46ef-a0b6-1143bce0b630.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "2",
+          "family": "abutting-grating",
+          "distractors": [
+            "J",
+            "N",
+            "T"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "ad8438c2-00e1-488a-aa0d-defdabd57ff5",
+      "imageUuid": "ad6099d3-ed8e-470b-b01f-65f160e177be",
+      "imageFileName": "ad6099d3-ed8e-470b-b01f-65f160e177be.png",
+      "answerAlternatives": [
+        "9",
+        "B",
+        "N",
+        "Y"
+      ],
+      "correctAlternative": "B",
+      "generationTimeMs": 28,
+      "generationTimestamp": "2026-02-20T23:23:48.797Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "f1d29473-5b46-42a4-9d1c-407642468769",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "ad6099d3-ed8e-470b-b01f-65f160e177be",
+            "fileName": "ad6099d3-ed8e-470b-b01f-65f160e177be.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "B",
+          "family": "abutting-grating",
+          "distractors": [
+            "9",
+            "Y",
+            "N"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "d1e74808-1bf5-4fb8-b752-cb06c36e7b8a",
+      "imageUuid": "feeb7083-2a3b-45d4-b4a0-10afdc7496a0",
+      "imageFileName": "feeb7083-2a3b-45d4-b4a0-10afdc7496a0.png",
+      "answerAlternatives": [
+        "F",
+        "B",
+        "9",
+        "V"
+      ],
+      "correctAlternative": "9",
+      "generationTimeMs": 29,
+      "generationTimestamp": "2026-02-20T23:23:48.826Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "142ac26f-40cb-495e-aa8a-8f26a5e6ccf6",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "feeb7083-2a3b-45d4-b4a0-10afdc7496a0",
+            "fileName": "feeb7083-2a3b-45d4-b4a0-10afdc7496a0.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "9",
+          "family": "abutting-grating",
+          "distractors": [
+            "B",
+            "V",
+            "F"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "c26e2729-4c5f-4064-81fa-8bdda5b46015",
+      "imageUuid": "c43b70b4-1dfd-44e3-ab87-59ef8ce59a35",
+      "imageFileName": "c43b70b4-1dfd-44e3-ab87-59ef8ce59a35.png",
+      "answerAlternatives": [
+        "U",
+        "N",
+        "M",
+        "E"
+      ],
+      "correctAlternative": "N",
+      "generationTimeMs": 29,
+      "generationTimestamp": "2026-02-20T23:23:48.855Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "3f07f9f9-c31f-4fee-aef1-25db6f364540",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "c43b70b4-1dfd-44e3-ab87-59ef8ce59a35",
+            "fileName": "c43b70b4-1dfd-44e3-ab87-59ef8ce59a35.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "N",
+          "family": "abutting-grating",
+          "distractors": [
+            "U",
+            "M",
+            "E"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "4459567d-0858-4a45-9cce-28ba8a4fa3f6",
+      "imageUuid": "8029497c-057c-467f-8fcd-a282885e8e4c",
+      "imageFileName": "8029497c-057c-467f-8fcd-a282885e8e4c.png",
+      "answerAlternatives": [
+        "Z",
+        "R",
+        "F",
+        "5"
+      ],
+      "correctAlternative": "Z",
+      "generationTimeMs": 30,
+      "generationTimestamp": "2026-02-20T23:23:48.885Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "8b64b9e0-95bb-4f23-8e28-63a0ca085028",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "8029497c-057c-467f-8fcd-a282885e8e4c",
+            "fileName": "8029497c-057c-467f-8fcd-a282885e8e4c.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "Z",
+          "family": "abutting-grating",
+          "distractors": [
+            "R",
+            "F",
+            "5"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "0587ee99-acb4-455a-8d5a-09a3591d20fe",
+      "imageUuid": "53d95d08-d808-41ba-9728-c883759c4db0",
+      "imageFileName": "53d95d08-d808-41ba-9728-c883759c4db0.png",
+      "answerAlternatives": [
+        "5",
+        "T",
+        "M",
+        "8"
+      ],
+      "correctAlternative": "M",
+      "generationTimeMs": 28,
+      "generationTimestamp": "2026-02-20T23:23:48.913Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "77c38467-3ca1-4ee6-a3c7-839b177c1ebe",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "53d95d08-d808-41ba-9728-c883759c4db0",
+            "fileName": "53d95d08-d808-41ba-9728-c883759c4db0.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "M",
+          "family": "abutting-grating",
+          "distractors": [
+            "8",
+            "5",
+            "T"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "6d315b66-4b38-4415-859c-eef889bd4f69",
+      "imageUuid": "bbcf1264-6fa3-4755-b0d4-0570286be6c3",
+      "imageFileName": "bbcf1264-6fa3-4755-b0d4-0570286be6c3.png",
+      "answerAlternatives": [
+        "F",
+        "V",
+        "2",
+        "E"
+      ],
+      "correctAlternative": "V",
+      "generationTimeMs": 28,
+      "generationTimestamp": "2026-02-20T23:23:48.941Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "58abe918-9cdd-45b5-a03b-0fe54a78a58c",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "bbcf1264-6fa3-4755-b0d4-0570286be6c3",
+            "fileName": "bbcf1264-6fa3-4755-b0d4-0570286be6c3.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "V",
+          "family": "abutting-grating",
+          "distractors": [
+            "F",
+            "E",
+            "2"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "e4d09e5b-0819-4414-875a-da28a0c6f288",
+      "imageUuid": "6ca45bd7-7ebe-44f9-8cdc-ef00d81c7acc",
+      "imageFileName": "6ca45bd7-7ebe-44f9-8cdc-ef00d81c7acc.png",
+      "answerAlternatives": [
+        "B",
+        "X",
+        "4",
+        "G"
+      ],
+      "correctAlternative": "G",
+      "generationTimeMs": 29,
+      "generationTimestamp": "2026-02-20T23:23:48.970Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "7b19bfde-ff47-4c94-88c6-6af9f5080b60",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "6ca45bd7-7ebe-44f9-8cdc-ef00d81c7acc",
+            "fileName": "6ca45bd7-7ebe-44f9-8cdc-ef00d81c7acc.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "G",
+          "family": "abutting-grating",
+          "distractors": [
+            "4",
+            "X",
+            "B"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "71a6cc10-36c5-49e5-9bd8-da6eb9f6b9f9",
+      "imageUuid": "de7b2409-223e-441f-a4ca-41e4eb2d20ff",
+      "imageFileName": "de7b2409-223e-441f-a4ca-41e4eb2d20ff.png",
+      "answerAlternatives": [
+        "V",
+        "R",
+        "U",
+        "6"
+      ],
+      "correctAlternative": "R",
+      "generationTimeMs": 30,
+      "generationTimestamp": "2026-02-20T23:23:49.000Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "e53906dd-12aa-413a-ada5-aa0cf2a812f1",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "de7b2409-223e-441f-a4ca-41e4eb2d20ff",
+            "fileName": "de7b2409-223e-441f-a4ca-41e4eb2d20ff.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "R",
+          "family": "abutting-grating",
+          "distractors": [
+            "V",
+            "U",
+            "6"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "511681f2-f25a-4c13-b032-5a0958e4fb8e",
+      "imageUuid": "df0dfc30-0fce-4022-ae21-7900ec39320e",
+      "imageFileName": "df0dfc30-0fce-4022-ae21-7900ec39320e.png",
+      "answerAlternatives": [
+        "S",
+        "K",
+        "4",
+        "Y"
+      ],
+      "correctAlternative": "4",
+      "generationTimeMs": 29,
+      "generationTimestamp": "2026-02-20T23:23:49.029Z",
+      "question": "Which character emerges from the striped illusion?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "860d969e-8c50-48af-af72-9465db18311a",
+        "originalGeneratorId": "abutting-grating",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "df0dfc30-0fce-4022-ae21-7900ec39320e",
+            "fileName": "df0dfc30-0fce-4022-ae21-7900ec39320e.png",
+            "mimeType": "image/png",
+            "width": 340,
+            "height": 260
+          }
+        ],
+        "metadata": {
+          "char": "4",
+          "family": "abutting-grating",
+          "distractors": [
+            "S",
+            "Y",
+            "K"
+          ]
+        }
+      }
+    }
+  ]
+}

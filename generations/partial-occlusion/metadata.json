@@ -1,0 +1,747 @@
+{
+  "schemaVersion": 1,
+  "generationType": "partial-occlusion",
+  "updatedAt": "2026-02-20T23:23:48.312Z",
+  "challenges": [
+    {
+      "challengeId": "7b2ca797-505d-490e-9f3a-d6a22bb62f5e",
+      "imageUuid": "945d9db0-7558-40cf-8205-df8ccf7331d0",
+      "imageFileName": "945d9db0-7558-40cf-8205-df8ccf7331d0.png",
+      "answerAlternatives": [
+        "ABCN",
+        "BNCA",
+        "BCNA",
+        "CNBA"
+      ],
+      "correctAlternative": "CNBA",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.238Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "595dd6db-a0eb-45e0-ab01-abf1cbaa0ec9",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "945d9db0-7558-40cf-8205-df8ccf7331d0",
+            "fileName": "945d9db0-7558-40cf-8205-df8ccf7331d0.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "CNBA",
+          "distractors": [
+            "BCNA",
+            "ABCN",
+            "BNCA"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "5e129f26-0155-459b-a0f3-ef347c565fd8",
+      "imageUuid": "90e19c04-7c35-454f-b38e-610dad6406c8",
+      "imageFileName": "90e19c04-7c35-454f-b38e-610dad6406c8.png",
+      "answerAlternatives": [
+        "MPLTU",
+        "PMTLU",
+        "MLUPT",
+        "MTPLU"
+      ],
+      "correctAlternative": "MLUPT",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.243Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "87ee75a9-cce2-4eb5-92dc-381459781a25",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "90e19c04-7c35-454f-b38e-610dad6406c8",
+            "fileName": "90e19c04-7c35-454f-b38e-610dad6406c8.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "MLUPT",
+          "distractors": [
+            "PMTLU",
+            "MTPLU",
+            "MPLTU"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "9ded4ce5-0aac-410d-b783-4f7aefb0aff7",
+      "imageUuid": "e909570d-a76e-41ba-8c41-f686a704cbba",
+      "imageFileName": "e909570d-a76e-41ba-8c41-f686a704cbba.png",
+      "answerAlternatives": [
+        "YNHWI",
+        "WIHYN",
+        "WIYNH",
+        "HYWIN"
+      ],
+      "correctAlternative": "WIHYN",
+      "generationTimeMs": 3,
+      "generationTimestamp": "2026-02-20T23:23:48.246Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "2f0cfd92-c84e-46d7-ba33-56b4c9773eab",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e909570d-a76e-41ba-8c41-f686a704cbba",
+            "fileName": "e909570d-a76e-41ba-8c41-f686a704cbba.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "WIHYN",
+          "distractors": [
+            "WIYNH",
+            "YNHWI",
+            "HYWIN"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "6ee77f8e-5527-4e43-a756-a72be897da70",
+      "imageUuid": "b3daf825-1dba-4fa4-87dd-71e6c2ca3995",
+      "imageFileName": "b3daf825-1dba-4fa4-87dd-71e6c2ca3995.png",
+      "answerAlternatives": [
+        "ACZRK",
+        "ZCKRA",
+        "AZRCK",
+        "ZRKCA"
+      ],
+      "correctAlternative": "ZRKCA",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.250Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "64904019-38e0-48dd-86a6-4f53851cddaf",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b3daf825-1dba-4fa4-87dd-71e6c2ca3995",
+            "fileName": "b3daf825-1dba-4fa4-87dd-71e6c2ca3995.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "ZRKCA",
+          "distractors": [
+            "ACZRK",
+            "ZCKRA",
+            "AZRCK"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "22f9d1a5-30f0-4588-8930-1a429a0564a6",
+      "imageUuid": "e8842cb3-3bed-4ac5-9a9a-a84e6ab15fb1",
+      "imageFileName": "e8842cb3-3bed-4ac5-9a9a-a84e6ab15fb1.png",
+      "answerAlternatives": [
+        "GLPRM",
+        "MGPRL",
+        "RLPGM",
+        "LRPMG"
+      ],
+      "correctAlternative": "GLPRM",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.254Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "a117d554-fc82-45c1-8412-cd763e442a0e",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e8842cb3-3bed-4ac5-9a9a-a84e6ab15fb1",
+            "fileName": "e8842cb3-3bed-4ac5-9a9a-a84e6ab15fb1.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "GLPRM",
+          "distractors": [
+            "RLPGM",
+            "LRPMG",
+            "MGPRL"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "82b8ec3a-a3f9-4d12-9b8c-b47617c94d2b",
+      "imageUuid": "f5395bd5-c855-41c3-aaa3-bf53d902c44f",
+      "imageFileName": "f5395bd5-c855-41c3-aaa3-bf53d902c44f.png",
+      "answerAlternatives": [
+        "OLZGI",
+        "OIZLG",
+        "LOZGI",
+        "IOZLG"
+      ],
+      "correctAlternative": "OIZLG",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.258Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "ab180199-983e-4a94-97f9-495e1d407f5e",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "f5395bd5-c855-41c3-aaa3-bf53d902c44f",
+            "fileName": "f5395bd5-c855-41c3-aaa3-bf53d902c44f.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "OIZLG",
+          "distractors": [
+            "LOZGI",
+            "IOZLG",
+            "OLZGI"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "1107700d-a811-4411-96df-48b729932dcb",
+      "imageUuid": "e573e03a-65dc-4eaf-89de-c8cca759e47f",
+      "imageFileName": "e573e03a-65dc-4eaf-89de-c8cca759e47f.png",
+      "answerAlternatives": [
+        "VAFK",
+        "FAVK",
+        "FVKA",
+        "VKFA"
+      ],
+      "correctAlternative": "VKFA",
+      "generationTimeMs": 3,
+      "generationTimestamp": "2026-02-20T23:23:48.261Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "dbd1995a-d131-4413-8e4e-961b1474fa82",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e573e03a-65dc-4eaf-89de-c8cca759e47f",
+            "fileName": "e573e03a-65dc-4eaf-89de-c8cca759e47f.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "VKFA",
+          "distractors": [
+            "FAVK",
+            "FVKA",
+            "VAFK"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "61c9c528-a4e2-4edd-8bc8-3d7485a72900",
+      "imageUuid": "2c8eabe3-c12c-4bc3-9e81-db56acc57797",
+      "imageFileName": "2c8eabe3-c12c-4bc3-9e81-db56acc57797.png",
+      "answerAlternatives": [
+        "SKZU",
+        "SUZK",
+        "KUZS",
+        "UZKS"
+      ],
+      "correctAlternative": "SKZU",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.265Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "ba0d1ded-4865-48aa-9b41-356b293d7926",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "2c8eabe3-c12c-4bc3-9e81-db56acc57797",
+            "fileName": "2c8eabe3-c12c-4bc3-9e81-db56acc57797.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "SKZU",
+          "distractors": [
+            "UZKS",
+            "KUZS",
+            "SUZK"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "b615588e-d0f2-4b2a-b217-6348999f6e20",
+      "imageUuid": "b367927f-3837-4064-aa66-dac4d8ee9d32",
+      "imageFileName": "b367927f-3837-4064-aa66-dac4d8ee9d32.png",
+      "answerAlternatives": [
+        "UDIZ",
+        "DIUZ",
+        "ZUDI",
+        "IZDU"
+      ],
+      "correctAlternative": "IZDU",
+      "generationTimeMs": 3,
+      "generationTimestamp": "2026-02-20T23:23:48.268Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "74a77ebd-5111-4ce8-9381-30171c97f2db",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b367927f-3837-4064-aa66-dac4d8ee9d32",
+            "fileName": "b367927f-3837-4064-aa66-dac4d8ee9d32.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "IZDU",
+          "distractors": [
+            "ZUDI",
+            "UDIZ",
+            "DIUZ"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "07c26cc3-091e-456b-ad0c-47d4e3c8af85",
+      "imageUuid": "b0ac2675-7732-4c81-84f2-91c1347c14b2",
+      "imageFileName": "b0ac2675-7732-4c81-84f2-91c1347c14b2.png",
+      "answerAlternatives": [
+        "BCLI",
+        "LCIB",
+        "IBCL",
+        "ICBL"
+      ],
+      "correctAlternative": "LCIB",
+      "generationTimeMs": 3,
+      "generationTimestamp": "2026-02-20T23:23:48.271Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "2667aa5d-0704-4340-9e2a-31bb0ee00eb6",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b0ac2675-7732-4c81-84f2-91c1347c14b2",
+            "fileName": "b0ac2675-7732-4c81-84f2-91c1347c14b2.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "LCIB",
+          "distractors": [
+            "BCLI",
+            "ICBL",
+            "IBCL"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "aaeca2b1-1c2f-4caf-b345-4facc8914b87",
+      "imageUuid": "47508fb5-cb67-424c-9a7c-738ad5159f3e",
+      "imageFileName": "47508fb5-cb67-424c-9a7c-738ad5159f3e.png",
+      "answerAlternatives": [
+        "JDOH",
+        "HDOJ",
+        "ODHJ",
+        "DHJO"
+      ],
+      "correctAlternative": "DHJO",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.275Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "72d300aa-2b37-4b0b-9fb4-28c1702fbd69",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "47508fb5-cb67-424c-9a7c-738ad5159f3e",
+            "fileName": "47508fb5-cb67-424c-9a7c-738ad5159f3e.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "DHJO",
+          "distractors": [
+            "JDOH",
+            "ODHJ",
+            "HDOJ"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "869d8af8-3951-4802-9578-22092f90065a",
+      "imageUuid": "9b3c9e14-6cb5-4861-9b50-d119194ccb75",
+      "imageFileName": "9b3c9e14-6cb5-4861-9b50-d119194ccb75.png",
+      "answerAlternatives": [
+        "YZSLC",
+        "ZSYLC",
+        "LZYCS",
+        "YLCSZ"
+      ],
+      "correctAlternative": "LZYCS",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.279Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "af4d2c12-ff57-424a-ab36-44f1e04eec39",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "9b3c9e14-6cb5-4861-9b50-d119194ccb75",
+            "fileName": "9b3c9e14-6cb5-4861-9b50-d119194ccb75.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "LZYCS",
+          "distractors": [
+            "YZSLC",
+            "YLCSZ",
+            "ZSYLC"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "c00a0f11-44a8-46cf-a6b1-63d46e6c60b8",
+      "imageUuid": "4fab3752-0549-45f9-a5f1-cbd6b3dd91e0",
+      "imageFileName": "4fab3752-0549-45f9-a5f1-cbd6b3dd91e0.png",
+      "answerAlternatives": [
+        "QKVDS",
+        "DSQVK",
+        "DQSKV",
+        "QKVSD"
+      ],
+      "correctAlternative": "DQSKV",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.283Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "4e106a65-b35f-44ae-9512-ea79b923afc5",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "4fab3752-0549-45f9-a5f1-cbd6b3dd91e0",
+            "fileName": "4fab3752-0549-45f9-a5f1-cbd6b3dd91e0.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "DQSKV",
+          "distractors": [
+            "DSQVK",
+            "QKVDS",
+            "QKVSD"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "eb27b558-d2a4-48a6-bf88-f0d5f424a9a0",
+      "imageUuid": "0715e54c-ce3a-45d2-9753-9643f4113128",
+      "imageFileName": "0715e54c-ce3a-45d2-9753-9643f4113128.png",
+      "answerAlternatives": [
+        "LWZUI",
+        "ILZUW",
+        "LUWIZ",
+        "WULIZ"
+      ],
+      "correctAlternative": "LWZUI",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.287Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "d526f3c2-7565-4a7a-859f-e320ab3b6afc",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "0715e54c-ce3a-45d2-9753-9643f4113128",
+            "fileName": "0715e54c-ce3a-45d2-9753-9643f4113128.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "LWZUI",
+          "distractors": [
+            "ILZUW",
+            "WULIZ",
+            "LUWIZ"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "85552f00-a173-49f7-b0c8-01b1444e9b37",
+      "imageUuid": "3dd238a5-54e6-498c-87a3-a587ad68543b",
+      "imageFileName": "3dd238a5-54e6-498c-87a3-a587ad68543b.png",
+      "answerAlternatives": [
+        "BVJM",
+        "MJVB",
+        "MBJV",
+        "MBVJ"
+      ],
+      "correctAlternative": "MBJV",
+      "generationTimeMs": 3,
+      "generationTimestamp": "2026-02-20T23:23:48.290Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "c965cff0-c371-4720-a312-3a8a05ee2812",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "3dd238a5-54e6-498c-87a3-a587ad68543b",
+            "fileName": "3dd238a5-54e6-498c-87a3-a587ad68543b.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "MBJV",
+          "distractors": [
+            "MBVJ",
+            "MJVB",
+            "BVJM"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "ff342fde-2ba6-4d62-9188-396606d86b70",
+      "imageUuid": "8aca176c-cc38-4d7e-937f-4949ee934382",
+      "imageFileName": "8aca176c-cc38-4d7e-937f-4949ee934382.png",
+      "answerAlternatives": [
+        "GAKSE",
+        "SEKAG",
+        "ASGKE",
+        "GSAEK"
+      ],
+      "correctAlternative": "SEKAG",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.295Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "c11c3669-2627-470c-b521-db9bb22134fb",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "8aca176c-cc38-4d7e-937f-4949ee934382",
+            "fileName": "8aca176c-cc38-4d7e-937f-4949ee934382.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "SEKAG",
+          "distractors": [
+            "GAKSE",
+            "ASGKE",
+            "GSAEK"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "638d82ae-7328-4142-92e5-d4b07550466a",
+      "imageUuid": "aa5cdefc-adf5-41d6-b94b-9fcd3d88b4f9",
+      "imageFileName": "aa5cdefc-adf5-41d6-b94b-9fcd3d88b4f9.png",
+      "answerAlternatives": [
+        "DTMP",
+        "PTDM",
+        "PTMD",
+        "MTPD"
+      ],
+      "correctAlternative": "MTPD",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.299Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "c9a2a95c-e5c1-4fd2-b7f1-3d50023b5a32",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "aa5cdefc-adf5-41d6-b94b-9fcd3d88b4f9",
+            "fileName": "aa5cdefc-adf5-41d6-b94b-9fcd3d88b4f9.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "MTPD",
+          "distractors": [
+            "PTDM",
+            "PTMD",
+            "DTMP"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "61374107-18ff-4950-830d-8039137b5bee",
+      "imageUuid": "055d4611-9657-4820-b782-b030b9ec3dad",
+      "imageFileName": "055d4611-9657-4820-b782-b030b9ec3dad.png",
+      "answerAlternatives": [
+        "JGKV",
+        "JKVG",
+        "KVGJ",
+        "JKGV"
+      ],
+      "correctAlternative": "KVGJ",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.304Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "f34957e1-0b6e-432b-8280-b8337694e3b2",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "055d4611-9657-4820-b782-b030b9ec3dad",
+            "fileName": "055d4611-9657-4820-b782-b030b9ec3dad.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "KVGJ",
+          "distractors": [
+            "JKGV",
+            "JKVG",
+            "JGKV"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "a6859562-62fc-4556-b574-0f7c3fbc769c",
+      "imageUuid": "e384cb66-11c1-4e6a-b8e2-b243f49b0003",
+      "imageFileName": "e384cb66-11c1-4e6a-b8e2-b243f49b0003.png",
+      "answerAlternatives": [
+        "INXL",
+        "IXLN",
+        "NXIL",
+        "XINL"
+      ],
+      "correctAlternative": "IXLN",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.308Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "91719316-e5e5-4240-ab9d-3bfe806d1232",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e384cb66-11c1-4e6a-b8e2-b243f49b0003",
+            "fileName": "e384cb66-11c1-4e6a-b8e2-b243f49b0003.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "IXLN",
+          "distractors": [
+            "INXL",
+            "XINL",
+            "NXIL"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "9cd2e170-78a9-4a10-a041-bde19add6d4d",
+      "imageUuid": "bfe05792-4cac-4731-bf3c-296332b4688b",
+      "imageFileName": "bfe05792-4cac-4731-bf3c-296332b4688b.png",
+      "answerAlternatives": [
+        "YHZRI",
+        "YHIRZ",
+        "ZHRYI",
+        "RZHYI"
+      ],
+      "correctAlternative": "YHIRZ",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.312Z",
+      "question": "What 4–5 letter sequence do you see partially hidden in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "531248d4-c629-4613-ac35-a88d70e349c0",
+        "originalGeneratorId": "partial-occlusion",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "bfe05792-4cac-4731-bf3c-296332b4688b",
+            "fileName": "bfe05792-4cac-4731-bf3c-296332b4688b.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "YHIRZ",
+          "distractors": [
+            "ZHRYI",
+            "YHZRI",
+            "RZHYI"
+          ]
+        }
+      }
+    }
+  ]
+}

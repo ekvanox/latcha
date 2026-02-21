@@ -1,6 +1,5 @@
 import {
   buildChallenge,
-  getGeneratorIds,
   type Challenge,
   type EvalRun,
   type ModelResult,
@@ -17,6 +16,12 @@ export interface RunOptions {
   models?: ModelConfig[];
 }
 
+export interface RunPreloadedOptions {
+  generatorId: string;
+  challenges: Challenge[];
+  models?: ModelConfig[];
+}
+
 export async function runEval(options: RunOptions): Promise<EvalRun> {
   const { generatorId, count, models = EVAL_MODELS } = options;
 
@@ -27,14 +32,29 @@ export async function runEval(options: RunOptions): Promise<EvalRun> {
   }
   console.log(`Generated ${challenges.length} challenges.`);
 
-  console.log(`Evaluating ${models.length} models...\n`);
+  return runEvalOnChallenges({
+    generatorId,
+    challenges,
+    models,
+  });
+}
+
+export async function runEvalOnChallenges(options: RunPreloadedOptions): Promise<EvalRun> {
+  const { generatorId, challenges, models = EVAL_MODELS } = options;
+  const totalChallenges = challenges.length;
+
+  if (totalChallenges === 0) {
+    throw new Error('No challenges to evaluate.');
+  }
+
+  console.log(`Evaluating ${models.length} models across ${totalChallenges} challenges...\n`);
   const modelResults: ModelResult[] = [];
 
   for (const model of models) {
     console.log(`  Testing ${model.name}...`);
     const results: EvalChallengeResult[] = [];
 
-    for (let i = 0; i < challenges.length; i++) {
+    for (let i = 0; i < totalChallenges; i++) {
       const challenge = challenges[i];
       const prompt = buildEvalPrompt(challenge);
       const images = challenge.images.map((img) => ({
@@ -77,13 +97,13 @@ export async function runEval(options: RunOptions): Promise<EvalRun> {
     const correctCount = results.filter((r) => r.correct).length;
     const avgLatency = results.reduce((s, r) => s + r.latencyMs, 0) / results.length;
 
-    console.log(`  ${correctCount}/${count} correct (${Math.round(avgLatency)}ms avg)\n`);
+    console.log(`  ${correctCount}/${totalChallenges} correct (${Math.round(avgLatency)}ms avg)\n`);
 
     modelResults.push({
       modelId: model.id,
       modelName: model.name,
       challenges: results,
-      accuracy: correctCount / count,
+      accuracy: correctCount / totalChallenges,
       avgLatencyMs: avgLatency,
     });
   }

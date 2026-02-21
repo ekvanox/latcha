@@ -1,0 +1,767 @@
+{
+  "schemaVersion": 1,
+  "generationType": "emerging-image",
+  "updatedAt": "2026-02-20T23:23:49.664Z",
+  "challenges": [
+    {
+      "challengeId": "07a097dc-9d14-405b-9d0d-7d97dee3be7a",
+      "imageUuid": "d9c1c793-64b2-4689-bc9c-bd2e2f6f7cdf",
+      "imageFileName": "d9c1c793-64b2-4689-bc9c-bd2e2f6f7cdf.png",
+      "answerAlternatives": [
+        "WFLPY",
+        "PFYLW",
+        "LFWPY",
+        "PWYFL"
+      ],
+      "correctAlternative": "LFWPY",
+      "generationTimeMs": 36,
+      "generationTimestamp": "2026-02-20T23:23:49.066Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "1154ddd6-8616-4abd-9b87-023f75a7e54d",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "d9c1c793-64b2-4689-bc9c-bd2e2f6f7cdf",
+            "fileName": "d9c1c793-64b2-4689-bc9c-bd2e2f6f7cdf.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "LFWPY",
+          "distractors": [
+            "PFYLW",
+            "WFLPY",
+            "PWYFL"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "56d5305d-f849-4931-8f42-09c140335fb8",
+      "imageUuid": "2779b8c4-b97a-4616-8041-634e2b0f6558",
+      "imageFileName": "2779b8c4-b97a-4616-8041-634e2b0f6558.png",
+      "answerAlternatives": [
+        "CFKP",
+        "CFPK",
+        "KCPF",
+        "PFCK"
+      ],
+      "correctAlternative": "CFKP",
+      "generationTimeMs": 32,
+      "generationTimestamp": "2026-02-20T23:23:49.098Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "91852921-8f6e-48f2-8f15-80919e61dd5d",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "2779b8c4-b97a-4616-8041-634e2b0f6558",
+            "fileName": "2779b8c4-b97a-4616-8041-634e2b0f6558.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "CFKP",
+          "distractors": [
+            "KCPF",
+            "CFPK",
+            "PFCK"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "7a1403aa-3f40-4d27-98c0-3ddec8edb59e",
+      "imageUuid": "a5f917b3-197c-435d-a239-461efcd0d8d4",
+      "imageFileName": "a5f917b3-197c-435d-a239-461efcd0d8d4.png",
+      "answerAlternatives": [
+        "GXBP",
+        "GBPX",
+        "GXPB",
+        "GBXP"
+      ],
+      "correctAlternative": "GBXP",
+      "generationTimeMs": 32,
+      "generationTimestamp": "2026-02-20T23:23:49.130Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "6574fc9a-f7d4-43db-9c7b-70379aa59b8e",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "a5f917b3-197c-435d-a239-461efcd0d8d4",
+            "fileName": "a5f917b3-197c-435d-a239-461efcd0d8d4.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "GBXP",
+          "distractors": [
+            "GXBP",
+            "GBPX",
+            "GXPB"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "3d5a3775-10fb-4644-8bbc-262ec8fb1ee6",
+      "imageUuid": "a52d23e1-ccda-4cf9-a6d9-d967eb6a104e",
+      "imageFileName": "a52d23e1-ccda-4cf9-a6d9-d967eb6a104e.png",
+      "answerAlternatives": [
+        "PSJET",
+        "ETJPS",
+        "JSPET",
+        "PTSJE"
+      ],
+      "correctAlternative": "JSPET",
+      "generationTimeMs": 31,
+      "generationTimestamp": "2026-02-20T23:23:49.161Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "30bb5ad7-7f88-4635-a0fc-be01cef7aacd",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "a52d23e1-ccda-4cf9-a6d9-d967eb6a104e",
+            "fileName": "a52d23e1-ccda-4cf9-a6d9-d967eb6a104e.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "JSPET",
+          "distractors": [
+            "PTSJE",
+            "PSJET",
+            "ETJPS"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "1b444533-788b-4694-97aa-7bb8aec45ca0",
+      "imageUuid": "f1f8151b-c35d-4864-9885-6172e50a0d57",
+      "imageFileName": "f1f8151b-c35d-4864-9885-6172e50a0d57.png",
+      "answerAlternatives": [
+        "VXMZF",
+        "ZFXVM",
+        "ZFXMV",
+        "ZFVMX"
+      ],
+      "correctAlternative": "VXMZF",
+      "generationTimeMs": 31,
+      "generationTimestamp": "2026-02-20T23:23:49.192Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "cb75ef44-6edc-42a5-9bc3-cd1353c369fb",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "f1f8151b-c35d-4864-9885-6172e50a0d57",
+            "fileName": "f1f8151b-c35d-4864-9885-6172e50a0d57.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "VXMZF",
+          "distractors": [
+            "ZFXVM",
+            "ZFVMX",
+            "ZFXMV"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "705d6e76-b3d1-422b-a0aa-c7b34b70c56b",
+      "imageUuid": "da07564e-2051-4e35-a8af-8faf6d3544b6",
+      "imageFileName": "da07564e-2051-4e35-a8af-8faf6d3544b6.png",
+      "answerAlternatives": [
+        "WFSY",
+        "WSFY",
+        "YWFS",
+        "YSWF"
+      ],
+      "correctAlternative": "WFSY",
+      "generationTimeMs": 32,
+      "generationTimestamp": "2026-02-20T23:23:49.224Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "d9ccf99d-dc57-41dc-a66e-ff2c56608884",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "da07564e-2051-4e35-a8af-8faf6d3544b6",
+            "fileName": "da07564e-2051-4e35-a8af-8faf6d3544b6.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "WFSY",
+          "distractors": [
+            "WSFY",
+            "YWFS",
+            "YSWF"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "556c8b1d-9949-42c6-87de-99ea816caf5e",
+      "imageUuid": "a890992c-2698-44d4-b460-be19879e5567",
+      "imageFileName": "a890992c-2698-44d4-b460-be19879e5567.png",
+      "answerAlternatives": [
+        "DSBZ",
+        "ZSDB",
+        "ZDSB",
+        "BDSZ"
+      ],
+      "correctAlternative": "DSBZ",
+      "generationTimeMs": 31,
+      "generationTimestamp": "2026-02-20T23:23:49.255Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "b86feef9-0b0c-4141-a0ae-12b163eb27f2",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "a890992c-2698-44d4-b460-be19879e5567",
+            "fileName": "a890992c-2698-44d4-b460-be19879e5567.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "DSBZ",
+          "distractors": [
+            "BDSZ",
+            "ZSDB",
+            "ZDSB"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "445ebbf8-4e44-43a8-9b81-4272443ca3d2",
+      "imageUuid": "8a0da172-760b-4a80-812f-45810ad3181f",
+      "imageFileName": "8a0da172-760b-4a80-812f-45810ad3181f.png",
+      "answerAlternatives": [
+        "WENRJ",
+        "NEJRW",
+        "RJWNE",
+        "EJRNW"
+      ],
+      "correctAlternative": "RJWNE",
+      "generationTimeMs": 31,
+      "generationTimestamp": "2026-02-20T23:23:49.286Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "99556f95-24cb-435f-b9b2-b18741f2b62e",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "8a0da172-760b-4a80-812f-45810ad3181f",
+            "fileName": "8a0da172-760b-4a80-812f-45810ad3181f.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "RJWNE",
+          "distractors": [
+            "NEJRW",
+            "EJRNW",
+            "WENRJ"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "73d68567-2d59-4f66-86fa-d242d6b1bcd7",
+      "imageUuid": "02e780f3-1b04-4f9a-80e7-d91f878e6269",
+      "imageFileName": "02e780f3-1b04-4f9a-80e7-d91f878e6269.png",
+      "answerAlternatives": [
+        "JZNW",
+        "ZJNW",
+        "NJZW",
+        "ZNWJ"
+      ],
+      "correctAlternative": "ZNWJ",
+      "generationTimeMs": 32,
+      "generationTimestamp": "2026-02-20T23:23:49.318Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "9a147d1d-8d10-4bbf-ab7f-120e07a83a06",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "02e780f3-1b04-4f9a-80e7-d91f878e6269",
+            "fileName": "02e780f3-1b04-4f9a-80e7-d91f878e6269.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "ZNWJ",
+          "distractors": [
+            "JZNW",
+            "NJZW",
+            "ZJNW"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "3739c582-2994-443a-961b-f10f4b6910e5",
+      "imageUuid": "4ade7487-1713-407b-96d7-b059f5e6163c",
+      "imageFileName": "4ade7487-1713-407b-96d7-b059f5e6163c.png",
+      "answerAlternatives": [
+        "RFAG",
+        "AGFR",
+        "GRAF",
+        "FGAR"
+      ],
+      "correctAlternative": "GRAF",
+      "generationTimeMs": 30,
+      "generationTimestamp": "2026-02-20T23:23:49.348Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "49e8afd8-a71d-41ef-9d1e-86ec1e651a9a",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "4ade7487-1713-407b-96d7-b059f5e6163c",
+            "fileName": "4ade7487-1713-407b-96d7-b059f5e6163c.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "GRAF",
+          "distractors": [
+            "AGFR",
+            "FGAR",
+            "RFAG"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "c0f71f28-cb3e-483e-baf5-c9f5b7763f0c",
+      "imageUuid": "7c936759-0544-49f5-be2b-45f3cba12cf2",
+      "imageFileName": "7c936759-0544-49f5-be2b-45f3cba12cf2.png",
+      "answerAlternatives": [
+        "VBTGL",
+        "BVTLG",
+        "TVBLG",
+        "LTVBG"
+      ],
+      "correctAlternative": "LTVBG",
+      "generationTimeMs": 30,
+      "generationTimestamp": "2026-02-20T23:23:49.378Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "46802ce0-24b8-455d-9962-b1f7f47f5461",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "7c936759-0544-49f5-be2b-45f3cba12cf2",
+            "fileName": "7c936759-0544-49f5-be2b-45f3cba12cf2.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "LTVBG",
+          "distractors": [
+            "VBTGL",
+            "TVBLG",
+            "BVTLG"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "5c1091d3-f5ad-47f8-a30f-ca5f448d6beb",
+      "imageUuid": "b67a3f72-d14c-4f7a-aca5-853860bf993c",
+      "imageFileName": "b67a3f72-d14c-4f7a-aca5-853860bf993c.png",
+      "answerAlternatives": [
+        "CYMZH",
+        "ZCHMY",
+        "CHZYM",
+        "MHCZY"
+      ],
+      "correctAlternative": "CYMZH",
+      "generationTimeMs": 31,
+      "generationTimestamp": "2026-02-20T23:23:49.409Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "d0372562-5017-4b77-9f2c-74ba3d3651ea",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b67a3f72-d14c-4f7a-aca5-853860bf993c",
+            "fileName": "b67a3f72-d14c-4f7a-aca5-853860bf993c.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "CYMZH",
+          "distractors": [
+            "MHCZY",
+            "CHZYM",
+            "ZCHMY"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "009dc51e-cf69-489a-ac85-8e113fc1e02c",
+      "imageUuid": "5528b3d5-a6d7-45a9-a5f6-296ac92b20b0",
+      "imageFileName": "5528b3d5-a6d7-45a9-a5f6-296ac92b20b0.png",
+      "answerAlternatives": [
+        "SFNT",
+        "NTFS",
+        "TNSF",
+        "SNFT"
+      ],
+      "correctAlternative": "SNFT",
+      "generationTimeMs": 33,
+      "generationTimestamp": "2026-02-20T23:23:49.442Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "443f3852-a77f-4452-a11d-67350cc4a487",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "5528b3d5-a6d7-45a9-a5f6-296ac92b20b0",
+            "fileName": "5528b3d5-a6d7-45a9-a5f6-296ac92b20b0.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "SNFT",
+          "distractors": [
+            "TNSF",
+            "SFNT",
+            "NTFS"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "84a535c7-c538-4029-b728-4c56e65addcc",
+      "imageUuid": "e25b2c42-2c88-481c-b692-24d0e8dd6adc",
+      "imageFileName": "e25b2c42-2c88-481c-b692-24d0e8dd6adc.png",
+      "answerAlternatives": [
+        "BZAMT",
+        "BTZMA",
+        "AMZBT",
+        "MABZT"
+      ],
+      "correctAlternative": "AMZBT",
+      "generationTimeMs": 31,
+      "generationTimestamp": "2026-02-20T23:23:49.473Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "69bb4813-5287-4185-84ea-c3e07e47c73c",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e25b2c42-2c88-481c-b692-24d0e8dd6adc",
+            "fileName": "e25b2c42-2c88-481c-b692-24d0e8dd6adc.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "AMZBT",
+          "distractors": [
+            "BZAMT",
+            "MABZT",
+            "BTZMA"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "76307df3-e64f-44a2-bdc4-9b071a18de55",
+      "imageUuid": "e20ac0c9-9053-41a8-8852-2e1b01b50b99",
+      "imageFileName": "e20ac0c9-9053-41a8-8852-2e1b01b50b99.png",
+      "answerAlternatives": [
+        "CHLTF",
+        "HCFLT",
+        "LHFCT",
+        "TCHFL"
+      ],
+      "correctAlternative": "HCFLT",
+      "generationTimeMs": 32,
+      "generationTimestamp": "2026-02-20T23:23:49.505Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "3ecfd0e9-d60a-4597-9573-d35d456f07bb",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e20ac0c9-9053-41a8-8852-2e1b01b50b99",
+            "fileName": "e20ac0c9-9053-41a8-8852-2e1b01b50b99.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "HCFLT",
+          "distractors": [
+            "TCHFL",
+            "LHFCT",
+            "CHLTF"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "31e07c71-c16c-4fc2-99e2-9a3e5e1c1593",
+      "imageUuid": "6099fab6-4416-4652-a2cd-56da374ff368",
+      "imageFileName": "6099fab6-4416-4652-a2cd-56da374ff368.png",
+      "answerAlternatives": [
+        "GARH",
+        "RAGH",
+        "AGRH",
+        "HAGR"
+      ],
+      "correctAlternative": "GARH",
+      "generationTimeMs": 32,
+      "generationTimestamp": "2026-02-20T23:23:49.537Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "ab0a3beb-6bf3-4f8d-8bfe-a7346934b913",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "6099fab6-4416-4652-a2cd-56da374ff368",
+            "fileName": "6099fab6-4416-4652-a2cd-56da374ff368.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "GARH",
+          "distractors": [
+            "AGRH",
+            "RAGH",
+            "HAGR"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "6bada8a4-6896-4da0-893a-e88f0f3a69f4",
+      "imageUuid": "bb649504-3856-420f-8dda-3eec01a91d8a",
+      "imageFileName": "bb649504-3856-420f-8dda-3eec01a91d8a.png",
+      "answerAlternatives": [
+        "BJGKP",
+        "KBGJP",
+        "KGBJP",
+        "GKPJB"
+      ],
+      "correctAlternative": "KGBJP",
+      "generationTimeMs": 31,
+      "generationTimestamp": "2026-02-20T23:23:49.568Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "60c5193f-c33e-4627-ad5b-c4dc19ca710e",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "bb649504-3856-420f-8dda-3eec01a91d8a",
+            "fileName": "bb649504-3856-420f-8dda-3eec01a91d8a.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "KGBJP",
+          "distractors": [
+            "BJGKP",
+            "GKPJB",
+            "KBGJP"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "a9e14e7b-1090-4738-b0f7-a45355ece0a3",
+      "imageUuid": "d9509c54-a8ac-4598-90d7-60af8bc5bff8",
+      "imageFileName": "d9509c54-a8ac-4598-90d7-60af8bc5bff8.png",
+      "answerAlternatives": [
+        "CABPE",
+        "PEABC",
+        "CAPBE",
+        "BEAPC"
+      ],
+      "correctAlternative": "CAPBE",
+      "generationTimeMs": 33,
+      "generationTimestamp": "2026-02-20T23:23:49.601Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "413ec9b5-89e6-4985-b62b-d2dbb44f7518",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "d9509c54-a8ac-4598-90d7-60af8bc5bff8",
+            "fileName": "d9509c54-a8ac-4598-90d7-60af8bc5bff8.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "CAPBE",
+          "distractors": [
+            "BEAPC",
+            "PEABC",
+            "CABPE"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "a9e16cf5-c81e-4067-b111-0f8dde54de89",
+      "imageUuid": "f5e63499-4ecd-432f-8001-3ab2cdbad41f",
+      "imageFileName": "f5e63499-4ecd-432f-8001-3ab2cdbad41f.png",
+      "answerAlternatives": [
+        "JMSG",
+        "MJSG",
+        "GMSJ",
+        "GJSM"
+      ],
+      "correctAlternative": "JMSG",
+      "generationTimeMs": 32,
+      "generationTimestamp": "2026-02-20T23:23:49.633Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "707291be-e32a-43e0-b782-8ddb44aa68d4",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "f5e63499-4ecd-432f-8001-3ab2cdbad41f",
+            "fileName": "f5e63499-4ecd-432f-8001-3ab2cdbad41f.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "JMSG",
+          "distractors": [
+            "MJSG",
+            "GJSM",
+            "GMSJ"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    },
+    {
+      "challengeId": "93388100-67fc-41f1-8eba-00ac12e6b501",
+      "imageUuid": "e7b8aa1d-55c2-4238-99af-75f0d799bf38",
+      "imageFileName": "e7b8aa1d-55c2-4238-99af-75f0d799bf38.png",
+      "answerAlternatives": [
+        "BGJHL",
+        "HJGBL",
+        "GJBHL",
+        "HGJBL"
+      ],
+      "correctAlternative": "HJGBL",
+      "generationTimeMs": 30,
+      "generationTimestamp": "2026-02-20T23:23:49.663Z",
+      "question": "Which 4–5 letter sequence is hidden in the texture?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "9be7aa7c-effe-4adb-a212-f5273c6172ed",
+        "originalGeneratorId": "emerging-image",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e7b8aa1d-55c2-4238-99af-75f0d799bf38",
+            "fileName": "e7b8aa1d-55c2-4238-99af-75f0d799bf38.png",
+            "mimeType": "image/png",
+            "width": 420,
+            "height": 220
+          }
+        ],
+        "metadata": {
+          "token": "HJGBL",
+          "distractors": [
+            "HGJBL",
+            "BGJHL",
+            "GJBHL"
+          ],
+          "family": "emerging-image"
+        }
+      }
+    }
+  ]
+}

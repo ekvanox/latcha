@@ -1,0 +1,767 @@
+{
+  "schemaVersion": 1,
+  "generationType": "grid-overlay",
+  "updatedAt": "2026-02-20T23:23:48.087Z",
+  "challenges": [
+    {
+      "challengeId": "6c7ff362-af24-4f7d-96e9-2dc179de5f74",
+      "imageUuid": "b4efddad-0887-4a2e-a661-b00b5bf44da2",
+      "imageFileName": "b4efddad-0887-4a2e-a661-b00b5bf44da2.png",
+      "answerAlternatives": [
+        "EVXT",
+        "EXVT",
+        "VTXE",
+        "TXEV"
+      ],
+      "correctAlternative": "EXVT",
+      "generationTimeMs": 59,
+      "generationTimestamp": "2026-02-20T23:23:47.952Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "5e2a7e09-5ab1-41d2-a50a-38cff4e0b2df",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b4efddad-0887-4a2e-a661-b00b5bf44da2",
+            "fileName": "b4efddad-0887-4a2e-a661-b00b5bf44da2.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "EXVT",
+          "distractors": [
+            "EVXT",
+            "TXEV",
+            "VTXE"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "5b505765-582c-45b6-9a8c-1b7ce6d7aa96",
+      "imageUuid": "6d1a6572-f4d3-46b8-8f92-a86e61e74b42",
+      "imageFileName": "6d1a6572-f4d3-46b8-8f92-a86e61e74b42.png",
+      "answerAlternatives": [
+        "MGCU",
+        "UMGC",
+        "UCMG",
+        "CUGM"
+      ],
+      "correctAlternative": "MGCU",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:47.957Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "ec2bbeaf-0c19-47c9-aeb0-9cd679ff8cac",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "6d1a6572-f4d3-46b8-8f92-a86e61e74b42",
+            "fileName": "6d1a6572-f4d3-46b8-8f92-a86e61e74b42.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "MGCU",
+          "distractors": [
+            "UMGC",
+            "UCMG",
+            "CUGM"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "43861794-1d75-49df-9ec3-a072e7c4a4ec",
+      "imageUuid": "337a9a62-5d60-4109-8010-9e19b8f94038",
+      "imageFileName": "337a9a62-5d60-4109-8010-9e19b8f94038.png",
+      "answerAlternatives": [
+        "PYBUT",
+        "PYTBU",
+        "UTYPB",
+        "UYBPT"
+      ],
+      "correctAlternative": "PYBUT",
+      "generationTimeMs": 8,
+      "generationTimestamp": "2026-02-20T23:23:47.965Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "c1ea4d83-47c1-4875-bf13-bc69ef61a19b",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "337a9a62-5d60-4109-8010-9e19b8f94038",
+            "fileName": "337a9a62-5d60-4109-8010-9e19b8f94038.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "PYBUT",
+          "distractors": [
+            "UTYPB",
+            "UYBPT",
+            "PYTBU"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "4d19d674-1e79-419f-ad68-90a28e09ba54",
+      "imageUuid": "6ab86ee5-9068-4fd0-a42f-e63b54c27d25",
+      "imageFileName": "6ab86ee5-9068-4fd0-a42f-e63b54c27d25.png",
+      "answerAlternatives": [
+        "IKRL",
+        "LRIK",
+        "KILR",
+        "RLKI"
+      ],
+      "correctAlternative": "LRIK",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:47.969Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "a2b58393-f2bc-4495-b135-c09f4bd8eb2b",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "6ab86ee5-9068-4fd0-a42f-e63b54c27d25",
+            "fileName": "6ab86ee5-9068-4fd0-a42f-e63b54c27d25.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "LRIK",
+          "distractors": [
+            "RLKI",
+            "KILR",
+            "IKRL"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "9a7df0c3-3c39-4833-b560-9be1d38c4587",
+      "imageUuid": "6214995e-4564-41c6-bdb1-7a256904e29b",
+      "imageFileName": "6214995e-4564-41c6-bdb1-7a256904e29b.png",
+      "answerAlternatives": [
+        "FBHQ",
+        "HQBF",
+        "QHBF",
+        "HFBQ"
+      ],
+      "correctAlternative": "FBHQ",
+      "generationTimeMs": 11,
+      "generationTimestamp": "2026-02-20T23:23:47.980Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "4035c2ba-0a4e-4c06-bd02-e8ec79f554ea",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "6214995e-4564-41c6-bdb1-7a256904e29b",
+            "fileName": "6214995e-4564-41c6-bdb1-7a256904e29b.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "FBHQ",
+          "distractors": [
+            "HFBQ",
+            "QHBF",
+            "HQBF"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "a701baab-a491-491b-a946-4e5e7e4969f0",
+      "imageUuid": "3016a7b7-aa08-4434-8e6f-02df1f7aa065",
+      "imageFileName": "3016a7b7-aa08-4434-8e6f-02df1f7aa065.png",
+      "answerAlternatives": [
+        "WXTU",
+        "UXWT",
+        "WXUT",
+        "XTUW"
+      ],
+      "correctAlternative": "XTUW",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:47.986Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "a9e5fca1-6641-4bc1-90ca-eca95fe6ed42",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "3016a7b7-aa08-4434-8e6f-02df1f7aa065",
+            "fileName": "3016a7b7-aa08-4434-8e6f-02df1f7aa065.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "XTUW",
+          "distractors": [
+            "WXTU",
+            "WXUT",
+            "UXWT"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "f1d6f0bc-5fc8-4366-b323-7a6f8505bbec",
+      "imageUuid": "be4af247-2e49-4c12-84c4-de75febd5960",
+      "imageFileName": "be4af247-2e49-4c12-84c4-de75febd5960.png",
+      "answerAlternatives": [
+        "OJKW",
+        "KOJW",
+        "WKJO",
+        "WOKJ"
+      ],
+      "correctAlternative": "WKJO",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:47.990Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "58c8e81f-b1d3-4904-9baa-3fbc434f84bd",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "be4af247-2e49-4c12-84c4-de75febd5960",
+            "fileName": "be4af247-2e49-4c12-84c4-de75febd5960.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "WKJO",
+          "distractors": [
+            "KOJW",
+            "OJKW",
+            "WOKJ"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "339978b1-3b61-4e46-8f5e-aa6f9f8c39b6",
+      "imageUuid": "9fc3ff2e-15dd-433f-98c2-340ad9df1aff",
+      "imageFileName": "9fc3ff2e-15dd-433f-98c2-340ad9df1aff.png",
+      "answerAlternatives": [
+        "FHVJT",
+        "VJTHF",
+        "TVHFJ",
+        "THJFV"
+      ],
+      "correctAlternative": "THJFV",
+      "generationTimeMs": 13,
+      "generationTimestamp": "2026-02-20T23:23:48.003Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "871911a3-ee41-46e7-ad82-bc0d3de068d7",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "9fc3ff2e-15dd-433f-98c2-340ad9df1aff",
+            "fileName": "9fc3ff2e-15dd-433f-98c2-340ad9df1aff.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "THJFV",
+          "distractors": [
+            "TVHFJ",
+            "VJTHF",
+            "FHVJT"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "dc64f8cb-053e-42f4-9f38-c79ad7766cba",
+      "imageUuid": "4941264d-c6cd-4112-9f4d-ae35da4e1d64",
+      "imageFileName": "4941264d-c6cd-4112-9f4d-ae35da4e1d64.png",
+      "answerAlternatives": [
+        "LYRWN",
+        "RYLNW",
+        "LNRWY",
+        "WYNRL"
+      ],
+      "correctAlternative": "WYNRL",
+      "generationTimeMs": 11,
+      "generationTimestamp": "2026-02-20T23:23:48.014Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "73382647-d66d-497b-8740-7b1ae93b7444",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "4941264d-c6cd-4112-9f4d-ae35da4e1d64",
+            "fileName": "4941264d-c6cd-4112-9f4d-ae35da4e1d64.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "WYNRL",
+          "distractors": [
+            "LYRWN",
+            "RYLNW",
+            "LNRWY"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "81a383cf-19f4-46ae-969b-41ba2871cd65",
+      "imageUuid": "d5009f23-0790-4d42-bf5f-b540b804053b",
+      "imageFileName": "d5009f23-0790-4d42-bf5f-b540b804053b.png",
+      "answerAlternatives": [
+        "ZTCM",
+        "CMZT",
+        "ZMCT",
+        "CMTZ"
+      ],
+      "correctAlternative": "ZMCT",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.018Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "335417fc-513b-4a51-b1a1-c8281708cd4f",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "d5009f23-0790-4d42-bf5f-b540b804053b",
+            "fileName": "d5009f23-0790-4d42-bf5f-b540b804053b.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "ZMCT",
+          "distractors": [
+            "CMZT",
+            "CMTZ",
+            "ZTCM"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "9f72b869-00bb-449a-b18f-8890d4832c41",
+      "imageUuid": "49cc69b0-3f91-4cbc-b1ae-aaa06c7597b6",
+      "imageFileName": "49cc69b0-3f91-4cbc-b1ae-aaa06c7597b6.png",
+      "answerAlternatives": [
+        "SQFZ",
+        "QFZS",
+        "FZQS",
+        "QFSZ"
+      ],
+      "correctAlternative": "QFZS",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.024Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "2fd80407-ca94-4f78-9d26-b00bc0670782",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "49cc69b0-3f91-4cbc-b1ae-aaa06c7597b6",
+            "fileName": "49cc69b0-3f91-4cbc-b1ae-aaa06c7597b6.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "QFZS",
+          "distractors": [
+            "SQFZ",
+            "QFSZ",
+            "FZQS"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "ab649a87-0430-472d-9144-165508cf77db",
+      "imageUuid": "5b84c092-f701-4c01-89cc-51d843ed42dd",
+      "imageFileName": "5b84c092-f701-4c01-89cc-51d843ed42dd.png",
+      "answerAlternatives": [
+        "PYEXR",
+        "ERYPX",
+        "RXYPE",
+        "YRXPE"
+      ],
+      "correctAlternative": "ERYPX",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.028Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "fed59508-b707-4113-823e-165c8cf64176",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "5b84c092-f701-4c01-89cc-51d843ed42dd",
+            "fileName": "5b84c092-f701-4c01-89cc-51d843ed42dd.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "ERYPX",
+          "distractors": [
+            "PYEXR",
+            "RXYPE",
+            "YRXPE"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "47a9bced-009a-4869-9b7d-afc6a0c4b738",
+      "imageUuid": "e184ef52-498a-48cc-af18-72a0de094a00",
+      "imageFileName": "e184ef52-498a-48cc-af18-72a0de094a00.png",
+      "answerAlternatives": [
+        "ZYNLF",
+        "YFNLZ",
+        "NZLYF",
+        "ZNFLY"
+      ],
+      "correctAlternative": "YFNLZ",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.032Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "9080627f-05c3-4615-8ed2-c8bbe8bec317",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e184ef52-498a-48cc-af18-72a0de094a00",
+            "fileName": "e184ef52-498a-48cc-af18-72a0de094a00.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "YFNLZ",
+          "distractors": [
+            "NZLYF",
+            "ZNFLY",
+            "ZYNLF"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "36aa4b9f-fc82-4d44-a756-7befba76159b",
+      "imageUuid": "e298df37-a1d3-4dd4-a618-336c0418071f",
+      "imageFileName": "e298df37-a1d3-4dd4-a618-336c0418071f.png",
+      "answerAlternatives": [
+        "YFOT",
+        "FTOY",
+        "OFYT",
+        "OTYF"
+      ],
+      "correctAlternative": "FTOY",
+      "generationTimeMs": 4,
+      "generationTimestamp": "2026-02-20T23:23:48.036Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "004070b1-774e-4745-b29e-c61aa0e4c38e",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "e298df37-a1d3-4dd4-a618-336c0418071f",
+            "fileName": "e298df37-a1d3-4dd4-a618-336c0418071f.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "FTOY",
+          "distractors": [
+            "YFOT",
+            "OFYT",
+            "OTYF"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "63b068a4-8876-4785-b061-68d1e5b05269",
+      "imageUuid": "220384e0-8b58-4892-abee-c0baee922587",
+      "imageFileName": "220384e0-8b58-4892-abee-c0baee922587.png",
+      "answerAlternatives": [
+        "THBV",
+        "TBVH",
+        "VHTB",
+        "BHTV"
+      ],
+      "correctAlternative": "VHTB",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.042Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "c14233b7-38cc-445d-80fd-f77ccc798781",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "220384e0-8b58-4892-abee-c0baee922587",
+            "fileName": "220384e0-8b58-4892-abee-c0baee922587.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "VHTB",
+          "distractors": [
+            "TBVH",
+            "BHTV",
+            "THBV"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "3305a998-b1d2-4c74-bdfc-a1370f9c4c44",
+      "imageUuid": "f803aa7e-936e-40ab-a0ac-804bf35b9632",
+      "imageFileName": "f803aa7e-936e-40ab-a0ac-804bf35b9632.png",
+      "answerAlternatives": [
+        "USPEV",
+        "VSPEU",
+        "VEPSU",
+        "UPSVE"
+      ],
+      "correctAlternative": "USPEV",
+      "generationTimeMs": 13,
+      "generationTimestamp": "2026-02-20T23:23:48.055Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "cc8cfdb8-c6e1-446b-be94-a5e5bd96a60c",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "f803aa7e-936e-40ab-a0ac-804bf35b9632",
+            "fileName": "f803aa7e-936e-40ab-a0ac-804bf35b9632.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "USPEV",
+          "distractors": [
+            "VEPSU",
+            "UPSVE",
+            "VSPEU"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "44749fda-e248-4736-922d-b968c1986fad",
+      "imageUuid": "cd152d81-c2d9-429c-ba00-df9af532c045",
+      "imageFileName": "cd152d81-c2d9-429c-ba00-df9af532c045.png",
+      "answerAlternatives": [
+        "YUVE",
+        "YUEV",
+        "EVYU",
+        "VUYE"
+      ],
+      "correctAlternative": "YUEV",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.060Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "9f8f4c8d-1ab3-4e54-a4bd-583f2da36d32",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "cd152d81-c2d9-429c-ba00-df9af532c045",
+            "fileName": "cd152d81-c2d9-429c-ba00-df9af532c045.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "YUEV",
+          "distractors": [
+            "YUVE",
+            "VUYE",
+            "EVYU"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "0a57cdca-1160-4f25-9b3f-d03fb86c63a4",
+      "imageUuid": "f58fb873-f76d-46b4-8c29-d49e4613027d",
+      "imageFileName": "f58fb873-f76d-46b4-8c29-d49e4613027d.png",
+      "answerAlternatives": [
+        "DCOFZ",
+        "FODZC",
+        "ZFDOC",
+        "OZCDF"
+      ],
+      "correctAlternative": "ZFDOC",
+      "generationTimeMs": 9,
+      "generationTimestamp": "2026-02-20T23:23:48.069Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "59c31d00-4e7a-4bfe-8a34-e9d6919d102a",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "f58fb873-f76d-46b4-8c29-d49e4613027d",
+            "fileName": "f58fb873-f76d-46b4-8c29-d49e4613027d.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "ZFDOC",
+          "distractors": [
+            "OZCDF",
+            "FODZC",
+            "DCOFZ"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "eb1a61b4-0b4b-4424-9cc1-71279b88ea20",
+      "imageUuid": "69d53d58-3547-4102-bbfe-e333dbe3567d",
+      "imageFileName": "69d53d58-3547-4102-bbfe-e333dbe3567d.png",
+      "answerAlternatives": [
+        "JHABX",
+        "HJABX",
+        "XAHBJ",
+        "BJXAH"
+      ],
+      "correctAlternative": "XAHBJ",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.075Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "1df2fce7-c97d-469d-92ae-54c41b3bc61d",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "69d53d58-3547-4102-bbfe-e333dbe3567d",
+            "fileName": "69d53d58-3547-4102-bbfe-e333dbe3567d.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "XAHBJ",
+          "distractors": [
+            "HJABX",
+            "BJXAH",
+            "JHABX"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    },
+    {
+      "challengeId": "2e9997c6-ee82-43f1-a512-b009f991b1e3",
+      "imageUuid": "fc1686b3-5c05-4f20-8d70-b4f625c5d3c4",
+      "imageFileName": "fc1686b3-5c05-4f20-8d70-b4f625c5d3c4.png",
+      "answerAlternatives": [
+        "QWZUJ",
+        "WJUZQ",
+        "JUWQZ",
+        "ZQJUW"
+      ],
+      "correctAlternative": "WJUZQ",
+      "generationTimeMs": 12,
+      "generationTimestamp": "2026-02-20T23:23:48.087Z",
+      "question": "What 4–5 letter sequence do you see in this image?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "d1686658-9344-4120-8362-93f6399662c6",
+        "originalGeneratorId": "grid-overlay",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "fc1686b3-5c05-4f20-8d70-b4f625c5d3c4",
+            "fileName": "fc1686b3-5c05-4f20-8d70-b4f625c5d3c4.png",
+            "mimeType": "image/png",
+            "width": 400,
+            "height": 200
+          }
+        ],
+        "metadata": {
+          "token": "WJUZQ",
+          "distractors": [
+            "QWZUJ",
+            "JUWQZ",
+            "ZQJUW"
+          ],
+          "pattern": "grid-overlay"
+        }
+      }
+    }
+  ]
+}

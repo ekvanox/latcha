@@ -1,0 +1,667 @@
+{
+  "schemaVersion": 1,
+  "generationType": "illusory-contours",
+  "updatedAt": "2026-02-20T23:23:48.423Z",
+  "challenges": [
+    {
+      "challengeId": "94d1bc9b-053f-450d-9ee4-af7d0dab4068",
+      "imageUuid": "1f2ad643-fab9-4d04-9ae4-32003a14eda8",
+      "imageFileName": "1f2ad643-fab9-4d04-9ae4-32003a14eda8.png",
+      "answerAlternatives": [
+        "Square",
+        "Circle",
+        "No clear shape",
+        "Triangle"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.318Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "f45d1ada-c354-4191-bbce-01ccc3015957",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "1f2ad643-fab9-4d04-9ae4-32003a14eda8",
+            "fileName": "1f2ad643-fab9-4d04-9ae4-32003a14eda8.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "466e5cf1-1669-4ead-b8cb-b11c771267ae",
+      "imageUuid": "28be3dc9-f464-4a16-88f8-5003b732a086",
+      "imageFileName": "28be3dc9-f464-4a16-88f8-5003b732a086.png",
+      "answerAlternatives": [
+        "No clear shape",
+        "Circle",
+        "Triangle",
+        "Square"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.324Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "cea7dace-8f96-42f1-b89a-8e3120aa4396",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "28be3dc9-f464-4a16-88f8-5003b732a086",
+            "fileName": "28be3dc9-f464-4a16-88f8-5003b732a086.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "6db670fa-608d-42ca-af8b-756592b3b184",
+      "imageUuid": "303f7062-f8c5-42df-b6df-ec1ae129c005",
+      "imageFileName": "303f7062-f8c5-42df-b6df-ec1ae129c005.png",
+      "answerAlternatives": [
+        "No clear shape",
+        "Triangle",
+        "Square",
+        "Circle"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.329Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "bcb3cf88-5f43-491d-9096-adbf90bfea56",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "303f7062-f8c5-42df-b6df-ec1ae129c005",
+            "fileName": "303f7062-f8c5-42df-b6df-ec1ae129c005.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "a3b2f089-e117-4f80-a603-2520847bcd47",
+      "imageUuid": "a2b96bb7-7a20-4061-9004-c1496d2a25a5",
+      "imageFileName": "a2b96bb7-7a20-4061-9004-c1496d2a25a5.png",
+      "answerAlternatives": [
+        "No clear shape",
+        "Circle",
+        "Triangle",
+        "Square"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.335Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "0f2ec880-6481-4334-86a6-f88c36197fd9",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "a2b96bb7-7a20-4061-9004-c1496d2a25a5",
+            "fileName": "a2b96bb7-7a20-4061-9004-c1496d2a25a5.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "540c5834-e36c-491a-b6ae-64999a2c85ec",
+      "imageUuid": "b04eca2b-9186-4d22-9816-75b80c8181e6",
+      "imageFileName": "b04eca2b-9186-4d22-9816-75b80c8181e6.png",
+      "answerAlternatives": [
+        "Square",
+        "Triangle",
+        "Circle",
+        "No clear shape"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.341Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "c3d476d9-11c4-47d6-acff-839eeb7da6ac",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b04eca2b-9186-4d22-9816-75b80c8181e6",
+            "fileName": "b04eca2b-9186-4d22-9816-75b80c8181e6.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "3d9944e9-4e6b-4666-ab9c-1c79626ac29d",
+      "imageUuid": "0371ecdc-5950-478b-bd70-83027a45de2c",
+      "imageFileName": "0371ecdc-5950-478b-bd70-83027a45de2c.png",
+      "answerAlternatives": [
+        "Square",
+        "No clear shape",
+        "Triangle",
+        "Circle"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.347Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "9b7dc0af-3600-418b-af5e-b6b1b7ba89b8",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "0371ecdc-5950-478b-bd70-83027a45de2c",
+            "fileName": "0371ecdc-5950-478b-bd70-83027a45de2c.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "cbed4f61-2d6a-4dd4-a36a-99dc453926a0",
+      "imageUuid": "0016a793-0c80-4100-90ba-461ab7d4a55a",
+      "imageFileName": "0016a793-0c80-4100-90ba-461ab7d4a55a.png",
+      "answerAlternatives": [
+        "Circle",
+        "Triangle",
+        "No clear shape",
+        "Square"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.352Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "96a3b56e-ce20-4771-b972-2f1b9df27619",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "0016a793-0c80-4100-90ba-461ab7d4a55a",
+            "fileName": "0016a793-0c80-4100-90ba-461ab7d4a55a.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "c3ea2bc7-f846-4124-bf24-94d75d3a3590",
+      "imageUuid": "b2ffb537-e4de-4378-a31a-b1c1d2b37bda",
+      "imageFileName": "b2ffb537-e4de-4378-a31a-b1c1d2b37bda.png",
+      "answerAlternatives": [
+        "Triangle",
+        "Circle",
+        "Square",
+        "No clear shape"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.358Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "98d55396-5c9c-491a-9f9e-5ac0fa7aad98",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b2ffb537-e4de-4378-a31a-b1c1d2b37bda",
+            "fileName": "b2ffb537-e4de-4378-a31a-b1c1d2b37bda.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "adf320eb-216c-4b9a-8480-aaabf69c3276",
+      "imageUuid": "b9e42fd5-45e7-43bb-b60b-19f20d117bbb",
+      "imageFileName": "b9e42fd5-45e7-43bb-b60b-19f20d117bbb.png",
+      "answerAlternatives": [
+        "No clear shape",
+        "Square",
+        "Triangle",
+        "Circle"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.363Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "b1365fcf-a8f7-4da6-945b-2d6907e1da02",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b9e42fd5-45e7-43bb-b60b-19f20d117bbb",
+            "fileName": "b9e42fd5-45e7-43bb-b60b-19f20d117bbb.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "29d2590c-3fa4-46a7-b0b7-c1b8bb2f0233",
+      "imageUuid": "74c7723d-0313-4fbb-bf90-a070da6a76a6",
+      "imageFileName": "74c7723d-0313-4fbb-bf90-a070da6a76a6.png",
+      "answerAlternatives": [
+        "Triangle",
+        "Square",
+        "Circle",
+        "No clear shape"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.369Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "5fd38f2a-d9a3-40cb-9f5a-99d97a8c1599",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "74c7723d-0313-4fbb-bf90-a070da6a76a6",
+            "fileName": "74c7723d-0313-4fbb-bf90-a070da6a76a6.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "c12e44e1-666f-4483-bf33-64c74675407a",
+      "imageUuid": "be8978cc-fd3f-4b4f-93ee-054f74291b91",
+      "imageFileName": "be8978cc-fd3f-4b4f-93ee-054f74291b91.png",
+      "answerAlternatives": [
+        "No clear shape",
+        "Square",
+        "Circle",
+        "Triangle"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.374Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "f4040bee-d2df-416f-a249-2e03a8330eca",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "be8978cc-fd3f-4b4f-93ee-054f74291b91",
+            "fileName": "be8978cc-fd3f-4b4f-93ee-054f74291b91.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "ce102e76-bffe-421b-b3ad-6b7593957444",
+      "imageUuid": "5ee8a8c0-710f-46cd-8962-2e7663d3a171",
+      "imageFileName": "5ee8a8c0-710f-46cd-8962-2e7663d3a171.png",
+      "answerAlternatives": [
+        "Triangle",
+        "Square",
+        "Circle",
+        "No clear shape"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.379Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "1c903ac1-1ec5-4da6-9e48-d364cd4f11a7",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "5ee8a8c0-710f-46cd-8962-2e7663d3a171",
+            "fileName": "5ee8a8c0-710f-46cd-8962-2e7663d3a171.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "5ed789e1-7a8d-43f8-b308-2a27aafbf73c",
+      "imageUuid": "9088e930-e09a-427b-a1b0-90198f297925",
+      "imageFileName": "9088e930-e09a-427b-a1b0-90198f297925.png",
+      "answerAlternatives": [
+        "Square",
+        "No clear shape",
+        "Circle",
+        "Triangle"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.385Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "f735e147-69ae-4e9f-9887-5e3dd02aa2f4",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "9088e930-e09a-427b-a1b0-90198f297925",
+            "fileName": "9088e930-e09a-427b-a1b0-90198f297925.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "bdddbb4a-4209-4dd8-a557-7dd436ab2500",
+      "imageUuid": "b585b68d-edc7-4a41-9940-2e1d8c19f70a",
+      "imageFileName": "b585b68d-edc7-4a41-9940-2e1d8c19f70a.png",
+      "answerAlternatives": [
+        "No clear shape",
+        "Triangle",
+        "Circle",
+        "Square"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.390Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "63dedc58-cfa6-4537-83c2-341ddce355e5",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b585b68d-edc7-4a41-9940-2e1d8c19f70a",
+            "fileName": "b585b68d-edc7-4a41-9940-2e1d8c19f70a.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "3fbdd188-f4ec-4c19-871d-8d50f8c54017",
+      "imageUuid": "aeaed6ce-4eaf-424d-a253-53555aed929b",
+      "imageFileName": "aeaed6ce-4eaf-424d-a253-53555aed929b.png",
+      "answerAlternatives": [
+        "Triangle",
+        "Square",
+        "No clear shape",
+        "Circle"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.396Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "add194e6-2538-4ff8-bee8-69ee3d84f828",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "aeaed6ce-4eaf-424d-a253-53555aed929b",
+            "fileName": "aeaed6ce-4eaf-424d-a253-53555aed929b.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "bce9c03a-5c46-4662-a0f6-bf47f2fa735b",
+      "imageUuid": "17c74c5f-8639-4e5d-95a1-139675f40426",
+      "imageFileName": "17c74c5f-8639-4e5d-95a1-139675f40426.png",
+      "answerAlternatives": [
+        "Circle",
+        "Triangle",
+        "Square",
+        "No clear shape"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.401Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "bf72074a-5435-4719-b09c-612d3810b934",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "17c74c5f-8639-4e5d-95a1-139675f40426",
+            "fileName": "17c74c5f-8639-4e5d-95a1-139675f40426.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "d6e7298e-dd45-4cfc-b08c-60f56105eae3",
+      "imageUuid": "13f8cdda-390c-4119-8941-26520fa84936",
+      "imageFileName": "13f8cdda-390c-4119-8941-26520fa84936.png",
+      "answerAlternatives": [
+        "Circle",
+        "Triangle",
+        "No clear shape",
+        "Square"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.406Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "a9e38533-eec3-46ae-84b4-7a066dfe557e",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "13f8cdda-390c-4119-8941-26520fa84936",
+            "fileName": "13f8cdda-390c-4119-8941-26520fa84936.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "2ed2eacd-b5bc-4e9e-8939-70dc3dec52ca",
+      "imageUuid": "901910b4-63ed-49b4-85fa-b373859137a2",
+      "imageFileName": "901910b4-63ed-49b4-85fa-b373859137a2.png",
+      "answerAlternatives": [
+        "Circle",
+        "Square",
+        "No clear shape",
+        "Triangle"
+      ],
+      "correctAlternative": "Square",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.412Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "cfcdde17-ede8-49c8-ae75-7998f68af8b1",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "901910b4-63ed-49b4-85fa-b373859137a2",
+            "fileName": "901910b4-63ed-49b4-85fa-b373859137a2.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Square",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "e9cd128c-4f2e-4b3e-b4ad-7c81e39938e2",
+      "imageUuid": "671c5f92-3ccb-4f27-a87a-9c8a52cf1c8a",
+      "imageFileName": "671c5f92-3ccb-4f27-a87a-9c8a52cf1c8a.png",
+      "answerAlternatives": [
+        "Circle",
+        "Square",
+        "No clear shape",
+        "Triangle"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.418Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "7555b573-f393-4517-9f6d-238f03bdf058",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "671c5f92-3ccb-4f27-a87a-9c8a52cf1c8a",
+            "fileName": "671c5f92-3ccb-4f27-a87a-9c8a52cf1c8a.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    },
+    {
+      "challengeId": "82fdd875-8b9f-4569-b311-5f6c6a6a7e02",
+      "imageUuid": "ebe401db-2f94-47e3-85de-ae0db7b90ce7",
+      "imageFileName": "ebe401db-2f94-47e3-85de-ae0db7b90ce7.png",
+      "answerAlternatives": [
+        "Triangle",
+        "Circle",
+        "No clear shape",
+        "Square"
+      ],
+      "correctAlternative": "Triangle",
+      "generationTimeMs": 5,
+      "generationTimestamp": "2026-02-20T23:23:48.423Z",
+      "question": "Which shape do you perceive in the center?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "47798694-676c-46ce-a778-460c005b0dce",
+        "originalGeneratorId": "illusory-contours",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "ebe401db-2f94-47e3-85de-ae0db7b90ce7",
+            "fileName": "ebe401db-2f94-47e3-85de-ae0db7b90ce7.png",
+            "mimeType": "image/png",
+            "width": 360,
+            "height": 360
+          }
+        ],
+        "metadata": {
+          "targetShape": "Triangle",
+          "family": "kanizsa"
+        }
+      }
+    }
+  ]
+}

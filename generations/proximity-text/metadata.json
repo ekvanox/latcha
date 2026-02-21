@@ -1,0 +1,747 @@
+{
+  "schemaVersion": 1,
+  "generationType": "proximity-text",
+  "updatedAt": "2026-02-20T23:23:48.233Z",
+  "challenges": [
+    {
+      "challengeId": "cd4c6cdd-c554-4232-b79b-a3d6837f911d",
+      "imageUuid": "633519ca-d3c6-4938-b32b-b88518b50d9a",
+      "imageFileName": "633519ca-d3c6-4938-b32b-b88518b50d9a.png",
+      "answerAlternatives": [
+        "T",
+        "R",
+        "C",
+        "7"
+      ],
+      "correctAlternative": "C",
+      "generationTimeMs": 11,
+      "generationTimestamp": "2026-02-20T23:23:48.099Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "43c070c2-b71e-4490-98f2-d8d6e173aabe",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "633519ca-d3c6-4938-b32b-b88518b50d9a",
+            "fileName": "633519ca-d3c6-4938-b32b-b88518b50d9a.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "C",
+          "distractors": [
+            "7",
+            "R",
+            "T"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "8cb8698b-7db9-474b-bb6b-8826e653d6ee",
+      "imageUuid": "c2c89161-8e2d-4f2b-9141-cb035ed490a5",
+      "imageFileName": "c2c89161-8e2d-4f2b-9141-cb035ed490a5.png",
+      "answerAlternatives": [
+        "J",
+        "Y",
+        "V",
+        "3"
+      ],
+      "correctAlternative": "Y",
+      "generationTimeMs": 8,
+      "generationTimestamp": "2026-02-20T23:23:48.107Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "4bf8eee0-c5d8-429c-9bdf-ac8e57720de8",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "c2c89161-8e2d-4f2b-9141-cb035ed490a5",
+            "fileName": "c2c89161-8e2d-4f2b-9141-cb035ed490a5.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "Y",
+          "distractors": [
+            "V",
+            "3",
+            "J"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "7955da84-722b-4e99-aea9-2a9eaea89fcd",
+      "imageUuid": "c70926ca-62e4-424e-a31c-0e8abce85c98",
+      "imageFileName": "c70926ca-62e4-424e-a31c-0e8abce85c98.png",
+      "answerAlternatives": [
+        "C",
+        "E",
+        "2",
+        "U"
+      ],
+      "correctAlternative": "2",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.113Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "ef0ab066-5e42-4357-8488-a13c6ac66807",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "c70926ca-62e4-424e-a31c-0e8abce85c98",
+            "fileName": "c70926ca-62e4-424e-a31c-0e8abce85c98.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "2",
+          "distractors": [
+            "U",
+            "E",
+            "C"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "5a8cbb52-2868-4a86-8224-cfa91b04cb47",
+      "imageUuid": "795ebb31-d0b4-490f-88a6-2296a026d3d8",
+      "imageFileName": "795ebb31-d0b4-490f-88a6-2296a026d3d8.png",
+      "answerAlternatives": [
+        "3",
+        "R",
+        "8",
+        "N"
+      ],
+      "correctAlternative": "8",
+      "generationTimeMs": 8,
+      "generationTimestamp": "2026-02-20T23:23:48.121Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "23f6b3c9-6d9c-43c3-8a9e-92ece43a143b",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "795ebb31-d0b4-490f-88a6-2296a026d3d8",
+            "fileName": "795ebb31-d0b4-490f-88a6-2296a026d3d8.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "8",
+          "distractors": [
+            "3",
+            "R",
+            "N"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "238d7c0b-dec9-4d46-bdb4-44aa44b16ade",
+      "imageUuid": "fd6e941b-b590-4e1e-b169-1086dcc119a5",
+      "imageFileName": "fd6e941b-b590-4e1e-b169-1086dcc119a5.png",
+      "answerAlternatives": [
+        "A",
+        "U",
+        "Z",
+        "L"
+      ],
+      "correctAlternative": "L",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.127Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "13d9f389-c8ba-4d48-917a-baa5ccf4377f",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "fd6e941b-b590-4e1e-b169-1086dcc119a5",
+            "fileName": "fd6e941b-b590-4e1e-b169-1086dcc119a5.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "L",
+          "distractors": [
+            "A",
+            "Z",
+            "U"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "890235a9-51ba-4826-b78c-02e67ce81c69",
+      "imageUuid": "690fb0fe-3f81-4fdf-86f1-59572c944a5c",
+      "imageFileName": "690fb0fe-3f81-4fdf-86f1-59572c944a5c.png",
+      "answerAlternatives": [
+        "P",
+        "X",
+        "8",
+        "Y"
+      ],
+      "correctAlternative": "X",
+      "generationTimeMs": 8,
+      "generationTimestamp": "2026-02-20T23:23:48.135Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "902533f2-6bec-4f3b-b574-6065fa725ae7",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "690fb0fe-3f81-4fdf-86f1-59572c944a5c",
+            "fileName": "690fb0fe-3f81-4fdf-86f1-59572c944a5c.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "X",
+          "distractors": [
+            "8",
+            "P",
+            "Y"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "5d1c3a9d-ee2d-4eda-a7f0-84058d0becbd",
+      "imageUuid": "966169ca-fa71-468d-b4db-bee117838602",
+      "imageFileName": "966169ca-fa71-468d-b4db-bee117838602.png",
+      "answerAlternatives": [
+        "M",
+        "8",
+        "D",
+        "7"
+      ],
+      "correctAlternative": "8",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.142Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "f8dfe99e-1aac-4a4f-b86d-856fcdbcbb8e",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "966169ca-fa71-468d-b4db-bee117838602",
+            "fileName": "966169ca-fa71-468d-b4db-bee117838602.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "8",
+          "distractors": [
+            "7",
+            "D",
+            "M"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "88913442-f9df-4065-8250-c69a3c4aa432",
+      "imageUuid": "7e972247-6c5a-45d0-a6fb-d3b6dc6a3b47",
+      "imageFileName": "7e972247-6c5a-45d0-a6fb-d3b6dc6a3b47.png",
+      "answerAlternatives": [
+        "U",
+        "H",
+        "V",
+        "N"
+      ],
+      "correctAlternative": "N",
+      "generationTimeMs": 6,
+      "generationTimestamp": "2026-02-20T23:23:48.148Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "57ed7de4-3c2c-42e0-9ad3-4ff8ce860b2c",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "7e972247-6c5a-45d0-a6fb-d3b6dc6a3b47",
+            "fileName": "7e972247-6c5a-45d0-a6fb-d3b6dc6a3b47.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "N",
+          "distractors": [
+            "H",
+            "V",
+            "U"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "5479a8da-5a49-4ea6-a6bc-3af19ae6b224",
+      "imageUuid": "f95bff4f-6868-46c8-8bb1-4049f8d39fa8",
+      "imageFileName": "f95bff4f-6868-46c8-8bb1-4049f8d39fa8.png",
+      "answerAlternatives": [
+        "6",
+        "P",
+        "Z",
+        "V"
+      ],
+      "correctAlternative": "6",
+      "generationTimeMs": 8,
+      "generationTimestamp": "2026-02-20T23:23:48.156Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "2c1e93aa-fad3-443a-a902-c5f0641489ab",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "f95bff4f-6868-46c8-8bb1-4049f8d39fa8",
+            "fileName": "f95bff4f-6868-46c8-8bb1-4049f8d39fa8.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "6",
+          "distractors": [
+            "P",
+            "V",
+            "Z"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "e793848c-a786-465b-8aff-34e0f1e62309",
+      "imageUuid": "c96524dd-1e62-49c0-8bd8-88cbdc56fce9",
+      "imageFileName": "c96524dd-1e62-49c0-8bd8-88cbdc56fce9.png",
+      "answerAlternatives": [
+        "T",
+        "M",
+        "W",
+        "4"
+      ],
+      "correctAlternative": "W",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.163Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "fb3b401c-7bac-4c14-a93a-7d2bc4a05ccf",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "c96524dd-1e62-49c0-8bd8-88cbdc56fce9",
+            "fileName": "c96524dd-1e62-49c0-8bd8-88cbdc56fce9.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "W",
+          "distractors": [
+            "4",
+            "T",
+            "M"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "f2c9c6a8-1b87-405d-9570-2dcc8867a303",
+      "imageUuid": "146c6540-2083-4437-9279-a3e4246a3b69",
+      "imageFileName": "146c6540-2083-4437-9279-a3e4246a3b69.png",
+      "answerAlternatives": [
+        "5",
+        "G",
+        "T",
+        "V"
+      ],
+      "correctAlternative": "5",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.170Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "966292a8-5423-41f4-a01b-d9ce323878b8",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "146c6540-2083-4437-9279-a3e4246a3b69",
+            "fileName": "146c6540-2083-4437-9279-a3e4246a3b69.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "5",
+          "distractors": [
+            "T",
+            "V",
+            "G"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "a9aceea9-82b1-4024-bbc3-15b8f2af372c",
+      "imageUuid": "2fda8b97-4192-4ae2-a007-fc1ac9388cc3",
+      "imageFileName": "2fda8b97-4192-4ae2-a007-fc1ac9388cc3.png",
+      "answerAlternatives": [
+        "K",
+        "H",
+        "A",
+        "M"
+      ],
+      "correctAlternative": "H",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.177Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "d78dd4ed-baf1-4c4a-a924-1723b6c9b4df",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "2fda8b97-4192-4ae2-a007-fc1ac9388cc3",
+            "fileName": "2fda8b97-4192-4ae2-a007-fc1ac9388cc3.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "H",
+          "distractors": [
+            "M",
+            "A",
+            "K"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "3357caeb-3b8c-4485-b2de-4926a54ee817",
+      "imageUuid": "b2ed35ed-d07e-4601-8387-b280c1e4ca85",
+      "imageFileName": "b2ed35ed-d07e-4601-8387-b280c1e4ca85.png",
+      "answerAlternatives": [
+        "F",
+        "N",
+        "P",
+        "L"
+      ],
+      "correctAlternative": "L",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.184Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "a0b246b8-8c2d-4afe-87b4-fd9032a4f5bf",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "b2ed35ed-d07e-4601-8387-b280c1e4ca85",
+            "fileName": "b2ed35ed-d07e-4601-8387-b280c1e4ca85.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "L",
+          "distractors": [
+            "P",
+            "N",
+            "F"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "376744c1-c6c1-4707-8c7b-88adb3f569cc",
+      "imageUuid": "7c829f02-e564-42b7-8db4-e0f90907f5a3",
+      "imageFileName": "7c829f02-e564-42b7-8db4-e0f90907f5a3.png",
+      "answerAlternatives": [
+        "E",
+        "U",
+        "H",
+        "K"
+      ],
+      "correctAlternative": "H",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.191Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "f4480a5e-838b-40f0-aa5d-8152ccc56cd4",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "7c829f02-e564-42b7-8db4-e0f90907f5a3",
+            "fileName": "7c829f02-e564-42b7-8db4-e0f90907f5a3.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "H",
+          "distractors": [
+            "E",
+            "K",
+            "U"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "a38ba08e-6fed-4395-bf3e-0d01158d6be8",
+      "imageUuid": "5c0ec9f2-510a-459a-b16c-aaae03d236cf",
+      "imageFileName": "5c0ec9f2-510a-459a-b16c-aaae03d236cf.png",
+      "answerAlternatives": [
+        "7",
+        "2",
+        "H",
+        "D"
+      ],
+      "correctAlternative": "7",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.198Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "8d086f41-633c-46b7-9043-f37afe2e9259",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "5c0ec9f2-510a-459a-b16c-aaae03d236cf",
+            "fileName": "5c0ec9f2-510a-459a-b16c-aaae03d236cf.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "7",
+          "distractors": [
+            "H",
+            "2",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "c242c936-1946-43d6-a202-a66845744f78",
+      "imageUuid": "0c23c72c-2794-4072-94d4-d079ad3b69d2",
+      "imageFileName": "0c23c72c-2794-4072-94d4-d079ad3b69d2.png",
+      "answerAlternatives": [
+        "D",
+        "7",
+        "V",
+        "X"
+      ],
+      "correctAlternative": "7",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.205Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "0ced2da3-f9b0-4cb1-9951-35db9c3630cf",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "0c23c72c-2794-4072-94d4-d079ad3b69d2",
+            "fileName": "0c23c72c-2794-4072-94d4-d079ad3b69d2.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "7",
+          "distractors": [
+            "V",
+            "D",
+            "X"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "c03a1c87-a8fe-4291-97f2-529a6f475716",
+      "imageUuid": "676d1731-dc97-4c62-9987-16f9ff87dedc",
+      "imageFileName": "676d1731-dc97-4c62-9987-16f9ff87dedc.png",
+      "answerAlternatives": [
+        "S",
+        "E",
+        "J",
+        "U"
+      ],
+      "correctAlternative": "E",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.212Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "2c7eaf16-de18-4d98-bca9-c5344eb64abf",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "676d1731-dc97-4c62-9987-16f9ff87dedc",
+            "fileName": "676d1731-dc97-4c62-9987-16f9ff87dedc.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "E",
+          "distractors": [
+            "U",
+            "S",
+            "J"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "5f6028ab-e355-4739-ab07-633351d17334",
+      "imageUuid": "ebbd248e-2138-4d56-a83b-47fc7fa46919",
+      "imageFileName": "ebbd248e-2138-4d56-a83b-47fc7fa46919.png",
+      "answerAlternatives": [
+        "4",
+        "9",
+        "P",
+        "2"
+      ],
+      "correctAlternative": "2",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.219Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "588766b6-cea9-4a39-ad1d-0fbce9788b05",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "ebbd248e-2138-4d56-a83b-47fc7fa46919",
+            "fileName": "ebbd248e-2138-4d56-a83b-47fc7fa46919.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "2",
+          "distractors": [
+            "4",
+            "P",
+            "9"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "2b027f2e-96e5-48a0-bfc6-c86f1f154308",
+      "imageUuid": "85919f21-b887-4d60-b1db-59414c6adbdf",
+      "imageFileName": "85919f21-b887-4d60-b1db-59414c6adbdf.png",
+      "answerAlternatives": [
+        "8",
+        "9",
+        "E",
+        "2"
+      ],
+      "correctAlternative": "8",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.226Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "8883cf84-c288-4e80-9c17-f6f8148ab96f",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "85919f21-b887-4d60-b1db-59414c6adbdf",
+            "fileName": "85919f21-b887-4d60-b1db-59414c6adbdf.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "8",
+          "distractors": [
+            "E",
+            "9",
+            "2"
+          ]
+        }
+      }
+    },
+    {
+      "challengeId": "bc66cfbb-27c2-4b37-a14d-991988cef5d8",
+      "imageUuid": "8099c4f5-dcae-49be-be41-7e83e0777e53",
+      "imageFileName": "8099c4f5-dcae-49be-be41-7e83e0777e53.png",
+      "answerAlternatives": [
+        "B",
+        "K",
+        "C",
+        "7"
+      ],
+      "correctAlternative": "K",
+      "generationTimeMs": 7,
+      "generationTimestamp": "2026-02-20T23:23:48.233Z",
+      "question": "What letter or number do you see formed by the dot pattern?",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "dbd0315a-954f-494d-9dfd-b747ab6b96f5",
+        "originalGeneratorId": "proximity-text",
+        "imageCount": 1,
+        "imageRefs": [
+          {
+            "uuid": "8099c4f5-dcae-49be-be41-7e83e0777e53",
+            "fileName": "8099c4f5-dcae-49be-be41-7e83e0777e53.png",
+            "mimeType": "image/png",
+            "width": 300,
+            "height": 300
+          }
+        ],
+        "metadata": {
+          "char": "K",
+          "distractors": [
+            "B",
+            "7",
+            "C"
+          ]
+        }
+      }
+    }
+  ]
+}

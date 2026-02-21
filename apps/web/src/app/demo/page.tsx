@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { CaptchaWidget } from '../components/CaptchaWidget';
+import { GenerationVisualizer } from '../components/GenerationVisualizer';
 
 const GENERATORS = [
   { id: 'grid-overlay', name: 'Grid Overlay', description: 'Text behind geometric patterns' },
@@ -15,6 +16,7 @@ const GENERATORS = [
 
 export default function DemoPage() {
   const [selectedGenerator, setSelectedGenerator] = useState<string | undefined>(undefined);
+  const [mode, setMode] = useState<'captcha' | 'saved-captcha' | 'visualize'>('captcha');
 
   return (
     <div className="min-h-screen p-8 font-[family-name:var(--font-geist-sans)]">
@@ -28,41 +30,90 @@ export default function DemoPage() {
           <div className="w-12" />
         </div>
 
-        {/* Generator selector */}
+        {/* Mode selector */}
         <div className="space-y-3">
           <label className="text-sm font-medium text-gray-600 dark:text-gray-400">
-            Challenge Type
+            Demo Mode
           </label>
           <div className="flex flex-wrap gap-2">
             <button
-              onClick={() => setSelectedGenerator(undefined)}
+              onClick={() => setMode('captcha')}
               className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                selectedGenerator === undefined
+                mode === 'captcha'
                   ? 'bg-black text-white dark:bg-white dark:text-black'
                   : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
               }`}
             >
-              Random
+              Live CAPTCHA
             </button>
-            {GENERATORS.map((gen) => (
-              <button
-                key={gen.id}
-                onClick={() => setSelectedGenerator(gen.id)}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  selectedGenerator === gen.id
-                    ? 'bg-black text-white dark:bg-white dark:text-black'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
-                }`}
-                title={gen.description}
-              >
-                {gen.name}
-              </button>
-            ))}
+            <button
+              onClick={() => setMode('visualize')}
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                mode === 'visualize'
+                  ? 'bg-black text-white dark:bg-white dark:text-black'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
+              }`}
+            >
+              Visualization
+            </button>
+            <button
+              onClick={() => setMode('saved-captcha')}
+              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                mode === 'saved-captcha'
+                  ? 'bg-black text-white dark:bg-white dark:text-black'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
+              }`}
+            >
+              Saved CAPTCHA
+            </button>
           </div>
         </div>
 
-        {/* CAPTCHA Widget */}
-        <CaptchaWidget key={selectedGenerator ?? 'random'} generator={selectedGenerator} />
+        {(mode === 'captcha' || mode === 'saved-captcha') ? (
+          <>
+            {/* Generator selector */}
+            <div className="space-y-3">
+              <label className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                Challenge Type
+              </label>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setSelectedGenerator(undefined)}
+                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                    selectedGenerator === undefined
+                      ? 'bg-black text-white dark:bg-white dark:text-black'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
+                  }`}
+                >
+                  Random
+                </button>
+                {GENERATORS.map((gen) => (
+                  <button
+                    key={gen.id}
+                    onClick={() => setSelectedGenerator(gen.id)}
+                    className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                      selectedGenerator === gen.id
+                        ? 'bg-black text-white dark:bg-white dark:text-black'
+                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
+                    }`}
+                    title={gen.description}
+                  >
+                    {gen.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* CAPTCHA Widget */}
+            <CaptchaWidget
+              key={`${mode}-${selectedGenerator ?? 'random'}`}
+              generator={selectedGenerator}
+              source={mode === 'saved-captcha' ? 'generations' : 'live'}
+            />
+          </>
+        ) : (
+          <GenerationVisualizer />
+        )}
 
         {/* Info */}
         <div className="text-sm text-gray-500 space-y-2 border-t pt-6 dark:border-gray-800">
