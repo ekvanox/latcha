@@ -8,6 +8,7 @@ const GENERATORS = [
   { id: 'grid-overlay', name: 'Grid Overlay', description: 'Text behind geometric patterns' },
   { id: 'proximity-text', name: 'Gestalt Proximity', description: 'Letters from dot spacing' },
   { id: 'partial-occlusion', name: 'Partial Occlusion', description: 'Text behind occluding bars' },
+  { id: 'illusory-contours', name: 'Illusory Contours', description: 'Kanizsa-style implied shapes' },
 ];
 
 export default function DemoPage() {

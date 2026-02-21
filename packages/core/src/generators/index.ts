@@ -2,11 +2,13 @@ import type { CaptchaGenerator } from '../types.js';
 import { GridOverlayGenerator } from './grid-overlay.js';
 import { ProximityTextGenerator } from './proximity-text.js';
 import { PartialOcclusionGenerator } from './partial-occlusion.js';
+import { IllusoryContoursGenerator } from './illusory-contours.js';
 
 const generators: CaptchaGenerator[] = [
   new GridOverlayGenerator(),
   new ProximityTextGenerator(),
   new PartialOcclusionGenerator(),
+  new IllusoryContoursGenerator(),
 ];
 
 const generatorMap = new Map(generators.map((g) => [g.config.id, g]));
