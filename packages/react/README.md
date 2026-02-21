@@ -3,7 +3,7 @@
 AI-proof CAPTCHA for React. Drop-in replacement for reCAPTCHA v2 — no signup, no API key, no backend needed.
 
 <!-- Replace with an actual screenshot -->
-![Latcha widget screenshot](https://latcha.dev/og-image.png)
+![Latcha widget screenshot](https://latcha.dev/captcha.png)
 
 ---
 
