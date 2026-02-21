@@ -1,131 +1,137 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { CaptchaWidget } from '../components/CaptchaWidget';
-import { GenerationVisualizer } from '../components/GenerationVisualizer';
-
-const GENERATORS = [
-  { id: 'grid-overlay', name: 'Grid Overlay', description: 'Text behind geometric patterns' },
-  { id: 'proximity-text', name: 'Gestalt Proximity', description: 'Letters from dot spacing' },
-  { id: 'partial-occlusion', name: 'Partial Occlusion', description: 'Text behind occluding bars' },
-  { id: 'illusory-contours', name: 'Illusory Contours', description: 'Kanizsa-style implied shapes' },
-  { id: 'abutting-grating', name: 'Abutting Grating', description: 'Phase-shifted stripe illusion' },
-  { id: 'emerging-image', name: 'Emerging Image', description: 'Token hidden in texture statistics' },
-];
+import { useState, useCallback, useRef } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { TestProgressBar } from "./components/TestProgressBar";
+import { CaptchaQuestion } from "./components/CaptchaQuestion";
+import { ResultsScreen } from "./components/ResultsScreen";
+import type { CaptchaItem, UserAnswer, TestState } from "./types";
+import { shuffle } from "./types";
 
 export default function DemoPage() {
-  const [selectedGenerator, setSelectedGenerator] = useState<string | undefined>(undefined);
-  const [mode, setMode] = useState<'captcha' | 'saved-captcha' | 'visualize'>('captcha');
+  const [state, setState] = useState<TestState>("idle");
+  const [items, setItems] = useState<CaptchaItem[]>([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [error, setError] = useState<string | null>(null);
+  const answersRef = useRef<Record<string, UserAnswer>>({});
+
+  const startTest = useCallback(async () => {
+    setState("loading");
+    setError(null);
+    answersRef.current = {};
+    setCurrentIndex(0);
+
+    try {
+      const res = await fetch("/api/captcha-test");
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Failed to load challenges");
+      }
+
+      const data = await res.json();
+      const shuffled = shuffle(data.items as CaptchaItem[]);
+
+      if (shuffled.length === 0) {
+        throw new Error("No captcha challenges found. Generate some first.");
+      }
+
+      setItems(shuffled);
+      setState("testing");
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "Failed to load challenges",
+      );
+      setState("idle");
+    }
+  }, []);
+
+  const handleAnswer = useCallback(
+    (answer: UserAnswer) => {
+      const currentItem = items[currentIndex];
+      if (!currentItem) return;
+
+      answersRef.current[currentItem.challengeId] = answer;
+
+      const nextIndex = currentIndex + 1;
+      if (nextIndex >= items.length) {
+        setState("completed");
+      } else {
+        setCurrentIndex(nextIndex);
+      }
+    },
+    [items, currentIndex],
+  );
+
+  const answeredCount = Object.keys(answersRef.current).length;
 
   return (
-    <div className="min-h-screen p-8 font-[family-name:var(--font-geist-sans)]">
-      <div className="max-w-2xl mx-auto space-y-8">
-        {/* Header */}
-        <div className="flex items-center justify-between">
-          <Link href="/" className="text-sm text-gray-500 hover:text-gray-700">
+    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+      {state === "testing" && (
+        <TestProgressBar current={answeredCount} total={items.length} />
+      )}
+
+      <div
+        className={`max-w-2xl mx-auto px-4 py-8 ${state === "testing" ? "pt-20" : ""}`}
+      >
+        <div className="flex items-center justify-between mb-8">
+          <Link
+            href="/"
+            className="text-sm text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
+          >
             &larr; Back
           </Link>
-          <h1 className="text-2xl font-bold">Lacha Demo</h1>
+          <h1 className="text-lg sm:text-xl font-bold">Lacha</h1>
           <div className="w-12" />
         </div>
 
-        {/* Mode selector */}
-        <div className="space-y-3">
-          <label className="text-sm font-medium text-gray-600 dark:text-gray-400">
-            Demo Mode
-          </label>
-          <div className="flex flex-wrap gap-2">
-            <button
-              onClick={() => setMode('captcha')}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                mode === 'captcha'
-                  ? 'bg-black text-white dark:bg-white dark:text-black'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
-              }`}
-            >
-              Live CAPTCHA
-            </button>
-            <button
-              onClick={() => setMode('visualize')}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                mode === 'visualize'
-                  ? 'bg-black text-white dark:bg-white dark:text-black'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
-              }`}
-            >
-              Visualization
-            </button>
-            <button
-              onClick={() => setMode('saved-captcha')}
-              className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                mode === 'saved-captcha'
-                  ? 'bg-black text-white dark:bg-white dark:text-black'
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
-              }`}
-            >
-              Saved CAPTCHA
-            </button>
-          </div>
-        </div>
-
-        {(mode === 'captcha' || mode === 'saved-captcha') ? (
-          <>
-            {/* Generator selector */}
-            <div className="space-y-3">
-              <label className="text-sm font-medium text-gray-600 dark:text-gray-400">
-                Challenge Type
-              </label>
-              <div className="flex flex-wrap gap-2">
-                <button
-                  onClick={() => setSelectedGenerator(undefined)}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                    selectedGenerator === undefined
-                      ? 'bg-black text-white dark:bg-white dark:text-black'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
-                  }`}
-                >
-                  Random
-                </button>
-                {GENERATORS.map((gen) => (
-                  <button
-                    key={gen.id}
-                    onClick={() => setSelectedGenerator(gen.id)}
-                    className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                      selectedGenerator === gen.id
-                        ? 'bg-black text-white dark:bg-white dark:text-black'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-400'
-                    }`}
-                    title={gen.description}
-                  >
-                    {gen.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* CAPTCHA Widget */}
-            <CaptchaWidget
-              key={`${mode}-${selectedGenerator ?? 'random'}`}
-              generator={selectedGenerator}
-              source={mode === 'saved-captcha' ? 'generations' : 'live'}
-            />
-          </>
-        ) : (
-          <GenerationVisualizer />
+        {state === "idle" && (
+          <Card className="max-w-md mx-auto">
+            <CardHeader className="text-center">
+              <CardTitle className="text-xl sm:text-2xl">
+                Captcha Test
+              </CardTitle>
+              <CardDescription className="text-sm sm:text-base">
+                Test your perception against all saved captcha challenges. Each
+                challenge is shown exactly once in a random order.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              {error && (
+                <p className="text-sm text-red-500 text-center">{error}</p>
+              )}
+              <Button onClick={startTest} className="w-full" size="lg">
+                Start Captcha Test
+              </Button>
+            </CardContent>
+          </Card>
         )}
 
-        {/* Info */}
-        <div className="text-sm text-gray-500 space-y-2 border-t pt-6 dark:border-gray-800">
-          <p>
-            <strong>How it works:</strong> Each challenge exploits a specific perceptual gap
-            between humans and AI vision models.
-          </p>
-          <p>
-            Humans perceive these images effortlessly through gestalt grouping,
-            amodal completion, and other visual mechanisms that AI models lack.
-          </p>
-        </div>
+        {state === "loading" && (
+          <div className="flex flex-col items-center justify-center py-24 space-y-4">
+            <div className="w-8 h-8 border-2 border-gray-300 border-t-foreground rounded-full animate-spin" />
+            <p className="text-sm text-gray-500">Loading challenges...</p>
+          </div>
+        )}
+
+        {state === "testing" && items[currentIndex] && (
+          <CaptchaQuestion
+            key={items[currentIndex].challengeId}
+            item={items[currentIndex]}
+            onAnswer={handleAnswer}
+          />
+        )}
+
+        {state === "completed" && (
+          <ResultsScreen items={items} answers={answersRef.current} />
+        )}
       </div>
     </div>
   );
