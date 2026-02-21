@@ -9,12 +9,18 @@ export default function Home() {
           LLM-Proof CAPTCHA — challenges that are trivially easy for humans but
           impossible for frontier AI models.
         </p>
-        <div className="flex gap-4 justify-center">
+        <div className="flex gap-4 justify-center flex-wrap">
           <Link
             href="/demo"
             className="px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-lg font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
           >
             Start Captcha Test
+          </Link>
+          <Link
+            href="/dashboard"
+            className="px-6 py-3 bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 rounded-lg font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            View Dashboard →
           </Link>
         </div>
         <div className="mt-12 text-sm text-gray-500 space-y-2">
