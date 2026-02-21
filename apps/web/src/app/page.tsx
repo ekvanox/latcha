@@ -8,11 +8,7 @@ const Index = () => {
       {/* Nav */}
       <nav className="flex items-center justify-between px-8 py-6 max-w-6xl mx-auto">
         <Link href="/" className="inline-block">
-          <img
-            src="/logo.png"
-            alt="latcha logo"
-            className="w-8 h-8"
-          />
+          <img src="/logo.png" alt="latcha logo" className="w-8 h-8" />
         </Link>
         <Link
           href="/dashboard"
@@ -65,7 +61,7 @@ const Index = () => {
             {
               icon: Users,
               title: "Human Friendly",
-              desc: "97%+ human solve rate. No more fire hydrants, crosswalks, or blurry text.",
+              desc: "93%+ human solve rate. No more fire hydrants, crosswalks, or blurry text.",
             },
             {
               icon: Bot,

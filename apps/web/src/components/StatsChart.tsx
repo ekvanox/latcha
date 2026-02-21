@@ -13,8 +13,8 @@ import {
 } from "recharts";
 
 const humanData = [
-  { name: "Latcha", value: 82 },
-  { name: "reCAPTCHA v2", value: 79 },
+  { name: "Latcha", value: 93 },
+  { name: "reCAPTCHA v2", value: 92 },
 ];
 
 const botData = [
@@ -22,42 +22,47 @@ const botData = [
   { name: "reCAPTCHA v2", value: 80 },
 ];
 
-// Custom label renderer for bot chart bars
-const renderBotLabel = (props: {
-  x?: number;
-  y?: number;
-  width?: number;
-  value?: number;
-  index?: number;
-}) => {
-  const { x = 0, y = 0, width = 0, value, index } = props;
-  if (!value) return null;
-  const isRecaptcha = index === 1;
-  return (
-    <text
-      x={x + width / 2}
-      y={y - 6}
-      fill="hsl(90 10% 35%)"
-      textAnchor="middle"
-      fontSize={13}
-      fontWeight={600}
-    >
-      {value}%{isRecaptcha ? "*" : ""}
-    </text>
-  );
-};
+// Returns a label renderer that appends `suffixes[index]` after the percentage
+const makeLabelRenderer =
+  (suffixes: string[]) =>
+  (props: {
+    x?: number;
+    y?: number;
+    width?: number;
+    value?: number;
+    index?: number;
+  }) => {
+    const { x = 0, y = 0, width = 0, value, index = 0 } = props;
+    if (value === undefined || value === null) return null;
+    const suffix = suffixes[index] ?? "";
+    return (
+      <text
+        x={x + width / 2}
+        y={y - 6}
+        fill="hsl(90 10% 35%)"
+        textAnchor="middle"
+        fontSize={13}
+        fontWeight={600}
+      >
+        {value}%{suffix}
+      </text>
+    );
+  };
+
+const renderHumanLabel = makeLabelRenderer(["", "**"]);
+const renderBotLabel = makeLabelRenderer(["", "*"]);
 
 const StatBar = ({
   title,
   data,
   subtitle,
-  showBotLabels,
+  labelRenderer,
   footnote,
 }: {
   title: string;
   data: typeof humanData;
   subtitle: string;
-  showBotLabels?: boolean;
+  labelRenderer?: (props: Record<string, unknown>) => React.ReactElement | null;
   footnote?: React.ReactNode;
 }) => (
   <div className="flex flex-col items-center gap-4">
@@ -100,8 +105,8 @@ const StatBar = ({
                 }
               />
             ))}
-            {showBotLabels && (
-              <LabelList dataKey="value" content={renderBotLabel as never} />
+            {labelRenderer && (
+              <LabelList dataKey="value" content={labelRenderer as never} />
             )}
           </Bar>
         </BarChart>
@@ -122,12 +127,26 @@ const StatsChart = () => {
         title="Human Solve Rate"
         data={humanData}
         subtitle="Higher is better"
+        labelRenderer={renderHumanLabel}
+        footnote={
+          <>
+            ** reCAPTCHA v2 human solve rate sourced from academic research.{" "}
+            <a
+              href="https://www.ndss-symposium.org/wp-content/uploads/usec25-21.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors"
+            >
+              Source: NDSS USEC, 2025
+            </a>
+          </>
+        }
       />
       <StatBar
         title="LLM Solve Rate"
         data={botData}
         subtitle="Lower is better"
-        showBotLabels
+        labelRenderer={renderBotLabel}
         footnote={
           <>
             * GPT-4V achieved an ~80% success rate against reCAPTCHA v2 in
