@@ -70,7 +70,7 @@ async function main() {
       const bucketPath = `${generationType}/${imageFileName}`;
 
       // Upload image to storage
-      const { data: storageData, error: storageError } = await supabase.storage
+      const { error: storageError } = await supabase.storage
         .from("captchas")
         .upload(bucketPath, fileBuffer, {
           contentType: "image/png",

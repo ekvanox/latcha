@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -15,21 +15,14 @@ interface CaptchaQuestionProps {
 type AnswerState = "unanswered" | "answered";
 
 export function CaptchaQuestion({ item, onAnswer }: CaptchaQuestionProps) {
-  const [shuffledAlternatives, setShuffledAlternatives] = useState<string[]>(
-    [],
+  const [shuffledAlternatives] = useState<string[]>(() =>
+    shuffle(item.answerAlternatives),
   );
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [answerState, setAnswerState] = useState<AnswerState>("unanswered");
   const [imageLoaded, setImageLoaded] = useState(false);
-  const startTimeRef = useRef<number>(0);
-
-  useEffect(() => {
-    setShuffledAlternatives(shuffle(item.answerAlternatives));
-    setSelectedAnswer(null);
-    setAnswerState("unanswered");
-    setImageLoaded(false);
-    startTimeRef.current = Date.now();
-  }, [item]);
+  const [startTime] = useState<number>(() => Date.now());
+  const startTimeRef = useRef<number>(startTime);
 
   const handleSelect = useCallback(
     (answer: string) => {
