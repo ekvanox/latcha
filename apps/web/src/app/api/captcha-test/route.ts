@@ -22,11 +22,13 @@ export async function GET() {
   try {
     const supabase = createSupabaseServerClient();
 
+    // Join captcha_types to exclude disabled types
     const { data, error } = await supabase
       .from("captchas")
       .select(
-        "challenge_id, image_uuid, generation_type, question, answer_alternatives, correct_alternative, bucket_path",
+        "challenge_id, image_uuid, generation_type, question, answer_alternatives, correct_alternative, bucket_path, captcha_types!inner(disabled)",
       )
+      .eq("captcha_types.disabled", false)
       .order("generation_timestamp", { ascending: true });
 
     if (error) {

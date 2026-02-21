@@ -156,6 +156,7 @@ async function generateAndSync(generationType: string) {
   const row = {
     challenge_id: challengeId,
     generation_type: generationType,
+    captcha_type_id: generationType, // FK to captcha_types
     image_uuid: imageRefs[0]?.uuid,
     image_file_name: imageRefs[0]?.fileName,
     bucket_path: `${generationType}/${imageRefs[0]?.fileName}`,
@@ -172,6 +173,19 @@ async function generateAndSync(generationType: string) {
       metadata: challenge.metadata,
     },
   };
+
+  // Ensure captcha_types row exists (idempotent)
+  await supabase.from("captcha_types").upsert(
+    {
+      id: generationType,
+      display_name: generationType
+        .split("-")
+        .map((w: string) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" "),
+      disabled: false,
+    },
+    { onConflict: "id", ignoreDuplicates: true },
+  );
 
   console.log(`  Inserting row into public.captchas...`);
   const { error: dbError } = await supabase.from("captchas").insert(row);

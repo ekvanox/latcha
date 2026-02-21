@@ -9,12 +9,10 @@ const UPPERCASE_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 const ENVIRONMENT_PROMPTS = [
   "a dense urban street market with layered shop signs, awnings, and crowds",
-  "a neon-lit subway station with tiled walls, route maps, and commuters",
   "a packed library aisle with bookshelves, labels, and reading tables",
   "a supermarket produce section with stacked crates, price tags, and signage",
   "an airport departure hall with display boards, queues, and gate signs",
   "a shipping container yard with stacked containers, cranes, and lane markings",
-  "a server room corridor with cable trays, blinking LEDs, and rack labels",
   "a factory assembly line with repeating machinery, warning stripes, and tools",
   "a train station platform with timetable boards, pillars, and tracks",
   "a downtown crosswalk at rush hour with road markings, billboards, and traffic",
@@ -22,9 +20,7 @@ const ENVIRONMENT_PROMPTS = [
   "a warehouse interior with pallet stacks, barcode labels, and shelving rows",
   "a university lecture hall with seat rows, notes, and projection screens",
   "a construction site with scaffolding grids, caution tape, and equipment",
-  "a data center operations room with monitors, consoles, and status lights",
   "a newsroom floor with desk clusters, monitors, cables, and wall screens",
-  "a busy port terminal with stacked cargo, gantry cranes, and painted markings",
   "a subway map wall mural with intersecting lines, icons, and station labels",
   "a city alley full of posters, utility pipes, vents, and textured walls",
   "an autumn forest trail with layered branches, leaves, trunks, and dappled light",
@@ -33,21 +29,13 @@ const ENVIRONMENT_PROMPTS = [
 const PROMPT_STYLE_SUFFIX =
   "detailed, high texture, visually rich, masterpiece";
 
-const COMMON_FONTS = [
-  "Arial",
-  "Helvetica",
-  "Verdana",
-  "Trebuchet MS",
-  "Georgia",
-  "Times New Roman",
-  "Courier New",
-];
+const COMMON_FONTS = ["Arial"];
 
 const NOISE_CONFIG = {
-  darkenProbability: 0.36,
+  darkenProbability: 0.26,
   darkenMin: 18,
   darkenMax: 130,
-  alphaDropProbability: 0.11,
+  alphaDropProbability: 0.08,
   alphaScaleMin: 0.25,
   alphaScaleMax: 0.72,
   erasureStrokeCount: 12,
@@ -119,7 +107,7 @@ export class IllusionDiffusionGenerator extends BaseGenerator {
 
     const shell = this.createChallengeShell();
     const conditioningScale = Number(
-      process.env.CONTROLNET_CONDITIONING_SCALE ?? "0.8",
+      process.env.CONTROLNET_CONDITIONING_SCALE ?? "1",
     );
 
     // Pick random character, font, environment
