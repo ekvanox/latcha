@@ -6,10 +6,13 @@ export interface CaptchaItem {
   answerAlternatives: string[];
   correctAlternative: string;
   imageUrl: string;
+  // select-all (grid) challenges supply all 9 cell images as base64 data-URLs
+  format?: 'multiple-choice' | 'select-all';
+  gridImageUrls?: string[];
 }
 
 export interface UserAnswer {
-  answer: string;
+  answer: string | string[];
   responseTimeMs: number;
 }
 

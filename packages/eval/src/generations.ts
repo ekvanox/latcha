@@ -136,18 +136,69 @@ export async function loadGenerationChallenges(
   for (const item of selected) {
     const { generationType, entry } = item;
 
+    if (!entry.correctAlternative) {
+      continue;
+    }
+
+    const challengeDir = resolve(generationsDir, generationType, 'challenge');
+
+    // Check if this is a multi-image grid challenge (select-all)
+    const imageRefs = Array.isArray(entry.generationSpecificMetadata?.imageRefs)
+      ? (entry.generationSpecificMetadata.imageRefs as Array<{ uuid: string; fileName: string; mimeType?: string }>)
+      : null;
+
+    const isGridChallenge = imageRefs && imageRefs.length === 9;
+
+    if (isGridChallenge) {
+      // Load all 9 cell images
+      try {
+        const images: ChallengeImage[] = [];
+        for (const ref of imageRefs) {
+          const imagePath = resolve(challengeDir, ref.fileName);
+          const imageData = await readFile(imagePath);
+          const mimeType = mimeTypeFromFileName(ref.fileName);
+          images.push({ data: imageData, mimeType, width: 512, height: 512 });
+        }
+
+        // correctAlternative is stored as "1,3,7" — split into string array
+        const correctAnswer = entry.correctAlternative.split(',').map((s) => s.trim()).filter(Boolean);
+
+        challenges.push({
+          id: entry.challengeId,
+          generatorId: generationType,
+          images,
+          question: entry.question,
+          correctAnswer,
+          metadata: {
+            format: 'select-all',
+            source: 'pregenerated',
+            generationType,
+            generationTimeMs: entry.generationTimeMs,
+            generationTimestamp: entry.generationTimestamp,
+            generationSpecificMetadata: entry.generationSpecificMetadata,
+          },
+          expiresAt: Date.now() + 1000 * 60 * 60,
+        });
+      } catch (error) {
+        console.warn(
+          `Skipping grid challenge ${entry.challengeId}: images not readable (${error instanceof Error ? error.message : String(error)})`,
+        );
+      }
+      continue;
+    }
+
+    // Standard single-image multiple-choice challenge
     if (
       !entry.imageUuid ||
       !UUID_PATTERN.test(entry.imageUuid) ||
       !entry.imageFileName ||
       !entry.answerAlternatives ||
-      entry.answerAlternatives.length < 4 ||
-      !entry.correctAlternative
+      entry.answerAlternatives.length < 4
     ) {
       continue;
     }
 
-    const imagePath = resolve(generationsDir, generationType, 'challenge', entry.imageFileName);
+    const imagePath = resolve(challengeDir, entry.imageFileName);
 
     try {
       const imageData = await readFile(imagePath);

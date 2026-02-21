@@ -1,11 +1,12 @@
 import type { Challenge, GeneratorConfig, ChallengeImage } from "../types.js";
 import { BaseGenerator } from "./base.js";
-import { randomPick, shuffle } from "../utils/random.js";
+import { shuffle } from "../utils/random.js";
 import { createCanvas } from "canvas";
 import { fal } from "@fal-ai/client";
 
 const SIZE = 512;
 const UPPERCASE_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const GRID_CELLS = 9;
 
 const ENVIRONMENT_PROMPTS = [
   "a dense urban street market with layered shop signs, awnings, and crowds",
@@ -86,13 +87,133 @@ function extractImageUrl(data: unknown): string {
   );
 }
 
+/**
+ * Renders a 512×512 control image.
+ * If `character` is provided, draws it as a white glyph on black with noise.
+ * If null, returns a solid black image (blank mask for non-letter cells).
+ */
+function renderControlImage(character: string | null): Buffer {
+  const canvas = createCanvas(SIZE, SIZE);
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#000";
+  ctx.fillRect(0, 0, SIZE, SIZE);
+
+  if (character === null) {
+    return canvas.toBuffer("image/png");
+  }
+
+  const fontFamily = COMMON_FONTS[0]!;
+  const fontSize = randomInt(260, 410);
+
+  const glyphCanvas = createCanvas(SIZE, SIZE);
+  const glyphCtx = glyphCanvas.getContext("2d");
+  glyphCtx.fillStyle = "#fff";
+  glyphCtx.textAlign = "left";
+  glyphCtx.textBaseline = "alphabetic";
+  glyphCtx.font = `bold ${fontSize}px "${fontFamily}", sans-serif`;
+
+  const metrics = glyphCtx.measureText(character);
+  const charWidth = metrics.width;
+  const ascent = metrics.actualBoundingBoxAscent || fontSize * 0.75;
+  const descent = metrics.actualBoundingBoxDescent || fontSize * 0.25;
+  const margin = 20;
+
+  const minX = margin;
+  const maxX = Math.max(minX, SIZE - charWidth - margin);
+  const minY = ascent + margin;
+  const maxY = Math.max(minY, SIZE - descent - margin);
+
+  const x = randomInRange(minX, maxX);
+  const y = randomInRange(minY, maxY);
+
+  glyphCtx.fillText(character, x, y);
+
+  // Apply noise to the glyph
+  const imageData = glyphCtx.getImageData(0, 0, SIZE, SIZE);
+  const { data } = imageData;
+  for (let i = 0; i < data.length; i += 4) {
+    const alpha = data[i + 3];
+    if (alpha === 0) continue;
+    if (Math.random() < NOISE_CONFIG.darkenProbability) {
+      const darken = randomInt(NOISE_CONFIG.darkenMin, NOISE_CONFIG.darkenMax);
+      data[i] = Math.max(0, data[i]! - darken);
+      data[i + 1] = Math.max(0, data[i + 1]! - darken);
+      data[i + 2] = Math.max(0, data[i + 2]! - darken);
+    }
+    if (Math.random() < NOISE_CONFIG.alphaDropProbability) {
+      data[i + 3] = Math.floor(
+        alpha *
+          randomInRange(NOISE_CONFIG.alphaScaleMin, NOISE_CONFIG.alphaScaleMax),
+      );
+    }
+  }
+  glyphCtx.putImageData(imageData, 0, 0);
+
+  // Erasure strokes
+  glyphCtx.save();
+  glyphCtx.globalCompositeOperation = "destination-out";
+  for (let i = 0; i < NOISE_CONFIG.erasureStrokeCount; i++) {
+    glyphCtx.beginPath();
+    glyphCtx.lineWidth = randomInRange(
+      NOISE_CONFIG.erasureLineWidthMin,
+      NOISE_CONFIG.erasureLineWidthMax,
+    );
+    glyphCtx.strokeStyle = `rgba(0, 0, 0, ${randomInRange(NOISE_CONFIG.erasureAlphaMin, NOISE_CONFIG.erasureAlphaMax)})`;
+    glyphCtx.moveTo(randomInRange(0, SIZE), randomInRange(0, SIZE));
+    glyphCtx.lineTo(randomInRange(0, SIZE), randomInRange(0, SIZE));
+    glyphCtx.stroke();
+  }
+  glyphCtx.restore();
+
+  ctx.drawImage(glyphCanvas, 0, 0);
+  return canvas.toBuffer("image/png");
+}
+
+async function generateCellImage(
+  character: string | null,
+  prompt: string,
+  conditioningScale: number,
+): Promise<ChallengeImage> {
+  const controlPng = renderControlImage(character);
+  const controlBlob = new Blob([Uint8Array.from(controlPng)], {
+    type: "image/png",
+  });
+  const controlImageUrl = await fal.storage.upload(controlBlob);
+
+  const result = await fal.subscribe("fal-ai/illusion-diffusion", {
+    input: {
+      prompt,
+      image_url: controlImageUrl,
+      controlnet_conditioning_scale: conditioningScale,
+    },
+    logs: false,
+  });
+
+  const outputUrl = extractImageUrl(result.data);
+
+  const res = await fetch(outputUrl);
+  if (!res.ok) {
+    throw new Error(
+      `Failed to download output image: ${res.status} ${res.statusText}`,
+    );
+  }
+  const outputBuffer = Buffer.from(await res.arrayBuffer());
+
+  return {
+    data: outputBuffer,
+    mimeType: "image/png",
+    width: SIZE,
+    height: SIZE,
+  };
+}
+
 export class IllusionDiffusionGenerator extends BaseGenerator {
   config: GeneratorConfig = {
     id: "illusion-diffusion",
     name: "Illusion Diffusion",
     description:
-      "AI-generated images with hidden capital letters using Fal AI illusion-diffusion ControlNet. Requires FAL_KEY env var.",
-    format: "multiple-choice",
+      "A 3×3 grid of AI-generated images where 2–5 cells hide a letter. Select all cells containing a hidden letter.",
+    format: "select-all",
     difficulty: "hard",
   };
 
@@ -110,157 +231,53 @@ export class IllusionDiffusionGenerator extends BaseGenerator {
       process.env.CONTROLNET_CONDITIONING_SCALE ?? "1",
     );
 
-    // Pick random character, font, environment
-    const character =
-      UPPERCASE_ALPHABET[randomInt(0, UPPERCASE_ALPHABET.length)] ?? "A";
-    const fontFamily = randomPick(COMMON_FONTS);
-    const fontSize = randomInt(260, 410);
-    const environmentPrompt = randomPick(ENVIRONMENT_PROMPTS);
+    // Pick how many cells will have letters (2–5)
+    const letterCount = randomInt(2, 6);
+
+    // Pick which cell indices (1-based) will have letters
+    const allCellIndices = Array.from({ length: GRID_CELLS }, (_, i) => i + 1);
+    const shuffledIndices = shuffle(allCellIndices);
+    const letterCellIndices = shuffledIndices.slice(0, letterCount).sort((a, b) => a - b);
+    const letterCellSet = new Set(letterCellIndices);
+
+    // Assign a random letter to each letter cell
+    const alphabet = UPPERCASE_ALPHABET.split("");
+    const shuffledAlphabet = shuffle(alphabet);
+    const cellLetters: Record<number, string> = {};
+    for (let i = 0; i < letterCellIndices.length; i++) {
+      cellLetters[letterCellIndices[i]!] = shuffledAlphabet[i]!;
+    }
+
+    // Pick a single environment prompt for all cells (visual coherence)
+    const environmentPrompt = ENVIRONMENT_PROMPTS[randomInt(0, ENVIRONMENT_PROMPTS.length)]!;
     const prompt = `${environmentPrompt}, ${PROMPT_STYLE_SUFFIX}`;
 
-    // Build distractors
-    const remaining = shuffle(
-      UPPERCASE_ALPHABET.split("").filter((ch) => ch !== character),
-    );
-    const answerOptions = shuffle([character, ...remaining.slice(0, 3)]);
-    const otherPotentialCharacters = remaining.slice(3, 7);
-
-    // Render control image (white letter on black background)
-    const canvas = createCanvas(SIZE, SIZE);
-    const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#000";
-    ctx.fillRect(0, 0, SIZE, SIZE);
-
-    const glyphCanvas = createCanvas(SIZE, SIZE);
-    const glyphCtx = glyphCanvas.getContext("2d");
-    glyphCtx.fillStyle = "#fff";
-    glyphCtx.textAlign = "left";
-    glyphCtx.textBaseline = "alphabetic";
-    glyphCtx.font = `bold ${fontSize}px "${fontFamily}", sans-serif`;
-
-    const metrics = glyphCtx.measureText(character);
-    const charWidth = metrics.width;
-    const ascent = metrics.actualBoundingBoxAscent || fontSize * 0.75;
-    const descent = metrics.actualBoundingBoxDescent || fontSize * 0.25;
-    const margin = 20;
-
-    const minX = margin;
-    const maxX = Math.max(minX, SIZE - charWidth - margin);
-    const minY = ascent + margin;
-    const maxY = Math.max(minY, SIZE - descent - margin);
-
-    const x = randomInRange(minX, maxX);
-    const y = randomInRange(minY, maxY);
-
-    glyphCtx.fillText(character, x, y);
-
-    // Apply noise to the glyph
-    const imageData = glyphCtx.getImageData(0, 0, SIZE, SIZE);
-    const { data } = imageData;
-    for (let i = 0; i < data.length; i += 4) {
-      const alpha = data[i + 3];
-      if (alpha === 0) continue;
-      if (Math.random() < NOISE_CONFIG.darkenProbability) {
-        const darken = randomInt(
-          NOISE_CONFIG.darkenMin,
-          NOISE_CONFIG.darkenMax,
-        );
-        data[i] = Math.max(0, data[i] - darken);
-        data[i + 1] = Math.max(0, data[i + 1] - darken);
-        data[i + 2] = Math.max(0, data[i + 2] - darken);
-      }
-      if (Math.random() < NOISE_CONFIG.alphaDropProbability) {
-        data[i + 3] = Math.floor(
-          alpha *
-            randomInRange(
-              NOISE_CONFIG.alphaScaleMin,
-              NOISE_CONFIG.alphaScaleMax,
-            ),
-        );
-      }
+    // Generate all 9 cells sequentially
+    const images: ChallengeImage[] = [];
+    for (let cell = 1; cell <= GRID_CELLS; cell++) {
+      const character = letterCellSet.has(cell) ? cellLetters[cell]! : null;
+      process.stdout.write(`  [illusion-diffusion] cell ${cell}/${GRID_CELLS} (${character ?? "blank"})...\n`);
+      const image = await generateCellImage(character, prompt, conditioningScale);
+      images.push(image);
     }
-    glyphCtx.putImageData(imageData, 0, 0);
 
-    // erasure strokes
-    glyphCtx.save();
-    glyphCtx.globalCompositeOperation = "destination-out";
-    for (let i = 0; i < NOISE_CONFIG.erasureStrokeCount; i++) {
-      glyphCtx.beginPath();
-      glyphCtx.lineWidth = randomInRange(
-        NOISE_CONFIG.erasureLineWidthMin,
-        NOISE_CONFIG.erasureLineWidthMax,
-      );
-      glyphCtx.strokeStyle = `rgba(0, 0, 0, ${randomInRange(NOISE_CONFIG.erasureAlphaMin, NOISE_CONFIG.erasureAlphaMax)})`;
-      glyphCtx.moveTo(randomInRange(0, SIZE), randomInRange(0, SIZE));
-      glyphCtx.lineTo(randomInRange(0, SIZE), randomInRange(0, SIZE));
-      glyphCtx.stroke();
-    }
-    glyphCtx.restore();
-
-    ctx.drawImage(glyphCanvas, 0, 0);
-
-    // Upload control image to Fal storage
-    const controlPng = canvas.toBuffer("image/png");
-    const controlBlob = new Blob([Uint8Array.from(controlPng)], {
-      type: "image/png",
-    });
-    const controlImageUrl = await fal.storage.upload(controlBlob);
-
-    // Call Fal AI illusion-diffusion
-    const result = await fal.subscribe("fal-ai/illusion-diffusion", {
-      input: {
-        prompt,
-        image_url: controlImageUrl,
-        controlnet_conditioning_scale: conditioningScale,
-      },
-      logs: true,
-    });
-
-    const outputUrl = extractImageUrl(result.data);
-
-    // Download the output image
-    const res = await fetch(outputUrl);
-    if (!res.ok) {
-      throw new Error(
-        `Failed to download output image: ${res.status} ${res.statusText}`,
-      );
-    }
-    const outputBuffer = Buffer.from(await res.arrayBuffer());
-
-    const outputImage: ChallengeImage = {
-      data: outputBuffer,
-      mimeType: "image/png",
-      width: SIZE,
-      height: SIZE,
-    };
+    // correctAnswer: sorted array of 1-based cell index strings
+    const correctAnswer = letterCellIndices.map(String);
 
     return {
       ...shell,
-      images: [outputImage],
-      question: "Which capital letter is hidden in this image?",
-      options: answerOptions,
-      correctAnswer: character,
+      images,
+      question: "Select all images containing a hidden letter.",
+      correctAnswer,
       metadata: {
-        prompt,
+        format: "select-all",
+        cellCount: GRID_CELLS,
+        letterCount,
+        letterCellIndices,
+        cellLetters,
         environmentPrompt,
-        controlnetConditioningScale: conditioningScale,
-        character: {
-          correct: character,
-          answerOptions,
-          correctOption: character,
-          otherPotentialCharacters,
-        },
-        font: { family: fontFamily, size: fontSize },
-        position: {
-          x,
-          y,
-          margin,
-          bounds: { minX, maxX, minY, maxY },
-          metrics: { charWidth, ascent, descent },
-        },
-        noise: NOISE_CONFIG,
-        controlImageUrl,
-        outputImageUrl: outputUrl,
+        prompt,
+        conditioningScale,
       },
     };
   }

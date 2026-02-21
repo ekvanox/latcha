@@ -10,6 +10,52 @@ import { evaluateWithModel } from './openrouter.js';
 import { buildEvalPrompt, parseAnswer } from './prompts.js';
 import { generateId } from '@lacha/core';
 
+/**
+ * Tolerance scoring for select-all challenges (±1 total error).
+ * For multiple-choice (single string answers) falls back to exact match.
+ */
+function isCorrectWithTolerance(
+  parsed: string,
+  correctAnswer: string | string[],
+): boolean {
+  const correctStr = Array.isArray(correctAnswer)
+    ? correctAnswer.join(',')
+    : correctAnswer;
+
+  // Exact match always passes
+  if (parsed.toUpperCase() === correctStr.toUpperCase()) return true;
+
+  // For comma-separated numeric answers (select-all), apply ±1 tolerance
+  const correctNums = correctStr
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map(Number)
+    .filter((n) => !isNaN(n));
+
+  const parsedNums = parsed
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean)
+    .map(Number)
+    .filter((n) => !isNaN(n));
+
+  if (correctNums.length === 0 || parsedNums.length === 0) return false;
+
+  const correctSet = new Set(correctNums);
+  const parsedSet = new Set(parsedNums);
+
+  let errors = 0;
+  for (const n of correctSet) {
+    if (!parsedSet.has(n)) errors++; // missed
+  }
+  for (const n of parsedSet) {
+    if (!correctSet.has(n)) errors++; // extra
+  }
+
+  return errors <= 1;
+}
+
 export interface RunOptions {
   generatorId: string;
   count: number;
@@ -65,10 +111,7 @@ export async function runEvalOnChallenges(options: RunPreloadedOptions): Promise
       try {
         const { answer, latencyMs, raw } = await evaluateWithModel(model.id, images, prompt);
         const parsed = parseAnswer(answer, challenge.options);
-        const correctStr = Array.isArray(challenge.correctAnswer)
-          ? challenge.correctAnswer.join(',')
-          : challenge.correctAnswer;
-        const correct = parsed.toUpperCase() === correctStr.toUpperCase();
+        const correct = isCorrectWithTolerance(parsed, challenge.correctAnswer);
 
         results.push({
           challengeId: challenge.id,

@@ -22,12 +22,9 @@ export function verify(response: ChallengeResponse): VerificationResult {
     return { success: false, challengeId: response.challengeId };
   }
 
-  // Compare answers
-  const correct = normalizeAnswer(challenge.correctAnswer);
-  const submitted = normalizeAnswer(response.answer);
-
+  // Compare answers with tolerance for select-all challenges
   return {
-    success: correct === submitted,
+    success: isAnswerCorrect(response.answer, challenge.correctAnswer),
     challengeId: response.challengeId,
   };
 }
@@ -37,6 +34,47 @@ function normalizeAnswer(answer: string | string[]): string {
     return answer.map((a) => a.trim().toUpperCase()).sort().join(',');
   }
   return answer.trim().toUpperCase();
+}
+
+/**
+ * For select-all challenges (array correctAnswer), allow ±1 total error.
+ * For multiple-choice (string correctAnswer), use exact match only.
+ */
+function isAnswerCorrect(
+  submitted: string | string[],
+  correct: string | string[],
+): boolean {
+  const normalizedSubmitted = normalizeAnswer(submitted);
+  const normalizedCorrect = normalizeAnswer(correct);
+
+  if (normalizedSubmitted === normalizedCorrect) return true;
+
+  if (!Array.isArray(correct)) return false;
+
+  const correctNums = normalizedCorrect
+    .split(',')
+    .map((s) => Number(s))
+    .filter((n) => !isNaN(n) && n > 0);
+
+  const submittedNums = normalizedSubmitted
+    .split(',')
+    .map((s) => Number(s))
+    .filter((n) => !isNaN(n) && n > 0);
+
+  if (correctNums.length === 0 || submittedNums.length === 0) return false;
+
+  const correctSet = new Set(correctNums);
+  const submittedSet = new Set(submittedNums);
+
+  let errors = 0;
+  for (const n of correctSet) {
+    if (!submittedSet.has(n)) errors++;
+  }
+  for (const n of submittedSet) {
+    if (!correctSet.has(n)) errors++;
+  }
+
+  return errors <= 1;
 }
 
 /** Clean up expired challenges */

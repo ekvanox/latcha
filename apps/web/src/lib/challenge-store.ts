@@ -58,6 +58,48 @@ function normalizeAnswer(answer: string | string[]): string {
   return answer.trim().toUpperCase();
 }
 
+/**
+ * For select-all challenges (array correctAnswer), allow ±1 total error.
+ * For multiple-choice (string correctAnswer), use exact match only.
+ */
+function isAnswerCorrect(
+  submitted: string | string[],
+  correct: string | string[],
+): boolean {
+  const normalizedSubmitted = normalizeAnswer(submitted);
+  const normalizedCorrect = normalizeAnswer(correct);
+
+  if (normalizedSubmitted === normalizedCorrect) return true;
+
+  // Only apply tolerance for numeric comma-separated select-all answers
+  if (!Array.isArray(correct)) return false;
+
+  const correctNums = normalizedCorrect
+    .split(',')
+    .map((s) => Number(s))
+    .filter((n) => !isNaN(n) && n > 0);
+
+  const submittedNums = normalizedSubmitted
+    .split(',')
+    .map((s) => Number(s))
+    .filter((n) => !isNaN(n) && n > 0);
+
+  if (correctNums.length === 0 || submittedNums.length === 0) return false;
+
+  const correctSet = new Set(correctNums);
+  const submittedSet = new Set(submittedNums);
+
+  let errors = 0;
+  for (const n of correctSet) {
+    if (!submittedSet.has(n)) errors++;
+  }
+  for (const n of submittedSet) {
+    if (!correctSet.has(n)) errors++;
+  }
+
+  return errors <= 1;
+}
+
 export async function storeChallenge(challenge: Challenge): Promise<void> {
   if (!hasSupabaseServerConfig()) {
     storeInMemoryChallenge(challenge);
@@ -124,8 +166,7 @@ export async function verifyChallenge(response: ChallengeResponse): Promise<Veri
     }
 
     return {
-      success:
-        normalizeAnswer(challenge.correctAnswer) === normalizeAnswer(response.answer),
+      success: isAnswerCorrect(response.answer, challenge.correctAnswer),
       challengeId: response.challengeId,
     };
   } catch (error) {

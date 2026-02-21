@@ -25,6 +25,7 @@ export { IllusoryContoursGenerator } from "./generators/illusory-contours.js";
 export { AbuttingGratingGenerator } from "./generators/abutting-grating.js";
 export { EmergingImageGenerator } from "./generators/emerging-image.js";
 export { IllusionDiffusionGenerator } from "./generators/illusion-diffusion.js";
+export { IllusionFacesGenerator } from "./generators/illusion-faces.js";
 
 // Challenge
 export { buildChallenge, buildRandomChallenge } from "./challenge/builder.js";

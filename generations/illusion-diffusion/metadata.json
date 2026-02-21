@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "generationType": "illusion-diffusion",
+  "updatedAt": "2026-02-21T13:38:52.921Z",
+  "challenges": [
+    {
+      "challengeId": "f8ed2292-0899-40e5-8e9d-663207dba5fd",
+      "imageUuid": "00944e90-f168-41db-be5f-66bdb210b501",
+      "imageFileName": "00944e90-f168-41db-be5f-66bdb210b501.png",
+      "answerAlternatives": [
+        "51,276,,,",
+        "5,7,,2,61",
+        "1,2,5,6,7",
+        "761,,5,2,"
+      ],
+      "correctAlternative": "1,2,5,6,7",
+      "generationTimeMs": 102518,
+      "generationTimestamp": "2026-02-21T13:36:01.630Z",
+      "question": "Select all images containing a hidden letter.",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "0edfbb69-18e0-4803-8260-b2a17fb96e76",
+        "originalGeneratorId": "illusion-diffusion",
+        "imageCount": 9,
+        "imageRefs": [
+          {
+            "uuid": "00944e90-f168-41db-be5f-66bdb210b501",
+            "fileName": "00944e90-f168-41db-be5f-66bdb210b501.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "e632e150-9913-4773-ab58-29f0f314fa1b",
+            "fileName": "e632e150-9913-4773-ab58-29f0f314fa1b.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "b51f0acb-63be-474d-9028-a37c905b465f",
+            "fileName": "b51f0acb-63be-474d-9028-a37c905b465f.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "7697432a-9d5d-4470-90d0-997a71c82ed3",
+            "fileName": "7697432a-9d5d-4470-90d0-997a71c82ed3.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "bf2f99f3-dfb4-4877-8c8c-6dd3983b0849",
+            "fileName": "bf2f99f3-dfb4-4877-8c8c-6dd3983b0849.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "b9f042a0-93fd-4e14-9268-45643e9dccc8",
+            "fileName": "b9f042a0-93fd-4e14-9268-45643e9dccc8.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "1c0038a7-316c-46ef-b25b-81bf4662ce0b",
+            "fileName": "1c0038a7-316c-46ef-b25b-81bf4662ce0b.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "7030adc8-2694-4b32-b69e-db3558996dfe",
+            "fileName": "7030adc8-2694-4b32-b69e-db3558996dfe.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "fd102225-08b4-4e8c-bd26-3abac60913ba",
+            "fileName": "fd102225-08b4-4e8c-bd26-3abac60913ba.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "metadata": {
+          "format": "select-all",
+          "cellCount": 9,
+          "letterCount": 5,
+          "letterCellIndices": [
+            1,
+            2,
+            5,
+            6,
+            7
+          ],
+          "cellLetters": {
+            "1": "W",
+            "2": "E",
+            "5": "T",
+            "6": "N",
+            "7": "S"
+          },
+          "environmentPrompt": "a dense urban street market with layered shop signs, awnings, and crowds",
+          "prompt": "a dense urban street market with layered shop signs, awnings, and crowds, detailed, high texture, visually rich, masterpiece",
+          "conditioningScale": 1
+        }
+      }
+    },
+    {
+      "challengeId": "2899a13f-887d-42d0-926b-457a920bc25d",
+      "imageUuid": "bc3213ff-e2f7-4a4e-8cbe-2191696fd9c2",
+      "imageFileName": "bc3213ff-e2f7-4a4e-8cbe-2191696fd9c2.png",
+      "answerAlternatives": [
+        ",583,",
+        "3,5,8",
+        "35,,8",
+        ",3,85"
+      ],
+      "correctAlternative": "3,5,8",
+      "generationTimeMs": 94582,
+      "generationTimestamp": "2026-02-21T13:37:36.212Z",
+      "question": "Select all images containing a hidden letter.",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "87401d39-80e5-4bae-9123-76baf347079b",
+        "originalGeneratorId": "illusion-diffusion",
+        "imageCount": 9,
+        "imageRefs": [
+          {
+            "uuid": "bc3213ff-e2f7-4a4e-8cbe-2191696fd9c2",
+            "fileName": "bc3213ff-e2f7-4a4e-8cbe-2191696fd9c2.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "9b9ba05e-8407-40c8-90cb-ba1d6d245c4c",
+            "fileName": "9b9ba05e-8407-40c8-90cb-ba1d6d245c4c.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "073079c4-31fa-42c8-9c3b-a90c9f8b57db",
+            "fileName": "073079c4-31fa-42c8-9c3b-a90c9f8b57db.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "2e60a629-29d6-4566-a174-25d03189fcc7",
+            "fileName": "2e60a629-29d6-4566-a174-25d03189fcc7.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "26812b59-7ef0-456c-b3b6-4d4c265758fe",
+            "fileName": "26812b59-7ef0-456c-b3b6-4d4c265758fe.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "bb090ab0-4166-4431-baf7-fb6d7040f590",
+            "fileName": "bb090ab0-4166-4431-baf7-fb6d7040f590.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "ff8d59a4-bcbd-40fe-aaf6-556d87515af4",
+            "fileName": "ff8d59a4-bcbd-40fe-aaf6-556d87515af4.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "77b521dc-5148-44a6-a026-059b4bf9f084",
+            "fileName": "77b521dc-5148-44a6-a026-059b4bf9f084.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "fe33f79f-3236-4287-a864-018eb2a99e1f",
+            "fileName": "fe33f79f-3236-4287-a864-018eb2a99e1f.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "metadata": {
+          "format": "select-all",
+          "cellCount": 9,
+          "letterCount": 3,
+          "letterCellIndices": [
+            3,
+            5,
+            8
+          ],
+          "cellLetters": {
+            "3": "M",
+            "5": "Y",
+            "8": "H"
+          },
+          "environmentPrompt": "a dense urban street market with layered shop signs, awnings, and crowds",
+          "prompt": "a dense urban street market with layered shop signs, awnings, and crowds, detailed, high texture, visually rich, masterpiece",
+          "conditioningScale": 1
+        }
+      }
+    },
+    {
+      "challengeId": "4ce8a4b7-70d9-4930-a921-c413ccb44895",
+      "imageUuid": "dcf2eedc-5b46-46af-b5d8-bc9756f5e55a",
+      "imageFileName": "dcf2eedc-5b46-46af-b5d8-bc9756f5e55a.png",
+      "answerAlternatives": [
+        "2,9",
+        "9,2",
+        "92,",
+        ",92"
+      ],
+      "correctAlternative": "2,9",
+      "generationTimeMs": 76709,
+      "generationTimestamp": "2026-02-21T13:38:52.921Z",
+      "question": "Select all images containing a hidden letter.",
+      "generationSpecificMetadata": {
+        "originalChallengeId": "799e5f99-1ac7-4d4a-ba33-72846e4574f2",
+        "originalGeneratorId": "illusion-diffusion",
+        "imageCount": 9,
+        "imageRefs": [
+          {
+            "uuid": "dcf2eedc-5b46-46af-b5d8-bc9756f5e55a",
+            "fileName": "dcf2eedc-5b46-46af-b5d8-bc9756f5e55a.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "a988bc95-821b-4bc7-82d9-ce82cf1e1e80",
+            "fileName": "a988bc95-821b-4bc7-82d9-ce82cf1e1e80.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "badf7f3d-b738-4266-924b-ac805bd4fc09",
+            "fileName": "badf7f3d-b738-4266-924b-ac805bd4fc09.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "b32c121f-13e3-4dc5-a31b-ccbead7eda61",
+            "fileName": "b32c121f-13e3-4dc5-a31b-ccbead7eda61.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "9a4e0190-deed-4bca-8188-2ac9c3ce6723",
+            "fileName": "9a4e0190-deed-4bca-8188-2ac9c3ce6723.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "3d6aae45-5ab7-4349-a115-6b5886050c25",
+            "fileName": "3d6aae45-5ab7-4349-a115-6b5886050c25.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "4123f281-157a-4a1e-8949-a6853e402a4f",
+            "fileName": "4123f281-157a-4a1e-8949-a6853e402a4f.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "28ea93bb-1969-40e0-b613-d58ec39e3489",
+            "fileName": "28ea93bb-1969-40e0-b613-d58ec39e3489.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          },
+          {
+            "uuid": "7cf1c8a4-a1e2-4edd-94c0-a0d9ea0d843d",
+            "fileName": "7cf1c8a4-a1e2-4edd-94c0-a0d9ea0d843d.png",
+            "mimeType": "image/png",
+            "width": 512,
+            "height": 512
+          }
+        ],
+        "metadata": {
+          "format": "select-all",
+          "cellCount": 9,
+          "letterCount": 2,
+          "letterCellIndices": [
+            2,
+            9
+          ],
+          "cellLetters": {
+            "2": "Z",
+            "9": "H"
+          },
+          "environmentPrompt": "a warehouse interior with pallet stacks, barcode labels, and shelving rows",
+          "prompt": "a warehouse interior with pallet stacks, barcode labels, and shelving rows, detailed, high texture, visually rich, masterpiece",
+          "conditioningScale": 1
+        }
+      }
+    }
+  ]
+}

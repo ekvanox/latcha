@@ -22,6 +22,47 @@ function formatGenerationType(type: string): string {
     .join(" ");
 }
 
+function parseNumericSet(str: string): Set<number> {
+  return new Set(
+    str
+      .split(",")
+      .map((s) => Number(s.trim()))
+      .filter((n) => !isNaN(n) && n > 0),
+  );
+}
+
+function isAnswerCorrect(
+  answer: string | string[],
+  correctAlternative: string,
+): boolean {
+  const normalizedAnswer = Array.isArray(answer)
+    ? answer
+        .map((a) => a.trim())
+        .sort()
+        .join(",")
+    : answer.trim();
+  const normalizedCorrect = correctAlternative.trim();
+
+  if (normalizedAnswer === normalizedCorrect) return true;
+
+  // Tolerance for select-all (±1 error)
+  if (!Array.isArray(answer)) return false;
+
+  const correctSet = parseNumericSet(normalizedCorrect);
+  const submittedSet = parseNumericSet(normalizedAnswer);
+
+  if (correctSet.size === 0 || submittedSet.size === 0) return false;
+
+  let errors = 0;
+  for (const n of correctSet) {
+    if (!submittedSet.has(n)) errors++;
+  }
+  for (const n of submittedSet) {
+    if (!correctSet.has(n)) errors++;
+  }
+  return errors <= 1;
+}
+
 function computeCategoryStats(
   items: CaptchaItem[],
   answers: Record<string, UserAnswer>,
@@ -54,7 +95,7 @@ function computeCategoryStats(
 
       if (userAnswer.answer === SKIP_ANSWER) {
         entry.skipped += 1;
-      } else if (userAnswer.answer === item.correctAlternative) {
+      } else if (isAnswerCorrect(userAnswer.answer, item.correctAlternative)) {
         entry.correct += 1;
       }
     }
