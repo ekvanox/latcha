@@ -162,12 +162,18 @@ export async function GET() {
   }
 
   // Attach 2 random samples to each category.
-  // "illusion-diffusion" shows face cells instead of its own images.
+  // "illusion-diffusion" uses fixed face showcase images.
+  const ILLUSION_DIFFUSION_SAMPLES = [
+    "https://v3b.fal.media/files/b/0a8f613a/3F4ThP2efTAXF-knZ3hvz_3a1f5add67124b47858b58a216afab91.png",
+    "https://v3b.fal.media/files/b/0a8f613d/Au549LskDGVxzZhXkw3bx_1b821947c5f34e59869b6a957f2ec736.png",
+  ];
+
   for (const cat of categories) {
-    const pool =
-      cat.generationType === "illusion-diffusion"
-        ? illusionFaceCellUrls
-        : (imagesByType.get(cat.generationType) ?? []);
+    if (cat.generationType === "illusion-diffusion") {
+      cat.sampleImages = ILLUSION_DIFFUSION_SAMPLES;
+      continue;
+    }
+    const pool = imagesByType.get(cat.generationType) ?? [];
     // Fisher-Yates partial shuffle to pick 2
     const copy = [...pool];
     for (let i = copy.length - 1; i > 0 && i >= copy.length - 2; i--) {
