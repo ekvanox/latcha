@@ -1,0 +1,24 @@
+{
+  "name": "lacha",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "eval": "pnpm --filter @lacha/eval start"
+  },
+  "devDependencies": {
+    "turbo": "^2.8.10",
+    "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "canvas",
+      "esbuild",
+      "sharp",
+      "unrs-resolver"
+    ]
+  },
+  "packageManager": "pnpm@10.15.1"
+}
