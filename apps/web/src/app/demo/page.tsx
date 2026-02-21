@@ -9,6 +9,8 @@ const GENERATORS = [
   { id: 'proximity-text', name: 'Gestalt Proximity', description: 'Letters from dot spacing' },
   { id: 'partial-occlusion', name: 'Partial Occlusion', description: 'Text behind occluding bars' },
   { id: 'illusory-contours', name: 'Illusory Contours', description: 'Kanizsa-style implied shapes' },
+  { id: 'abutting-grating', name: 'Abutting Grating', description: 'Phase-shifted stripe illusion' },
+  { id: 'emerging-image', name: 'Emerging Image', description: 'Token hidden in texture statistics' },
 ];
 
 export default function DemoPage() {

@@ -18,6 +18,8 @@ export { GridOverlayGenerator } from './generators/grid-overlay.js';
 export { ProximityTextGenerator } from './generators/proximity-text.js';
 export { PartialOcclusionGenerator } from './generators/partial-occlusion.js';
 export { IllusoryContoursGenerator } from './generators/illusory-contours.js';
+export { AbuttingGratingGenerator } from './generators/abutting-grating.js';
+export { EmergingImageGenerator } from './generators/emerging-image.js';
 
 // Challenge
 export { buildChallenge, buildRandomChallenge } from './challenge/builder.js';
