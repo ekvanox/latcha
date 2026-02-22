@@ -1,4 +1,4 @@
-# Latcha — The LLM-Proof CAPTCHA
+# Latcha - The LLM-Proof CAPTCHA
 
 > **HackEurope Stockholm 2025 submission** 🏆
 
@@ -6,13 +6,16 @@ Latcha is a next-generation CAPTCHA that exploits a fundamental gap between huma
 
 ![Latcha captcha](apps/web/public/captcha.png)
 
-In each challenge, users see a 3 × 3 grid of AI-generated images and must identify which cells contain a hidden human face. The faces are embedded in a way that feels intuitive for people but consistently fools AI systems — making Latcha especially resistant to automated attacks.
+In each challenge, users see a 3 × 3 grid of AI-generated images and must identify which cells contain a hidden human face. The faces are embedded in a way that feels intuitive for people but consistently fools AI systems - making Latcha especially resistant to automated attacks.
 
 ---
 
 ## Why Latcha?
 
-Modern bots have caught up with traditional CAPTCHAs. GPT-4o and similar models now solve reCAPTCHA v2 with ~80 % accuracy. Through our own benchmarking research we found that face-in-image challenges are a category where AI accuracy drops dramatically while human solve rates stay above **93 %** — that gap is what Latcha is built on.
+Modern bots have caught up with traditional CAPTCHAs. GPT-4o and similar models now solve reCAPTCHA v2 with ~80 % accuracy. Through our own benchmarking research we found that face-in-image challenges are a category where AI accuracy drops dramatically while human solve rates stay above **93 %** - that gap is what Latcha is built on.
+
+![Gemini 3.1 Pro failure case](apps/web/public/gemini-3.1-pro.png)
+*Note: Gemini 3.1 Pro failure case, correct answer is [3, 5, 6, 7, 9]. All other major LLM:s we've tested fail in similar fashion.*
 
 |                            | Human     | AI (LLMs) |
 | -------------------------- | --------- | --------- |
@@ -25,12 +28,12 @@ Modern bots have caught up with traditional CAPTCHAs. GPT-4o and similar models 
 
 ## How it works
 
-1. **Face sourcing** — Real human faces are sourced from [thispersondoesnotexist.com](https://thispersondoesnotexist.com), ensuring no real person's likeness is used.
-2. **Background removal** — Each face is processed through `fal-ai/bria/background/remove` to isolate the subject on a clean greyscale control map.
-3. **Illusion diffusion** — The control map feeds into `fal-ai/illusion-diffusion` (a ControlNet-driven model) which embeds the face into a richly textured AI-generated scene.
-4. **Grid assembly** — 2–5 of the 9 grid cells receive an embedded face; the rest are blank control images rendered with the same scene prompt — ensuring visual coherence.
-5. **Server-side verification** — The user's selection is checked against the signed, server-stored answer. A verification token is issued on success.
-6. **Adaptive difficulty** — The ControlNet `conditioning_scale` parameter controls how strongly the face is embedded, letting you tune CAPTCHA difficulty without changing any other logic.
+1. **Face sourcing** - Real human faces are sourced from [thispersondoesnotexist.com](https://thispersondoesnotexist.com), ensuring no real person's likeness is used.
+2. **Background removal** - Each face is processed through `fal-ai/bria/background/remove` to isolate the subject on a clean greyscale control map.
+3. **Illusion diffusion** - The control map feeds into `fal-ai/illusion-diffusion` (a ControlNet-driven model) which embeds the face into a richly textured AI-generated scene.
+4. **Grid assembly** - 2–5 of the 9 grid cells receive an embedded face; the rest are blank control images rendered with the same scene prompt - ensuring visual coherence.
+5. **Server-side verification** - The user's selection is checked against the signed, server-stored answer. A verification token is issued on success.
+6. **Adaptive difficulty** - The ControlNet `conditioning_scale` parameter controls how strongly the face is embedded, letting you tune CAPTCHA difficulty without changing any other logic.
 
 ---
 
@@ -54,7 +57,7 @@ latcha/
 │   │       ├── challenge/    # Builder + server-side verifier
 │   │       ├── types.ts
 │   │       └── index.ts
-│   ├── react/                # @latcha/react — drop-in React widget (npm)
+│   ├── react/                # @latcha/react - drop-in React widget (npm)
 │   └── eval/                 # LLM evaluation harness
 ├── scripts/
 │   ├── generate-and-upload.ts  # Batch-generate challenges and store in Supabase
@@ -126,8 +129,8 @@ function ContactForm() {
 
 | Prop       | Type                      | Default                           | Description                      |
 | ---------- | ------------------------- | --------------------------------- | -------------------------------- |
-| `onVerify` | `(token: string) => void` | —                                 | Fires on successful verification |
-| `onError`  | `(err: Error) => void`    | —                                 | Fires on network / API failure   |
+| `onVerify` | `(token: string) => void` | -                                 | Fires on successful verification |
+| `onError`  | `(err: Error) => void`    | -                                 | Fires on network / API failure   |
 | `apiBase`  | `string`                  | `"https://latcha.dev/api/latcha"` | Override for self-hosting        |
 | `theme`    | `"light" \| "dark"`       | `"light"`                         | Widget colour scheme             |
 
@@ -158,7 +161,7 @@ cp .env.example .env
 ### Environment variables
 
 ```env
-FAL_KEY=                      # fal.ai key — required for generation
+FAL_KEY=                      # fal.ai key - required for generation
 NEXT_PUBLIC_SUPABASE_URL=     # Supabase project URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
@@ -217,7 +220,7 @@ pnpm illusion-faces-eval    # benchmark only the face-in-image challenge
 
 ## Related research
 
-The following papers and articles informed Latcha's design and directly validate our core hypothesis — that visual illusions and image-in-image embedding create a reliable human-easy / AI-hard boundary.
+The following papers and articles informed Latcha's design and directly validate our core hypothesis - that visual illusions and image-in-image embedding create a reliable human-easy / AI-hard boundary.
 
 ---
 
@@ -225,7 +228,7 @@ The following papers and articles informed Latcha's design and directly validate
 
 _arXiv 2409.05558 · 2024_
 
-Demonstrates that adding semi-transparent masks over CAPTCHA images drops AI classifier accuracy by **more than 50 percentage points**, with robust vision-transformer models losing up to **80 pp**. The key insight is that changes which preserve semantic meaning for humans can catastrophically confuse even the strongest models — the same principle underlying Latcha's illusion-diffusion approach.
+Demonstrates that adding semi-transparent masks over CAPTCHA images drops AI classifier accuracy by **more than 50 percentage points**, with robust vision-transformer models losing up to **80 pp**. The key insight is that changes which preserve semantic meaning for humans can catastrophically confuse even the strongest models - the same principle underlying Latcha's illusion-diffusion approach.
 
 ---
 
@@ -241,11 +244,11 @@ Reveals a **20+ percentage-point accuracy gap** between proprietary and open-sou
 
 _arXiv 2502.05461 · 2025_
 
-The closest academic parallel to Latcha. IllusionCAPTCHA applies visual illusions to create challenges that fool LLMs **100 % of the time** in their evaluation, while achieving an **86.95 % first-attempt human pass rate**. Latcha extends this idea with a specific focus on embedded human faces — a category where the human cognitive advantage is especially pronounced — and couples it with a production-ready npm package and server-side verification pipeline.
+The closest academic parallel to Latcha. IllusionCAPTCHA applies visual illusions to create challenges that fool LLMs **100 % of the time** in their evaluation, while achieving an **86.95 % first-attempt human pass rate**. Latcha extends this idea with a specific focus on embedded human faces - a category where the human cognitive advantage is especially pronounced - and couples it with a production-ready npm package and server-side verification pipeline.
 
 ---
 
-### [Benchmarking Leading AI Agents Against CAPTCHAs — Roundtable Research](https://research.roundtable.ai/captcha-benchmarking/)
+### [Benchmarking Leading AI Agents Against CAPTCHAs - Roundtable Research](https://research.roundtable.ai/captcha-benchmarking/)
 
 _Roundtable Research · 2025_
 
