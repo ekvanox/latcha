@@ -253,15 +253,6 @@ Real-world benchmark of Claude Sonnet, Gemini 2.5 Pro, and GPT-5 solving Google 
 
 ---
 
-## What's next
-
-- Partner with companies facing bot-driven threats to analytics, data integrity, and user experience.
-- Validate Latcha in production environments and collect real-world accuracy data.
-- Continuously tune embedding visibility parameters to stay ahead of improving AI models.
-- Explore additional human-advantage challenges beyond facial recognition.
-
----
-
 ## License
 
 MIT
