@@ -50,8 +50,8 @@ const makeLabelRenderer = (suffixes: string[]) => {
   return LabelRenderer;
 };
 
-const renderHumanLabel = makeLabelRenderer(["", "**"]);
-const renderBotLabel = makeLabelRenderer(["", "*"]);
+const renderHumanLabel = makeLabelRenderer(["", "*"]);
+const renderBotLabel = makeLabelRenderer(["", "**"]);
 
 const StatBar = ({
   title,
@@ -131,7 +131,7 @@ const StatsChart = () => {
         labelRenderer={renderHumanLabel}
         footnote={
           <>
-            ** reCAPTCHA v2 human solve rate sourced from academic research.{" "}
+            * reCAPTCHA v2 human solve rate sourced from academic research.{" "}
             <a
               href="https://www.ndss-symposium.org/wp-content/uploads/usec25-21.pdf"
               target="_blank"
@@ -150,7 +150,7 @@ const StatsChart = () => {
         labelRenderer={renderBotLabel}
         footnote={
           <>
-            * GPT-4V achieved an ~80% success rate against reCAPTCHA v2 in
+            ** GPT-4V achieved an ~80% success rate against reCAPTCHA v2 in
             independent testing.{" "}
             <a
               href="https://cheq.ai/blog/testing-ai-gpt-4v-against-captcha/"
