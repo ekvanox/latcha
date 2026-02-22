@@ -23,9 +23,8 @@ const botData = [
 ];
 
 // Returns a label renderer that appends `suffixes[index]` after the percentage
-const makeLabelRenderer =
-  (suffixes: string[]) =>
-  (props: {
+const makeLabelRenderer = (suffixes: string[]) => {
+  const LabelRenderer = (props: {
     x?: number;
     y?: number;
     width?: number;
@@ -48,6 +47,8 @@ const makeLabelRenderer =
       </text>
     );
   };
+  return LabelRenderer;
+};
 
 const renderHumanLabel = makeLabelRenderer(["", "**"]);
 const renderBotLabel = makeLabelRenderer(["", "*"]);
