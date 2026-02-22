@@ -14,16 +14,15 @@ export function makeCanvas(width: number, height: number): { canvas: Canvas; ctx
   return { canvas, ctx };
 }
 
-/** Convert a canvas to a ChallengeImage PNG buffer */
+/** Convert a canvas to a ChallengeImage 256×256 WebP buffer */
 export async function canvasToImage(canvas: Canvas): Promise<ChallengeImage> {
   const pngBuffer = canvas.toBuffer('image/png');
-  // Run through sharp to optimize
-  const optimized = await sharp(pngBuffer).png().toBuffer();
+  const optimized = await sharp(pngBuffer).resize(256, 256).webp().toBuffer();
   return {
     data: optimized,
-    mimeType: 'image/png',
-    width: canvas.width,
-    height: canvas.height,
+    mimeType: 'image/webp',
+    width: 256,
+    height: 256,
   };
 }
 

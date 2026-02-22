@@ -3,6 +3,7 @@ import { BaseGenerator } from "./base.js";
 import { shuffle } from "../utils/random.js";
 import { createCanvas } from "canvas";
 import { fal } from "@fal-ai/client";
+import sharp from "sharp";
 
 const SIZE = 512;
 const UPPERCASE_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -198,12 +199,13 @@ async function generateCellImage(
     );
   }
   const outputBuffer = Buffer.from(await res.arrayBuffer());
+  const resized = await sharp(outputBuffer).resize(256, 256).webp().toBuffer();
 
   return {
-    data: outputBuffer,
-    mimeType: "image/png",
-    width: SIZE,
-    height: SIZE,
+    data: resized,
+    mimeType: "image/webp",
+    width: 256,
+    height: 256,
   };
 }
 

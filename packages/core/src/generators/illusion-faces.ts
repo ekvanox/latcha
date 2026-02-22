@@ -197,12 +197,13 @@ async function generateCellImage(
     );
   }
   const outputBuffer = Buffer.from(await res.arrayBuffer());
+  const resized = await sharp(outputBuffer).resize(256, 256).webp().toBuffer();
 
   return {
-    data: outputBuffer,
-    mimeType: "image/png",
-    width: SIZE,
-    height: SIZE,
+    data: resized,
+    mimeType: "image/webp",
+    width: 256,
+    height: 256,
   };
 }
 
