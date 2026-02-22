@@ -146,8 +146,8 @@ function ContactForm() {
 ### Setup
 
 ```bash
-git clone https://github.com/ekvanox/lacha.git
-cd lacha
+git clone https://github.com/ekvanox/latcha.git
+cd latcha
 
 pnpm install
 

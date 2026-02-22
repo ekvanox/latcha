@@ -3,6 +3,7 @@
 AI-proof CAPTCHA for React. Drop-in replacement for reCAPTCHA v2 — no signup, no API key, no backend needed.
 
 <!-- Replace with an actual screenshot -->
+
 ![Latcha widget screenshot](https://latcha.dev/captcha.png)
 
 ---
@@ -47,17 +48,16 @@ No cookies. No tracking. No account required.
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `onVerify` | `(token: string) => void` | — | Called on success |
-| `onError` | `(err: Error) => void` | — | Called on network/API failure |
-| `apiBase` | `string` | `"https://latcha.dev/api/latcha"` | Override to self-host |
-| `theme` | `"light" \| "dark"` | `"light"` | Color scheme |
+| Prop       | Type                      | Default                           | Description                   |
+| ---------- | ------------------------- | --------------------------------- | ----------------------------- |
+| `onVerify` | `(token: string) => void` | —                                 | Called on success             |
+| `onError`  | `(err: Error) => void`    | —                                 | Called on network/API failure |
+| `apiBase`  | `string`                  | `"https://latcha.dev/api/latcha"` | Override to self-host         |
+| `theme`    | `"light" \| "dark"`       | `"light"`                         | Color scheme                  |
 
 ## Links
 
 - [Live demo](https://latcha.dev/dashboard)
-- [GitHub](https://github.com/ekvanox/lacha)
-
+- [GitHub](https://github.com/ekvanox/latcha)
 
 Made with ❤️ for HackEurope Stockholm
