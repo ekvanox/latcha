@@ -7,9 +7,7 @@ import {
   type ChallengeResponse,
 } from '@latcha/core';
 import { storeChallenge, verifyChallenge } from '../../../lib/challenge-store';
-import { buildGenerationChallenge } from '../../../lib/generations';
 
-// Serialize a challenge for the client (strip correct answer, encode images as base64)
 function serializeChallenge(challenge: Challenge) {
   return {
     challengeId: challenge.id,
@@ -28,19 +26,11 @@ function serializeChallenge(challenge: Challenge) {
 
 export async function GET(request: NextRequest) {
   const generator = request.nextUrl.searchParams.get('generator');
-  const source = request.nextUrl.searchParams.get('source');
-  const challengeId = request.nextUrl.searchParams.get('challengeId');
 
   try {
-    const challenge =
-      source === 'generations'
-        ? await buildGenerationChallenge({
-            generationType: generator ?? undefined,
-            challengeId: challengeId ?? undefined,
-          })
-        : generator
-          ? await buildChallenge(generator)
-          : await buildRandomChallenge();
+    const challenge = generator
+      ? await buildChallenge(generator)
+      : await buildRandomChallenge();
 
     await storeChallenge(challenge);
 
@@ -51,7 +41,6 @@ export async function GET(request: NextRequest) {
       {
         error: msg,
         availableGenerators: getGeneratorIds(),
-        availableSources: ['live', 'generations'],
       },
       { status: 400 },
     );

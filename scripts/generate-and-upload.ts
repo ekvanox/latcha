@@ -20,7 +20,7 @@ if (!supabaseUrl || !supabaseKey) {
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// Helpers (same as pregenerate-captchas.ts)
+// Helpers
 function mimeToExtension(mimeType: string): string {
   if (mimeType === "image/gif") return ".gif";
   if (mimeType === "image/webp") return ".webp";

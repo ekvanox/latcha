@@ -8,11 +8,9 @@
     "test": "turbo test",
     "eval": "pnpm --filter @latcha/eval start",
     "manual": "pnpm --filter @latcha/eval manual",
-    "pregenerate": "npx tsx scripts/pregenerate-captchas.ts",
+    "generate": "npx tsx scripts/generate-and-upload.ts",
     "supabase-eval": "npx tsx scripts/supabase-eval.ts",
-    "illusion-faces-eval": "npx tsx scripts/illusion-faces-eval.ts",
-    "convert-to-webp": "npx tsx scripts/convert-to-webp.ts",
-    "sync-db-to-webp": "npx tsx scripts/sync-db-to-webp.ts"
+    "illusion-faces-eval": "npx tsx scripts/illusion-faces-eval.ts"
   },
   "devDependencies": {
     "@fal-ai/client": "^1.9.3",
