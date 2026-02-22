@@ -5,6 +5,7 @@ import { LatchaWidget } from "@latcha/react";
 
 export function LiveDemo() {
   const [token, setToken] = useState<string | null>(null);
+  const [widgetKey, setWidgetKey] = useState(0);
 
   const handleVerify = (t: string) => {
     setToken(t);
@@ -12,11 +13,12 @@ export function LiveDemo() {
 
   const handleReset = () => {
     setToken(null);
+    setWidgetKey((k) => k + 1);
   };
 
   return (
     <div className="flex flex-col items-center gap-4 w-full">
-      <LatchaWidget onVerify={handleVerify} />
+      <LatchaWidget key={widgetKey} onVerify={handleVerify} />
 
       {token && (
         <div className="flex flex-col items-center gap-3 text-center">
