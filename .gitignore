@@ -7,3 +7,4 @@ packages/results/
 .env
 .env.local
 *.tsbuildinfo
+generations/
