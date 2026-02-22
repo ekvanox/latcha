@@ -245,12 +245,6 @@ export default function ResearchPage() {
             <span className="text-[var(--text-muted)]">/</span>
             <span className="text-sm text-[var(--text-muted)]">Research</span>
           </div>
-          <Link
-            href="/demo"
-            className="text-xs px-4 py-2 rounded-full bg-[var(--olive)] text-white font-semibold hover:bg-[var(--olive-light)] transition-colors"
-          >
-            Try it yourself →
-          </Link>
         </div>
       </nav>
 
