@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:challenge-image-urls": "node scripts/test-challenge-image-urls.mjs"
   },
   "dependencies": {
     "@latcha/core": "workspace:*",

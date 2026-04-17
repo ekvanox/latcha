@@ -140,6 +140,7 @@ interface IllusionFacesRow {
   image_uuid?: string;
   answer_alternatives: unknown;
   generation_specific_metadata: {
+    grid_image_data_urls?: string[];
     imageRefs?: ImageRef[];
   };
 }
@@ -168,6 +169,17 @@ function getGridImageUrlCandidates(
   pb: PocketBase,
   row: IllusionFacesRow,
 ): string[][] {
+  const dataUrls = row.generation_specific_metadata?.grid_image_data_urls;
+  if (
+    Array.isArray(dataUrls) &&
+    dataUrls.length === 9 &&
+    dataUrls.every(
+      (url) => typeof url === "string" && url.startsWith("data:image/"),
+    )
+  ) {
+    return dataUrls.map((url) => [url]);
+  }
+
   const refs = row.generation_specific_metadata?.imageRefs;
   if (!refs || refs.length !== 9) {
     throw new Error(

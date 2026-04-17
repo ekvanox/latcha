@@ -200,6 +200,10 @@ async function generateAndSync(generationType: string) {
     correctAlternative,
     challenge.options,
   );
+  const gridImageDataUrls = challenge.images.map(
+    (image) =>
+      `data:${image.mimeType};base64,${Buffer.from(image.data).toString("base64")}`,
+  );
 
   const primaryImage = challenge.images[0]!;
   const primaryImageRef = imageRefs[0]!;
@@ -226,6 +230,7 @@ async function generateAndSync(generationType: string) {
       originalGeneratorId: challenge.generatorId,
       imageCount: challenge.images.length,
       imageRefs,
+      grid_image_data_urls: gridImageDataUrls,
       metadata: challenge.metadata,
     },
     image: imageFile,

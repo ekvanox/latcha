@@ -9,6 +9,8 @@
     "eval": "pnpm --filter @latcha/eval start",
     "manual": "pnpm --filter @latcha/eval manual",
     "generate": "npx tsx scripts/generate-and-upload.ts",
+    "backfill-illusion-faces": "npx tsx scripts/backfill-illusion-faces-grid-data.ts",
+    "test:challenge-image-urls": "node apps/web/scripts/test-challenge-image-urls.mjs",
     "pocketbase-eval": "npx tsx scripts/pocketbase-eval.ts",
     "illusion-faces-eval": "npx tsx scripts/illusion-faces-eval.ts"
   },

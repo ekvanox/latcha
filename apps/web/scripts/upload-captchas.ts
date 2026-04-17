@@ -132,6 +132,42 @@ async function main() {
         type: mimeFromFilename(imageFileName),
       });
 
+      let enrichedGenerationSpecificMetadata = generationSpecificMetadata;
+      const imageRefs = generationSpecificMetadata?.imageRefs;
+
+      if (Array.isArray(imageRefs) && imageRefs.length > 0) {
+        const gridImageDataUrls: string[] = [];
+        let allRefsResolved = true;
+
+        for (const imageRef of imageRefs) {
+          const refFileName =
+            typeof imageRef?.fileName === "string" ? imageRef.fileName : "";
+
+          if (!refFileName) {
+            allRefsResolved = false;
+            break;
+          }
+
+          const refPath = path.join(generationsDir, group, "challenge", refFileName);
+          if (!fs.existsSync(refPath)) {
+            allRefsResolved = false;
+            break;
+          }
+
+          const refBuffer = fs.readFileSync(refPath);
+          gridImageDataUrls.push(
+            `data:${mimeFromFilename(refFileName)};base64,${refBuffer.toString("base64")}`,
+          );
+        }
+
+        if (allRefsResolved && gridImageDataUrls.length === imageRefs.length) {
+          enrichedGenerationSpecificMetadata = {
+            ...(generationSpecificMetadata ?? {}),
+            grid_image_data_urls: gridImageDataUrls,
+          };
+        }
+      }
+
       const payload = {
         challenge_id: challengeId,
         generation_type: generationType,
@@ -144,7 +180,7 @@ async function main() {
         generation_time_ms: generationTimeMs,
         generation_timestamp: generationTimestamp,
         question,
-        generation_specific_metadata: generationSpecificMetadata,
+        generation_specific_metadata: enrichedGenerationSpecificMetadata,
         image: imageFile,
       };
 
