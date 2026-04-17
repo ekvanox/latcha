@@ -1,20 +1,46 @@
 import { NextResponse } from "next/server";
-import { createSupabaseServerClient } from "../../../../lib/supabase";
+import {
+  createPocketBaseClient,
+  getPocketBaseUrl,
+} from "../../../../lib/pocketbase";
 import { storePending } from "../../../../lib/latcha-pending-store";
 
-// ── Supabase row type ─────────────────────────────────────────────────────────
+// ── PocketBase row type ───────────────────────────────────────────────────────
 
 interface CaptchaRow {
+  id: string;
+  collectionId: string;
+  collectionName: string;
   challenge_id: string;
   question: string;
   correct_alternative: string;
-  generation_specific_metadata: {
+  image?: string;
+  image_uuid?: string;
+  generation_specific_metadata?: {
     imageRefs?: Array<{
       uuid: string;
       fileName: string;
       mimeType?: string;
     }>;
   };
+}
+
+function buildGridImageUrls(pb: ReturnType<typeof createPocketBaseClient>, row: CaptchaRow): string[] | null {
+  const imageRefs = row.generation_specific_metadata?.imageRefs;
+  if (!imageRefs || imageRefs.length !== 9) return null;
+
+  const baseUrl = getPocketBaseUrl().replace(/\/+$/, "");
+  const primaryUrl = row.image ? pb.files.getURL(row, row.image) : null;
+
+  return imageRefs.map((ref) => {
+    // Prefer the canonical attached file URL for the primary image.
+    if (primaryUrl && row.image_uuid && ref.uuid === row.image_uuid) {
+      return primaryUrl;
+    }
+
+    // Best-effort fallback for migrated references (legacy filename).
+    return `${baseUrl}/api/files/${row.collectionName}/${row.id}/${ref.fileName}`;
+  });
 }
 
 // ── CORS headers (allows cross-origin use from any domain) ────────────────────
@@ -32,53 +58,35 @@ export async function OPTIONS() {
 
 export async function GET() {
   try {
-    const supabase = createSupabaseServerClient();
-
-    const supabaseUrl =
-      process.env.NEXT_PUBLIC_SUPABASE_URL || "https://supabase.heimdal.dev";
+    const pb = createPocketBaseClient();
 
     // Pick a random illusion-faces challenge.
     // We fetch a small batch and pick one at random to avoid the overhead
     // of COUNT(*) + OFFSET (which is slow on large tables).
-    const { data, error } = await supabase
-      .from("captchas")
-      .select(
-        "challenge_id, question, correct_alternative, generation_specific_metadata",
-      )
-      .eq("generation_type", "illusion-faces")
-      .limit(50);
+    const data = await pb.collection("captchas").getList(1, 50, {
+      filter: pb.filter("generation_type = {:generationType}", {
+        generationType: "illusion-faces",
+      }),
+    });
 
-    if (error) {
-      return NextResponse.json(
-        { error: `Database error: ${error.message}` },
-        { status: 500, headers: CORS },
-      );
-    }
-
-    if (!data || data.length === 0) {
+    if (!data.items || data.items.length === 0) {
       return NextResponse.json(
         { error: "No illusion-faces challenges available." },
         { status: 404, headers: CORS },
       );
     }
 
-    const row = data[
-      Math.floor(Math.random() * data.length)
-    ] as CaptchaRow;
+    const row = data.items[
+      Math.floor(Math.random() * data.items.length)
+    ] as unknown as CaptchaRow;
 
-    const imageRefs = row.generation_specific_metadata?.imageRefs;
-    if (!imageRefs || imageRefs.length !== 9) {
+    const gridImageUrls = buildGridImageUrls(pb, row);
+    if (!gridImageUrls) {
       return NextResponse.json(
         { error: "Challenge data is malformed (expected 9 image refs)." },
         { status: 500, headers: CORS },
       );
     }
-
-    // Build public storage URLs for each of the 9 cells
-    const gridImageUrls = imageRefs.map(
-      (ref) =>
-        `${supabaseUrl}/storage/v1/object/public/captchas/illusion-faces/${ref.fileName}`,
-    );
 
     // Store the answer server-side so the client never sees it
     storePending(row.challenge_id, row.correct_alternative);

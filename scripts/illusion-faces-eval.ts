@@ -5,8 +5,8 @@
  * Each challenge sends 9 grid images to the model; it must identify
  * all cells containing a hidden face (select-all format).
  *
- * Results are written to llm_eval_sessions / llm_eval_results in Supabase,
- * following the same schema/pattern as supabase-eval.ts.
+ * Results are written to llm_eval_sessions / llm_eval_results in PocketBase,
+ * following the same schema/pattern as pocketbase-eval.ts.
  *
  * Usage (from repo root):
  *   npx tsx scripts/illusion-faces-eval.ts [--model <id>] [--limit N]
@@ -16,7 +16,7 @@
  *   --limit  -n  max captchas to evaluate (default: all)
  */
 
-import { createClient } from "@supabase/supabase-js";
+import PocketBase from "pocketbase";
 import { config as loadDotenv } from "dotenv";
 import { resolve } from "node:path";
 import { OpenRouter } from "@openrouter/sdk";
@@ -26,16 +26,36 @@ loadDotenv({ path: resolve(repoRoot, ".env") });
 
 // ── Config ────────────────────────────────────────────────────────────────────
 
-const SUPABASE_URL =
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://supabase.heimdal.dev";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const POCKETBASE_URL =
+  process.env.NEXT_PUBLIC_POCKETBASE_URL ||
+  process.env.POCKETBASE_URL ||
+  "https://latcha-db.heimdal.dev";
+const POCKETBASE_ADMIN_EMAIL = process.env.POCKETBASE_ADMIN_EMAIL;
+const POCKETBASE_ADMIN_PASSWORD = process.env.POCKETBASE_ADMIN_PASSWORD;
 const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY!;
 
-if (!SUPABASE_KEY) throw new Error("Missing SUPABASE_SERVICE_ROLE_KEY");
+if (!POCKETBASE_ADMIN_EMAIL || !POCKETBASE_ADMIN_PASSWORD) {
+  throw new Error(
+    "Missing POCKETBASE_ADMIN_EMAIL or POCKETBASE_ADMIN_PASSWORD",
+  );
+}
 if (!OPENROUTER_KEY) throw new Error("Missing OPENROUTER_API_KEY");
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 const openrouter = new OpenRouter({ apiKey: OPENROUTER_KEY });
+let pbClient: PocketBase | null = null;
+
+async function getPocketBaseAdminClient(): Promise<PocketBase> {
+  if (pbClient) return pbClient;
+
+  const pb = new PocketBase(POCKETBASE_URL);
+  await pb.admins.authWithPassword(
+    POCKETBASE_ADMIN_EMAIL!,
+    POCKETBASE_ADMIN_PASSWORD!,
+  );
+  pbClient = pb;
+
+  return pb;
+}
 
 const DEFAULT_MODEL = {
   id: "google/gemini-3.1-pro-preview",
@@ -101,7 +121,7 @@ function isCorrectWithTolerance(parsed: string, correct: string): boolean {
   return errors <= 1;
 }
 
-// ── Supabase helpers ──────────────────────────────────────────────────────────
+// ── PocketBase helpers ────────────────────────────────────────────────────────
 
 interface ImageRef {
   uuid: string;
@@ -110,9 +130,14 @@ interface ImageRef {
 }
 
 interface IllusionFacesRow {
+  id: string;
+  collectionId: string;
+  collectionName: string;
   challenge_id: string;
   question: string;
   correct_alternative: string;
+  image?: string;
+  image_uuid?: string;
   answer_alternatives: unknown;
   generation_specific_metadata: {
     imageRefs?: ImageRef[];
@@ -122,42 +147,77 @@ interface IllusionFacesRow {
 async function fetchIllusionFacesCaptchas(
   limit?: number,
 ): Promise<IllusionFacesRow[]> {
-  let query = supabase
-    .from("captchas")
-    .select(
-      "challenge_id, question, correct_alternative, answer_alternatives, generation_specific_metadata",
-    )
-    .eq("generation_type", "illusion-faces")
-    .order("created_at", { ascending: true });
+  const pb = await getPocketBaseAdminClient();
 
-  if (limit) query = query.limit(limit);
+  const rows = await pb.collection("captchas").getFullList<IllusionFacesRow>({
+    sort: "generation_timestamp",
+    filter: pb.filter("generation_type = {:generationType}", {
+      generationType: "illusion-faces",
+    }),
+  });
 
-  const { data, error } = await query;
-  if (error) throw new Error(`Failed to fetch captchas: ${error.message}`);
-  if (!data?.length)
+  const result = limit ? rows.slice(0, limit) : rows;
+
+  if (!result.length)
     throw new Error("No illusion-faces captchas found in database.");
-  return data as IllusionFacesRow[];
+
+  return result;
 }
 
-function getGridImageUrls(row: IllusionFacesRow): string[] {
+function getGridImageUrlCandidates(
+  pb: PocketBase,
+  row: IllusionFacesRow,
+): string[][] {
   const refs = row.generation_specific_metadata?.imageRefs;
   if (!refs || refs.length !== 9) {
     throw new Error(
       `Challenge ${row.challenge_id} has malformed imageRefs (expected 9, got ${refs?.length ?? 0}).`,
     );
   }
-  return refs.map(
-    (ref) =>
-      `${SUPABASE_URL}/storage/v1/object/public/captchas/illusion-faces/${ref.uuid}.webp`,
-  );
+
+  const baseUrl = POCKETBASE_URL.replace(/\/+$/, "");
+  const primaryUrl = row.image ? pb.files.getURL(row, row.image) : null;
+
+  return refs.map((ref) => {
+    const candidates: string[] = [];
+
+    if (primaryUrl && row.image_uuid && ref.uuid === row.image_uuid) {
+      candidates.push(primaryUrl);
+    }
+
+    // Best-effort migrated file references.
+    candidates.push(
+      `${baseUrl}/api/files/${row.collectionName}/${row.id}/${ref.fileName}`,
+    );
+    candidates.push(`${baseUrl}/captchas/illusion-faces/${ref.fileName}`);
+
+    return [...new Set(candidates)];
+  });
 }
 
-async function downloadImageAsBase64(url: string): Promise<string> {
-  const res = await fetch(url);
-  if (!res.ok)
-    throw new Error(`Failed to download image ${url}: ${res.status}`);
-  const buf = Buffer.from(await res.arrayBuffer());
-  return buf.toString("base64");
+async function downloadFirstAvailableAsBase64(
+  candidates: string[],
+): Promise<string> {
+  let lastStatus = "unreachable";
+
+  for (const url of candidates) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) {
+        lastStatus = String(res.status);
+        continue;
+      }
+
+      const buf = Buffer.from(await res.arrayBuffer());
+      return buf.toString("base64");
+    } catch {
+      lastStatus = "network_error";
+    }
+  }
+
+  throw new Error(
+    `Failed to download image from all candidate URLs (last status: ${lastStatus}).`,
+  );
 }
 
 // ── OpenRouter call ───────────────────────────────────────────────────────────
@@ -232,10 +292,11 @@ function parseArgs(args: string[]) {
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
+  const pb = await getPocketBaseAdminClient();
   const { modelId, modelName, limit } = parseArgs(process.argv.slice(2));
 
   console.log(
-    `\n🔍 Fetching illusion-faces captchas from Supabase${limit ? ` (limit: ${limit})` : ""}...`,
+    `\n🔍 Fetching illusion-faces captchas from PocketBase${limit ? ` (limit: ${limit})` : ""}...`,
   );
   const captchas = await fetchIllusionFacesCaptchas(limit);
   console.log(`   Found ${captchas.length} captchas.\n`);
@@ -250,9 +311,7 @@ async function main() {
   const resultsToInsert: object[] = [];
 
   // Insert session row upfront to get session_id
-  const { data: sessionData, error: sessionErr } = await supabase
-    .from("llm_eval_sessions")
-    .insert({
+  const sessionData = (await pb.collection("llm_eval_sessions").create({
       model_id: modelId,
       model_name: modelName,
       prompt_template: PROMPT_TEMPLATE,
@@ -261,13 +320,7 @@ async function main() {
       generation_type: "illusion-faces",
       captcha_count: captchas.length,
       started_at: startedAt,
-    })
-    .select("id")
-    .single();
-
-  if (sessionErr || !sessionData) {
-    throw new Error(`Failed to create session: ${sessionErr?.message}`);
-  }
+    })) as { id: string };
 
   const sessionId = sessionData.id;
   console.log(`   Session ID: ${sessionId}\n`);
@@ -280,10 +333,12 @@ async function main() {
     );
 
     try {
-      const urls = getGridImageUrls(captcha);
+      const urlCandidates = getGridImageUrlCandidates(pb, captcha);
 
       // Download all 9 grid images in parallel
-      const imageBase64s = await Promise.all(urls.map(downloadImageAsBase64));
+      const imageBase64s = await Promise.all(
+        urlCandidates.map(downloadFirstAvailableAsBase64),
+      );
 
       const { raw, latencyMs } = await evaluateGrid(
         modelId,
@@ -297,8 +352,8 @@ async function main() {
       totalLatency += latencyMs;
 
       resultsToInsert.push({
-        session_id: sessionId,
-        captcha_id: captcha.challenge_id,
+        session: sessionId,
+        captcha: captcha.id,
         question: captcha.question,
         answer_alternatives: captcha.answer_alternatives ?? [],
         correct_alternative: captcha.correct_alternative,
@@ -318,8 +373,8 @@ async function main() {
       const msg = err instanceof Error ? err.message : String(err);
       process.stdout.write(`ERROR: ${msg}\n`);
       resultsToInsert.push({
-        session_id: sessionId,
-        captcha_id: captcha.challenge_id,
+        session: sessionId,
+        captcha: captcha.id,
         question: captcha.question,
         answer_alternatives: captcha.answer_alternatives ?? [],
         correct_alternative: captcha.correct_alternative,
@@ -334,11 +389,16 @@ async function main() {
 
   // Bulk insert results
   if (resultsToInsert.length > 0) {
-    const { error: resultsErr } = await supabase
-      .from("llm_eval_results")
-      .insert(resultsToInsert);
-    if (resultsErr) {
-      console.error(`  ⚠️  Failed to save results: ${resultsErr.message}`);
+    try {
+      for (const result of resultsToInsert) {
+        await pb.collection("llm_eval_results").create(result);
+      }
+    } catch (error) {
+      console.error(
+        `  ⚠️  Failed to save results: ${
+          error instanceof Error ? error.message : String(error)
+        }`,
+      );
     }
   }
 
@@ -346,18 +406,15 @@ async function main() {
   const accuracy = correctCount / captchas.length;
   const avgLatency = captchas.length > 0 ? totalLatency / captchas.length : 0;
 
-  await supabase
-    .from("llm_eval_sessions")
-    .update({
+  await pb.collection("llm_eval_sessions").update(sessionId, {
       correct_count: correctCount,
       accuracy,
       avg_latency_ms: avgLatency,
       finished_at: new Date().toISOString(),
-    })
-    .eq("id", sessionId);
+    });
 
   console.log(
-    `\n   ✅ ${correctCount}/${captchas.length} correct (${(accuracy * 100).toFixed(1)}%) — avg latency: ${Math.round(avgLatency)}ms`,
+    `\n   ✅ ${correctCount}/${captchas.length} correct (${(accuracy * 100).toFixed(1)}%) - avg latency: ${Math.round(avgLatency)}ms`,
   );
   console.log(`   Session saved: ${sessionId}`);
   console.log("\n🏁 Done!\n");

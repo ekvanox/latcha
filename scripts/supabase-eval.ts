@@ -1,7 +1,7 @@
 /**
  * supabase-eval.ts
  *
- * Fetches all captchas from Supabase, evaluates them with one or more
+ * Fetches all captchas from PocketBase, evaluates them with one or more
  * OpenRouter LLMs, and writes results back into llm_eval_sessions /
  * llm_eval_results.
  *
@@ -14,7 +14,7 @@
  *   --limit      -n  max captchas to evaluate (default: all)
  */
 
-import { createClient } from "@supabase/supabase-js";
+import PocketBase from "pocketbase";
 import { config as loadDotenv } from "dotenv";
 import { resolve } from "node:path";
 import { OpenRouter } from "@openrouter/sdk";
@@ -24,18 +24,38 @@ loadDotenv({ path: resolve(repoRoot, ".env") });
 
 // ── Config ────────────────────────────────────────────────────────────────────
 
-const SUPABASE_URL =
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://supabase.heimdal.dev";
-const SUPABASE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const POCKETBASE_URL =
+  process.env.NEXT_PUBLIC_POCKETBASE_URL ||
+  process.env.POCKETBASE_URL ||
+  "https://latcha-db.heimdal.dev";
+const POCKETBASE_ADMIN_EMAIL = process.env.POCKETBASE_ADMIN_EMAIL;
+const POCKETBASE_ADMIN_PASSWORD = process.env.POCKETBASE_ADMIN_PASSWORD;
 const OPENROUTER_KEY = process.env.OPENROUTER_API_KEY!;
 
-if (!SUPABASE_KEY) throw new Error("Missing SUPABASE_SERVICE_ROLE_KEY");
+if (!POCKETBASE_ADMIN_EMAIL || !POCKETBASE_ADMIN_PASSWORD) {
+  throw new Error(
+    "Missing POCKETBASE_ADMIN_EMAIL or POCKETBASE_ADMIN_PASSWORD",
+  );
+}
 if (!OPENROUTER_KEY) throw new Error("Missing OPENROUTER_API_KEY");
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 const openrouter = new OpenRouter({ apiKey: OPENROUTER_KEY });
+let pbClient: PocketBase | null = null;
 
-// Default models to evaluate against — edit freely
+async function getPocketBaseAdminClient(): Promise<PocketBase> {
+  if (pbClient) return pbClient;
+
+  const pb = new PocketBase(POCKETBASE_URL);
+  await pb.admins.authWithPassword(
+    POCKETBASE_ADMIN_EMAIL!,
+    POCKETBASE_ADMIN_PASSWORD!,
+  );
+  pbClient = pb;
+
+  return pb;
+}
+
+// Default models to evaluate against - edit freely
 const DEFAULT_MODELS: { id: string; name: string }[] = [
   //   { id: "anthropic/claude-haiku-4.5", name: "Haiku 4.5" },
   //   { id: "minimax/minimax-01", name: "MiniMax-01" },
@@ -91,41 +111,53 @@ function parseAnswer(raw: string, alternatives: string[]): string {
   return cleaned;
 }
 
-// ── Supabase helpers ───────────────────────────────────────────────────────────
+// ── PocketBase helpers ─────────────────────────────────────────────────────────
 
 interface CaptchaRow {
+  id: string;
+  collectionId: string;
+  collectionName: string;
   challenge_id: string;
   generation_type: string;
-  bucket_path: string;
   question: string;
   answer_alternatives: string[];
   correct_alternative: string;
   generation_time_ms: number | null;
   generation_timestamp: string;
+  image?: string;
 }
 
 async function fetchCaptchas(
   generatorFilter?: string,
   limit?: number,
 ): Promise<CaptchaRow[]> {
-  let query = supabase
-    .from("captchas")
-    .select(
-      "challenge_id, generation_type, bucket_path, question, answer_alternatives, correct_alternative, generation_time_ms, generation_timestamp",
-    )
-    .order("generation_timestamp", { ascending: true });
+  const pb = await getPocketBaseAdminClient();
 
-  if (generatorFilter) query = query.eq("generation_type", generatorFilter);
-  if (limit) query = query.limit(limit);
+  const rows = await pb.collection("captchas").getFullList<CaptchaRow>({
+    sort: "generation_timestamp",
+    ...(generatorFilter
+      ? {
+          filter: pb.filter("generation_type = {:generationType}", {
+            generationType: generatorFilter,
+          }),
+        }
+      : {}),
+  });
 
-  const { data, error } = await query;
-  if (error) throw new Error(`Failed to fetch captchas: ${error.message}`);
-  if (!data?.length) throw new Error("No captchas found in database.");
-  return data as CaptchaRow[];
+  const result = limit ? rows.slice(0, limit) : rows;
+  if (!result.length) throw new Error("No captchas found in database.");
+
+  return result;
 }
 
-function getPublicImageUrl(bucketPath: string): string {
-  return `${SUPABASE_URL}/storage/v1/object/public/captchas/${bucketPath}`;
+function getPublicImageUrl(pb: PocketBase, row: CaptchaRow): string {
+  if (!row.image) {
+    throw new Error(
+      `Captcha ${row.challenge_id} is missing the PocketBase image file field.`,
+    );
+  }
+
+  return pb.files.getURL(row, row.image);
 }
 
 async function downloadImageAsBase64(url: string): Promise<string> {
@@ -187,6 +219,7 @@ async function evaluateWithModel(
 // ── Main ───────────────────────────────────────────────────────────────────────
 
 async function main() {
+  const pb = await getPocketBaseAdminClient();
   const { generatorFilter, modelOverride, limit } = parseArgs(
     process.argv.slice(2),
   );
@@ -196,7 +229,7 @@ async function main() {
     : DEFAULT_MODELS;
 
   console.log(
-    `\n🔍 Fetching captchas from Supabase${generatorFilter ? ` (type: ${generatorFilter})` : ""}${limit ? ` (limit: ${limit})` : ""}...`,
+    `\n🔍 Fetching captchas from PocketBase${generatorFilter ? ` (type: ${generatorFilter})` : ""}${limit ? ` (limit: ${limit})` : ""}...`,
   );
   const captchas = await fetchCaptchas(generatorFilter, limit);
   console.log(`   Found ${captchas.length} captchas.\n`);
@@ -212,31 +245,23 @@ async function main() {
     const resultsToInsert: object[] = [];
 
     // Insert session row upfront to get session_id
-    const { data: sessionData, error: sessionErr } = await supabase
-      .from("llm_eval_sessions")
-      .insert({
+    const sessionData = (await pb.collection("llm_eval_sessions").create({
         model_id: model.id,
         model_name: model.name,
         prompt_template: "multiple-choice-letter",
         temperature: TEMPERATURE,
         max_tokens: MAX_TOKENS,
-        generation_type: generatorFilter ?? null,
+        generation_type: generatorFilter ?? "",
         captcha_count: captchas.length,
         started_at: startedAt,
-      })
-      .select("id")
-      .single();
-
-    if (sessionErr || !sessionData) {
-      throw new Error(`Failed to create session: ${sessionErr?.message}`);
-    }
+      })) as { id: string };
 
     const sessionId = sessionData.id;
     console.log(`   Session ID: ${sessionId}\n`);
 
     for (let i = 0; i < captchas.length; i++) {
       const captcha = captchas[i]!;
-      const imageUrl = getPublicImageUrl(captcha.bucket_path);
+      const imageUrl = getPublicImageUrl(pb, captcha);
       const prompt = buildPrompt(captcha.question, captcha.answer_alternatives);
 
       process.stdout.write(
@@ -258,8 +283,8 @@ async function main() {
         totalLatency += latencyMs;
 
         resultsToInsert.push({
-          session_id: sessionId,
-          captcha_id: captcha.challenge_id,
+          session: sessionId,
+          captcha: captcha.id,
           question: captcha.question,
           answer_alternatives: captcha.answer_alternatives,
           correct_alternative: captcha.correct_alternative,
@@ -279,8 +304,8 @@ async function main() {
         const msg = err instanceof Error ? err.message : String(err);
         process.stdout.write(`ERROR: ${msg}\n`);
         resultsToInsert.push({
-          session_id: sessionId,
-          captcha_id: captcha.challenge_id,
+          session: sessionId,
+          captcha: captcha.id,
           question: captcha.question,
           answer_alternatives: captcha.answer_alternatives,
           correct_alternative: captcha.correct_alternative,
@@ -295,29 +320,32 @@ async function main() {
 
     // Bulk insert results
     if (resultsToInsert.length > 0) {
-      const { error: resultsErr } = await supabase
-        .from("llm_eval_results")
-        .insert(resultsToInsert);
-      if (resultsErr)
-        console.error(`  ⚠️  Failed to save results: ${resultsErr.message}`);
+      try {
+        for (const result of resultsToInsert) {
+          await pb.collection("llm_eval_results").create(result);
+        }
+      } catch (error) {
+        console.error(
+          `  ⚠️  Failed to save results: ${
+            error instanceof Error ? error.message : String(error)
+          }`,
+        );
+      }
     }
 
     // Update session with final stats
     const accuracy = correctCount / captchas.length;
     const avgLatency = captchas.length > 0 ? totalLatency / captchas.length : 0;
 
-    await supabase
-      .from("llm_eval_sessions")
-      .update({
+    await pb.collection("llm_eval_sessions").update(sessionId, {
         correct_count: correctCount,
         accuracy,
         avg_latency_ms: avgLatency,
         finished_at: new Date().toISOString(),
-      })
-      .eq("id", sessionId);
+      });
 
     console.log(
-      `\n   ✅ ${correctCount}/${captchas.length} correct (${(accuracy * 100).toFixed(1)}%) — avg latency: ${Math.round(avgLatency)}ms`,
+      `\n   ✅ ${correctCount}/${captchas.length} correct (${(accuracy * 100).toFixed(1)}%) - avg latency: ${Math.round(avgLatency)}ms`,
     );
     console.log(`   Session saved: ${sessionId}`);
   }

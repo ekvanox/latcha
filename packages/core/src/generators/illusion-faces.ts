@@ -108,7 +108,7 @@ async function renderFaceControlImage(faceFilePath: string): Promise<Buffer> {
   //   1. Cover-fit to 512×512 and upload to fal storage
   //   2. fal-ai/bria/background/remove → PNG with alpha channel
   //   3. Download the alpha-masked face, convert to greyscale
-  //   4. Composite onto a solid black 512×512 canvas — background is now truly black
+  //   4. Composite onto a solid black 512×512 canvas - background is now truly black
   //   5. Normalise + slight blur to match the ControlNet's expected input range
   //   6. Mild random brightness jitter (0.92-1.0) for variety
 
@@ -139,7 +139,7 @@ async function renderFaceControlImage(faceFilePath: string): Promise<Buffer> {
   const bgRemovedBuffer = Buffer.from(await bgResponse.arrayBuffer());
 
   // Step 3+4: greyscale the face, composite onto black canvas
-  // The bg-removed PNG has RGBA — alpha=0 where background was.
+  // The bg-removed PNG has RGBA - alpha=0 where background was.
   // We flatten onto black (alpha composite) then greyscale.
   return sharp({
     create: {

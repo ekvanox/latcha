@@ -233,8 +233,8 @@ export function LatchaWidget({
           setState("success");
           onVerify?.(data.token ?? challenge.challengeId);
         } else {
-          // Wrong answer — let user retry with a fresh challenge
-          setErrorMsg("Incorrect — please try again.");
+          // Wrong answer - let user retry with a fresh challenge
+          setErrorMsg("Incorrect - please try again.");
           setState("error");
         }
       } catch (err) {

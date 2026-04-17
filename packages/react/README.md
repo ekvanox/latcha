@@ -1,6 +1,6 @@
 # @latcha/react
 
-AI-proof CAPTCHA for React. Drop-in replacement for reCAPTCHA v2 — no signup, no API key, no backend needed.
+AI-proof CAPTCHA for React. Drop-in replacement for reCAPTCHA v2 - no signup, no API key, no backend needed.
 
 <!-- Replace with an actual screenshot -->
 
@@ -40,7 +40,7 @@ function ContactForm() {
 ## How it works
 
 1. User clicks "I'm not a robot"
-2. A 3×3 grid of AI-generated images loads — human faces are hidden inside some cells
+2. A 3×3 grid of AI-generated images loads - human faces are hidden inside some cells
 3. User selects all cells with a face and clicks Verify
 4. Answer is checked server-side. `onVerify` fires on success.
 
@@ -50,8 +50,8 @@ No cookies. No tracking. No account required.
 
 | Prop       | Type                      | Default                           | Description                   |
 | ---------- | ------------------------- | --------------------------------- | ----------------------------- |
-| `onVerify` | `(token: string) => void` | —                                 | Called on success             |
-| `onError`  | `(err: Error) => void`    | —                                 | Called on network/API failure |
+| `onVerify` | `(token: string) => void` | -                                 | Called on success             |
+| `onError`  | `(err: Error) => void`    | -                                 | Called on network/API failure |
 | `apiBase`  | `string`                  | `"https://latcha.dev/api/latcha"` | Override to self-host         |
 | `theme`    | `"light" \| "dark"`       | `"light"`                         | Color scheme                  |
 

@@ -263,7 +263,7 @@ export default function ResearchPage() {
           <p className="text-sm text-[var(--text-secondary)] max-w-2xl leading-relaxed">
             Comparing human accuracy against averaged LLM performance across
             captcha categories. A large gap means humans dramatically outperform
-            AI — ideal for a CAPTCHA.
+            AI - ideal for a CAPTCHA.
           </p>
         </div>
 
@@ -296,7 +296,7 @@ export default function ResearchPage() {
               />
               <StatCard
                 title="Biggest Gap"
-                value={bestGap ? `+${pct(bestGap.gap)}` : "—"}
+                value={bestGap ? `+${pct(bestGap.gap)}` : "-"}
                 sub={bestGap ? label(bestGap.generationType) : ""}
               />
               <StatCard

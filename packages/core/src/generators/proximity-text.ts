@@ -10,7 +10,7 @@ export class ProximityTextGenerator extends BaseGenerator {
   config: GeneratorConfig = {
     id: 'proximity-text',
     name: 'Gestalt Proximity Text',
-    description: 'Dot patterns where letter shapes emerge from spacing differences — exploits gestalt proximity grouping',
+    description: 'Dot patterns where letter shapes emerge from spacing differences - exploits gestalt proximity grouping',
     format: 'multiple-choice',
     difficulty: 'medium',
   };

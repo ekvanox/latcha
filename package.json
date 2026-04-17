@@ -9,16 +9,16 @@
     "eval": "pnpm --filter @latcha/eval start",
     "manual": "pnpm --filter @latcha/eval manual",
     "generate": "npx tsx scripts/generate-and-upload.ts",
-    "supabase-eval": "npx tsx scripts/supabase-eval.ts",
+    "pocketbase-eval": "npx tsx scripts/pocketbase-eval.ts",
     "illusion-faces-eval": "npx tsx scripts/illusion-faces-eval.ts"
   },
   "devDependencies": {
     "@fal-ai/client": "^1.9.3",
     "@openrouter/sdk": "^0.8.0",
-    "@supabase/supabase-js": "^2.57.4",
     "@types/sharp": "^0.32.0",
     "canvas": "^3.2.1",
     "dotenv": "^16.6.1",
+    "pocketbase": "^0.26.8",
     "sharp": "^0.33.5",
     "tsx": "^4.21.0",
     "turbo": "^2.8.10",

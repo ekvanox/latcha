@@ -10,7 +10,7 @@ export class PartialOcclusionGenerator extends BaseGenerator {
   config: GeneratorConfig = {
     id: 'partial-occlusion',
     name: 'Partial Occlusion',
-    description: 'Text partially hidden behind random bars/shapes — humans do amodal completion, AI degrades at >30% coverage',
+    description: 'Text partially hidden behind random bars/shapes - humans do amodal completion, AI degrades at >30% coverage',
     format: 'multiple-choice',
     difficulty: 'medium',
   };

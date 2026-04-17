@@ -24,7 +24,7 @@ export function LiveDemo() {
         <div className="flex flex-col items-center gap-3 text-center">
           <p className="text-sm text-[var(--text-secondary)]">
             <span className="text-[#2d5a1b] font-medium">✓ Verified</span>
-            {" — your form would submit here."}
+            {" - your form would submit here."}
           </p>
           <p className="text-xs text-[var(--text-muted)] font-mono break-all max-w-xs">
             token: {token}

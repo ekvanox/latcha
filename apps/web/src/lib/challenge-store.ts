@@ -1,8 +1,8 @@
 import type { Challenge, ChallengeResponse, VerificationResult } from '@latcha/core';
 import { storeChallenge as storeInMemoryChallenge, verify as verifyInMemoryChallenge } from '@latcha/core';
-import { createSupabaseServerClient } from './supabase';
+import { createPocketBaseAdminClient, hasPocketBaseAdminConfig } from './pocketbase';
 
-const DEFAULT_CHALLENGE_TABLE = 'captcha_challenges';
+const DEFAULT_CHALLENGE_COLLECTION = 'captcha_challenges';
 const memoryBackedChallengeIds = new Set<string>();
 
 interface StoredImage {
@@ -16,13 +16,14 @@ interface StoredChallenge extends Omit<Challenge, 'images'> {
   images: StoredImage[];
 }
 
-function getChallengeTableName(): string {
-  return process.env.SUPABASE_CHALLENGES_TABLE ?? DEFAULT_CHALLENGE_TABLE;
+interface StoredChallengeRecord {
+  id: string;
+  payload?: unknown;
 }
 
-function hasSupabaseServerConfig(): boolean {
-  return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY,
+function getChallengeCollectionName(): string {
+  return (
+    process.env.POCKETBASE_CHALLENGES_COLLECTION ?? DEFAULT_CHALLENGE_COLLECTION
   );
 }
 
@@ -100,30 +101,73 @@ function isAnswerCorrect(
   return errors <= 1;
 }
 
+function isNotFoundError(error: unknown): boolean {
+  return (
+    typeof error === 'object' &&
+    error !== null &&
+    'status' in error &&
+    (error as { status?: number }).status === 404
+  );
+}
+
+function parseStoredChallenge(value: unknown): StoredChallenge | null {
+  if (!value) return null;
+
+  if (typeof value === 'string') {
+    try {
+      return JSON.parse(value) as StoredChallenge;
+    } catch {
+      return null;
+    }
+  }
+
+  if (typeof value === 'object') {
+    return value as StoredChallenge;
+  }
+
+  return null;
+}
+
 export async function storeChallenge(challenge: Challenge): Promise<void> {
-  if (!hasSupabaseServerConfig()) {
+  if (!hasPocketBaseAdminConfig()) {
     storeInMemoryChallenge(challenge);
     return;
   }
 
   try {
-    const supabase = createSupabaseServerClient();
-    const table = getChallengeTableName();
+    const pb = await createPocketBaseAdminClient();
+    const collection = getChallengeCollectionName();
+    const payload = {
+      challenge_id: challenge.id,
+      expires_at: new Date(challenge.expiresAt).toISOString(),
+      payload: serializeChallenge(challenge),
+    };
 
-    const { error } = await supabase
-      .from(table)
-      .upsert({
-        id: challenge.id,
-        expires_at: new Date(challenge.expiresAt).toISOString(),
-        payload: serializeChallenge(challenge),
-      });
+    let existingRecordId: string | null = null;
+    try {
+      const existing =
+        (await pb
+          .collection(collection)
+          .getFirstListItem(
+            pb.filter('challenge_id = {:challengeId}', {
+              challengeId: challenge.id,
+            }),
+          )) as StoredChallengeRecord;
+      existingRecordId = existing.id;
+    } catch (error) {
+      if (!isNotFoundError(error)) {
+        throw error;
+      }
+    }
 
-    if (error) {
-      throw new Error(error.message);
+    if (existingRecordId) {
+      await pb.collection(collection).update(existingRecordId, payload);
+    } else {
+      await pb.collection(collection).create(payload);
     }
   } catch (error) {
     console.warn(
-      `Supabase challenge storage failed, falling back to in-memory store: ${
+      `PocketBase challenge storage failed, falling back to in-memory store: ${
         error instanceof Error ? error.message : 'Unknown error'
       }`,
     );
@@ -134,7 +178,7 @@ export async function storeChallenge(challenge: Challenge): Promise<void> {
 }
 
 export async function verifyChallenge(response: ChallengeResponse): Promise<VerificationResult> {
-  if (!hasSupabaseServerConfig()) {
+  if (!hasPocketBaseAdminConfig()) {
     return verifyInMemoryChallenge(response);
   }
 
@@ -144,21 +188,33 @@ export async function verifyChallenge(response: ChallengeResponse): Promise<Veri
   }
 
   try {
-    const supabase = createSupabaseServerClient();
-    const table = getChallengeTableName();
+    const pb = await createPocketBaseAdminClient();
+    const collection = getChallengeCollectionName();
 
-    const { data, error } = await supabase
-      .from(table)
-      .delete()
-      .eq('id', response.challengeId)
-      .select('payload')
-      .maybeSingle();
+    let record: StoredChallengeRecord;
+    try {
+      record = (await pb
+        .collection(collection)
+        .getFirstListItem(
+          pb.filter('challenge_id = {:challengeId}', {
+            challengeId: response.challengeId,
+          }),
+        )) as StoredChallengeRecord;
+    } catch (error) {
+      if (isNotFoundError(error)) {
+        return { success: false, challengeId: response.challengeId };
+      }
 
-    if (error || !data) {
+      throw error;
+    }
+
+    await pb.collection(collection).delete(record.id);
+
+    const storedChallenge = parseStoredChallenge(record.payload);
+    if (!storedChallenge) {
       return { success: false, challengeId: response.challengeId };
     }
 
-    const storedChallenge = (data as { payload: StoredChallenge }).payload;
     const challenge = deserializeChallenge(storedChallenge);
 
     if (Date.now() > challenge.expiresAt) {
@@ -171,7 +227,7 @@ export async function verifyChallenge(response: ChallengeResponse): Promise<Veri
     };
   } catch (error) {
     console.warn(
-      `Supabase challenge verification failed: ${
+      `PocketBase challenge verification failed: ${
         error instanceof Error ? error.message : 'Unknown error'
       }`,
     );

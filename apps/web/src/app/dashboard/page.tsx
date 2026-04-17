@@ -33,7 +33,7 @@ export default function DashboardPackagePage() {
             Installation
           </h1>
           <p className="text-base text-[var(--text-secondary)] max-w-2xl leading-relaxed">
-            A drop-in AI-proof CAPTCHA widget for React. Works like reCAPTCHA v2 — no signup,
+            A drop-in AI-proof CAPTCHA widget for React. Works like reCAPTCHA v2 - no signup,
             no API key, no backend required. Serves faces hidden in AI-generated images.
           </p>
           <div className="flex flex-wrap gap-2 pt-1">
@@ -54,7 +54,7 @@ export default function DashboardPackagePage() {
             Live demo
           </h2>
           <p className="text-sm text-[var(--text-muted)]">
-            Click the widget below to try it — this is the real thing, pulling
+            Click the widget below to try it - this is the real thing, pulling
             live challenges from our database.
           </p>
           <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl p-8 flex flex-col items-center gap-6">
@@ -85,7 +85,7 @@ function ContactForm() {
       <input name="email" type="email" placeholder="Email" />
       <textarea name="message" placeholder="Message" />
 
-      {/* CAPTCHA — works exactly like reCAPTCHA v2 */}
+      {/* CAPTCHA - works exactly like reCAPTCHA v2 */}
       <LatchaWidget
         onVerify={(token) => {
           setVerified(true);
@@ -121,13 +121,13 @@ function ContactForm() {
                   {
                     prop: "onVerify",
                     type: "(token: string) => void",
-                    def: "—",
+                    def: "-",
                     desc: "Called on success. token is a short-lived challenge ID.",
                   },
                   {
                     prop: "onError",
                     type: "(err: Error) => void",
-                    def: "—",
+                    def: "-",
                     desc: "Called if the network request or API fails.",
                   },
                   {
@@ -168,7 +168,7 @@ function ContactForm() {
               {
                 step: "2",
                 title: "Challenge",
-                body: "The user selects all cells containing a face. ±1 error is allowed — AIs fail because the faces blend into the scene.",
+                body: "The user selects all cells containing a face. ±1 error is allowed - AIs fail because the faces blend into the scene.",
               },
               {
                 step: "3",

@@ -1,40 +1,40 @@
-import { createClient } from "@supabase/supabase-js";
+import PocketBase from "pocketbase";
 import fs from "fs";
 
 console.log("Starting debug script...");
 try {
   const envContent = fs.readFileSync("../../.env", "utf8");
   console.log("Read env file successfully.");
-  let supabaseUrl = "";
-  let supabaseKey = "";
+  let pocketbaseUrl = "";
+  let adminEmail = "";
+  let adminPassword = "";
 
   for (const line of envContent.split("\n")) {
-    if (line.startsWith("NEXT_PUBLIC_SUPABASE_URL=")) {
-      supabaseUrl = line.split("=")[1].trim();
+    if (line.startsWith("NEXT_PUBLIC_POCKETBASE_URL=")) {
+      pocketbaseUrl = line.split("=")[1].trim();
     }
-    if (line.startsWith("SUPABASE_SERVICE_ROLE_KEY=")) {
-      supabaseKey = line.split("SUPABASE_SERVICE_ROLE_KEY=")[1].trim();
+    if (line.startsWith("POCKETBASE_ADMIN_EMAIL=")) {
+      adminEmail = line.split("POCKETBASE_ADMIN_EMAIL=")[1].trim();
+    }
+    if (line.startsWith("POCKETBASE_ADMIN_PASSWORD=")) {
+      adminPassword = line.split("POCKETBASE_ADMIN_PASSWORD=")[1].trim();
     }
   }
 
-  console.log("URL:", supabaseUrl);
-  console.log("KEY prefix:", supabaseKey.substring(0, 15));
+  if (!pocketbaseUrl) pocketbaseUrl = "https://latcha-db.heimdal.dev";
 
-  const supabase = createClient(
-    supabaseUrl,
-    supabaseKey,
-  );
+  console.log("URL:", pocketbaseUrl);
+  console.log("Admin prefix:", adminEmail.substring(0, 3));
+
+  const pb = new PocketBase(pocketbaseUrl);
   console.log("Client created. Fetching...");
 
-  const { count, error } = await supabase
-    .from("captchas")
-    .select("*", { count: "exact", head: true });
+  await pb.admins.authWithPassword(adminEmail, adminPassword);
+  const list = await pb.collection("captchas").getList(1, 1, {
+    fields: "id",
+  });
 
-  if (error) {
-    console.error("Error reading captchas table:", error.message);
-  } else {
-    console.log(`There are ${count} rows in 'captchas'.`);
-  }
+  console.log(`There are ${list.totalItems} rows in 'captchas'.`);
 } catch (err) {
   console.error(err);
 }

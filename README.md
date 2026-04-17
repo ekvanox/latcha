@@ -60,8 +60,8 @@ latcha/
 │   ├── react/                # @latcha/react - drop-in React widget (npm)
 │   └── eval/                 # LLM evaluation harness
 ├── scripts/
-│   ├── generate-and-upload.ts  # Batch-generate challenges and store in Supabase
-│   ├── supabase-eval.ts        # Run LLM benchmark against stored challenges
+│   ├── generate-and-upload.ts  # Batch-generate challenges and store in PocketBase
+│   ├── pocketbase-eval.ts      # Run LLM benchmark against PocketBase-stored challenges
 │   └── illusion-faces-eval.ts  # Targeted face-challenge benchmark
 └── generations/
     └── face-sources/           # Source face images (add your own JPG/PNG/WebP)
@@ -143,7 +143,7 @@ function ContactForm() {
 - Node.js ≥ 18
 - [pnpm](https://pnpm.io) ≥ 10
 - A [fal.ai](https://fal.ai) API key (for challenge generation)
-- A [Supabase](https://supabase.com) project (for storing challenges)
+- A [PocketBase](https://pocketbase.io) instance (for storing challenges/results)
 - An [OpenRouter](https://openrouter.ai) API key (for LLM evaluation)
 
 ### Setup
@@ -162,10 +162,10 @@ cp .env.example .env
 
 ```env
 FAL_KEY=                      # fal.ai key - required for generation
-NEXT_PUBLIC_SUPABASE_URL=     # Supabase project URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-SUPABASE_SERVICE_ROLE_KEY=
-SUPABASE_CHALLENGES_TABLE=captcha_challenges
+NEXT_PUBLIC_POCKETBASE_URL=   # PocketBase base URL
+POCKETBASE_ADMIN_EMAIL=       # Needed for admin-only write scripts
+POCKETBASE_ADMIN_PASSWORD=
+POCKETBASE_CHALLENGES_COLLECTION=captcha_challenges
 OPENROUTER_API_KEY=           # For LLM evaluation scripts
 ```
 
@@ -182,13 +182,13 @@ pnpm --filter web dev
 Add face source images (JPG / PNG / WebP) to `generations/face-sources/`, then:
 
 ```bash
-pnpm generate     # generates challenges and uploads to Supabase
+pnpm generate     # generates challenges and uploads to PocketBase
 ```
 
 ### Run LLM benchmarks
 
 ```bash
-pnpm supabase-eval          # benchmark all challenge types against multiple LLMs
+pnpm pocketbase-eval        # benchmark all challenge types against multiple LLMs
 pnpm illusion-faces-eval    # benchmark only the face-in-image challenge
 ```
 
@@ -202,7 +202,7 @@ pnpm illusion-faces-eval    # benchmark only the face-in-image challenge
 | Core library     | TypeScript, Node.js                                  |
 | Image processing | sharp, Canvas                                        |
 | AI generation    | fal.ai (illusion-diffusion, bria background removal) |
-| Storage          | Supabase (Postgres + Storage)                        |
+| Storage          | PocketBase (SQLite + file storage)                   |
 | Hosting          | Vercel + Cloudflare                                  |
 | Payments         | Stripe                                               |
 | Build system     | Turborepo + pnpm workspaces                          |
